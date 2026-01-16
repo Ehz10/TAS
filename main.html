@@ -8,14 +8,39 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <style>
-.card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,.08);
-}
-</style>
+            .card-link {
+                text-decoration: none;
+                color: inherit;
+                display: block;
+            }
+
+            .card {
+                transition: transform .25s ease, box-shadow .25s ease;
+            }
+
+            .card-link:hover .card {
+                transform: translateY(-4px);
+                box-shadow: 0 1rem 2rem rgba(0,0,0,.08);
+            }
+
+            .cta {
+                font-weight: 600;
+                font-size: 0.95rem;
+                letter-spacing: 0.3px;
+                transition: transform .2s ease, opacity .2s ease;
+            }
+
+            .card-link:hover .cta {
+                transform: translateX(4px);
+                opacity: 0.85;
+            }
+
+            .card-link:focus-visible .card {
+                outline: 3px solid #0d6efd;
+                outline-offset: 4px;
+            }
+        </style>
+
 
 </head>
 
@@ -29,95 +54,149 @@
             </header>
         </div>
         <div class="container mt-5">
+    <div class="container mt-5">
     <h2 class="pb-2">TAS</h2>
 
     <div class="row g-4 py-lg-5 py-3 row-cols-1 row-cols-lg-3">
 
         <div class="col">
-            <a  href="page1.html" >
+            <a href="Pre_Hospitalar.html" class="card-link">
                 <div class="card h-100 border-0 shadow-sm">
                     <div class="card-body d-flex flex-column">
-                        <h3 class="fs-5 fw-semibold text-body-emphasis">
+                        <h3 class="fs-5 fw-semibold text-body-emphasis mb-3">
                             Introdução à Emergência Pré-Hospitalar
                         </h3>
-                        <p class="mt-auto icon-link fw-semibold text-primary">
-                            Ver conteúdo →
-                        </p>
+                        <span class="cta text-primary mt-auto">Ver conteúdo →</span>
                     </div>
                 </div>
             </a>
         </div>
 
         <div class="col">
-            <a href="page2.html">
+            <a href="Abordagem_Vitima.html" class="card-link">
                 <div class="card h-100 border-0 shadow-sm">
                     <div class="card-body d-flex flex-column">
-                        <h3 class="fs-5 fw-semibold text-body-emphasis">
+                        <h3 class="fs-5 fw-semibold text-body-emphasis mb-3">
                             Abordagem da Vítima
                         </h3>
-                        <a href="page2.html" class="mt-auto icon-link fw-semibold text-success">
-                            Ver conteúdo →
-                        </a>
+                        <span class="cta text-success mt-auto">Ver conteúdo →</span>
                     </div>
                 </div>
             </a>
         </div>
 
         <div class="col">
-            <a href="page3.html">
+            <a href="Emer_Medicas.html" class="card-link">
                 <div class="card h-100 border-0 shadow-sm">
                     <div class="card-body d-flex flex-column">
-                        <h3 class="fs-5 fw-semibold text-body-emphasis">
+                        <h3 class="fs-5 fw-semibold text-body-emphasis mb-3">
                             Emergências Médicas
                         </h3>
-                        <a href="page3.html" class="mt-auto icon-link fw-semibold text-warning">
-                            Ver conteúdo →
-                        </a>
+                        <span class="cta text-warning mt-auto">Ver conteúdo →</span>
                     </div>
                 </div>
             </a>
         </div>
 
         <div class="col">
-            <a href="page4.html">
+            <a href="Emer_Obstetricia.html" class="card-link">
                 <div class="card h-100 border-0 shadow-sm">
                     <div class="card-body d-flex flex-column">
-                        <h3 class="fs-5 fw-semibold text-body-emphasis">
+                        <h3 class="fs-5 fw-semibold text-body-emphasis mb-3">
                             Emergências de Obstetrícia
                         </h3>
-                        <a href="page4.html" class="mt-auto icon-link fw-semibold text-info">
-                            Ver conteúdo →
-                        </a>
+                        <span class="cta text-info mt-auto">Ver conteúdo →</span>
                     </div>
                 </div>
             </a>
         </div>
 
         <div class="col">
-            <a href="page5.html">
+            <a href="Emer_Pedriatrica.html" class="card-link">
                 <div class="card h-100 border-0 shadow-sm">
                     <div class="card-body d-flex flex-column">
-                        <h3 class="fs-5 fw-semibold text-body-emphasis">
+                        <h3 class="fs-5 fw-semibold text-body-emphasis mb-3">
                             Emergências Pediátricas
                         </h3>
-                        <a href="page5.html" class="mt-auto icon-link fw-semibold text-primary">
-                            Ver conteúdo →
-                        </a>
+                        <span class="cta text-primary mt-auto">Ver conteúdo →</span>
                     </div>
                 </div>
             </a>
         </div>
 
         <div class="col">
-            <a href="page6.html"></a>
+            <a href="Emer_Trauma.html" class="card-link">
                 <div class="card h-100 border-0 shadow-sm">
                     <div class="card-body d-flex flex-column">
-                        <h3 class="fs-5 fw-semibold text-body-emphasis">
+                        <h3 class="fs-5 fw-semibold text-body-emphasis mb-3">
                             Emergências de Trauma
                         </h3>
-                        <a href="page6.html" class="mt-auto icon-link fw-semibold text-danger">
-                            Ver conteúdo →
-                        </a>
+                        <span class="cta text-danger mt-auto">Ver conteúdo →</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col">
+            <a href="" class="card-link">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="fs-5 fw-semibold text-body-emphasis mb-3">
+                            Ética e Aspetos Legais
+                        </h3>
+                        <span class="cta text-secondary mt-auto">Ver conteúdo →</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col">
+            <a href="" class="card-link">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="fs-5 fw-semibold text-body-emphasis mb-3">
+                            Reanimação
+                        </h3>
+                        <span class="cta text-danger mt-auto">Ver conteúdo →</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col">
+            <a href="" class="card-link">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="fs-5 fw-semibold text-body-emphasis mb-3">
+                            Oxigenoterapia
+                        </h3>
+                        <span class="cta text-info mt-auto">Ver conteúdo →</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col">
+            <a href="" class="card-link">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="fs-5 fw-semibold text-body-emphasis mb-3">
+                            Competências Psicológicas
+                        </h3>
+                        <span class="cta text-success mt-auto">Ver conteúdo →</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col">
+            <a href="" class="card-link">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="fs-5 fw-semibold text-body-emphasis mb-3">
+                            Apoio SAV
+                        </h3>
+                        <span class="cta text-primary mt-auto">Ver conteúdo →</span>
                     </div>
                 </div>
             </a>
@@ -125,6 +204,7 @@
 
     </div>
 </div>
+
 
     </main>
     <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"

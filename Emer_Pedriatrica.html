@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manual TAS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container"> 
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> 
+            <h2 href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> 
+                <img src="img/EstrelaDaVida.png" alt="Logo" width="40" height="40" class="me-2"> 
+                <span class="fs-4">Estudo TAS </span></h2> 
+        </header>
+    </div>
+    <main>
+        <div class="container mt-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="main.html">Início</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Emergências Pediátricas</li>
+                </ol>
+            </nav>
+        </div>
+        <button id="btnTopo" aria-label="Voltar ao topo">
+            <span>↑</span>
+        </button>
+        <div class="container my-5">
+            <h2 class="fw-bold text-body-emphasis border-bottom">
+                <span class="badge bg-primary me-2">TAS</span>
+                Emergências Pediátricas
+            </h2>
+            <p class="text-muted mb-0">
+                Abordagem e cuidados em situações de emergência em pediatria.
+            </p>
+        </div>
+
+        <div class="container mt-5">
+            <section class="mb-5">
+            <h3 class="module-title">🎯 Objetivos</h3>
+            <div class="card">
+                <div class="card-body">
+                    <ul>
+                        <li>Identificar os estádios de desenvolvimento da criança</li>
+                        <li>Conhecer as estratégias de abordagem e comunicação com a criança</li>
+                        <li>Identificar a preparação para a atuação</li>
+                        <li>Identificar os critérios a avaliar no Triângulo de Avaliação Pediátrica</li>
+                        <li>Compreender as particularidades do exame primário ABCDE e secundário, na vítima pediátrica</li>
+                        <li>Conhecer os aspetos fundamentais no transporte da vítima pediátrica</li>
+                        <li>Conhecer as principais emergências pediátricas em contexto pré-hospitalar e identificar as respetivas atuações</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="module-title mt-4">📋 Enquadramento</h3>
+            <div class="card">
+                <div class="card-body">
+                    <ul>
+                        <li>O TAS deve promover conforto e segurança à criança, responsável presente e a família</li>
+                        <li>A colaboração dos pais na abordagem é fundamental</li>
+                        <li>A sistematização de abordagem inclui 4 passos:
+                            <ol>
+                                <li>Avaliação do cenário</li>
+                                <li>Avaliação primária</li>
+                                <li>Avaliação secundária</li>
+                                <li>Avaliação do status psicológico</li>
+                            </ol>
+                        </li>
+                        <li>A principal causa de PCR em idade pediátrica é a hipóxia</li>
+                        <li>Raramente é um evento súbito, ao contrário do que acontece nos adultos</li>
+                        <li>A prioridade na reanimação pediátrica é a otimização da oxigenação (permeabilização da via aérea, oxigenação e suporte básico de vida)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulo 2: Estádios do desenvolvimento da criança -->
+        <section class="mb-5">
+            <h3 class="module-title development-color">👶 Estádios do desenvolvimento da criança</h3>
+            <div class="card">
+                <div class="card-header">Faixas etárias</div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Recém-nascido (RN):</strong> dos 0 até aos 28 dias</li>
+                        <li><strong>Lactente:</strong> até ao ano de idade</li>
+                        <li><strong>Criança:</strong> entre 1 e os 18 anos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-info text-white">Recém-Nascido – características gerais</div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Cabeça moldável, notam-se as fontanelas</li>
+                                <li>Olhos apresentam edema e olhar aparentemente estrábico</li>
+                                <li>Espirro para desobstruir o nariz</li>
+                                <li>Pele muito fina no RN pré-termo / RN termo pele lisa, brilhante, húmida e fina / RN pós-termo pele seca, enrugada e com descamação acentuada</li>
+                                <li>Vérnix caseosa – revestimento gorduroso branco</li>
+                                <li>Respiração predominantemente nasal (até aos 4-6 meses)</li>
+                                <li>Sensíveis à estimulação vagal</li>
+                                <li>RN e lactentes até aos 3 meses têm maior risco de hipotermia</li>
+                                <li>Genitais encontram-se mais edemaciados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-success text-white">Lactente – características gerais</div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Idade compreendida entre os 29 dias e 1 ano</li>
+                                <li>Entre os 2 e os 6 meses, os lactentes tornam-se mais ativos</li>
+                                <li>Perto de 1 ano de idade, a maioria começa a gatinhar ou a rastejar, colocam-se de pé e apoiam-se em superfícies, começando progressivamente a caminhar</li>
+                                <li>A incapacidade de comunicação verbal dificulta a avaliação dos sintomas</li>
+                                <li>Considerar sempre a opinião dos cuidadores quando dizem que “o bebé não está bem” ou “está diferente”</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-warning text-white">Criança – características gerais</div>
+                        <div class="card-body">
+                            <table class="table table-sm table-custom">
+                                <tr><th>Idade</th><th>Características</th></tr>
+                                <tr><td>1–3 anos</td><td>Lógica simples, nível de atenção baixo, não distinguem fantasia da realidade, bastantes ativos, teimosos, assustados com estranhos</td></tr>
+                                <tr><td>3–5 anos</td><td>Criativas e pensadoras, exploram muito e têm pouca noção do perigo, compreendem causa e efeito dos seus atos</td></tr>
+                                <tr><td>6–11 anos</td><td>Observadoras, faladoras, linguagem formal, raciocínio operatório concreto, perceção corporal</td></tr>
+                                <tr><td>12–18 anos</td><td>Racionais, grandes alterações crescimento e desenvolvimento, pensamento abstrato, autoestima, autoimagem, tomam decisões, expõem-se a riscos</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulo 3: Preparação e avaliação do cenário -->
+        <section class="mb-5">
+            <h3 class="module-title assessment-color">📊 Preparação e avaliação do cenário</h3>
+            <div class="card">
+                <div class="card-header">Ativação para vítima pediátrica</div>
+                <div class="card-body">
+                    <ul>
+                        <li>Enquadrar tipologia de ocorrência: Emergência Médica VS Trauma</li>
+                        <li>Estipular os parâmetros vitais esperados</li>
+                        <li>Equacionar a tríade que possibilita a prestação de cuidados em pediatria: Equipa de socorro, criança e responsável pela mesma no local</li>
+                        <li>Noção do equipamento pediátrico disponível na carga do meio</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-header">Parâmetros pediátricos</div>
+                <div class="card-body">
+                    <h5>Fórmula de cálculo do peso (Kg)</h5>
+                    <table class="table table-sm table-custom mb-4">
+                        <tr><th>Idade</th><th>Fórmula</th></tr>
+                        <tr><td>&lt; 1 ano</td><td>(idade em meses + 9) / 2</td></tr>
+                        <tr><td>1–10 anos</td><td>(2 x idade) + 8</td></tr>
+                        <tr><td>&gt;10 anos</td><td>3 x idade</td></tr>
+                    </table>
+
+                    <h5>Pressão arterial sistólica (mmHg)</h5>
+                    <table class="table table-sm table-custom mb-4">
+                        <tr><th>Idade</th><th>Normal</th><th>Limite inferior aceitável</th></tr>
+                        <tr><td>0 – 1 mês</td><td>&gt;60</td><td>50–60</td></tr>
+                        <tr><td>1 – 12 meses</td><td>80</td><td>70</td></tr>
+                        <tr><td>1 – 10 anos</td><td>90 + (2 x idade)</td><td>70 + (2 x idade)</td></tr>
+                        <tr><td>&gt;10 anos</td><td>120</td><td>90</td></tr>
+                    </table>
+
+                    <h5>Parâmetros vitais por idade</h5>
+                    <table class="table table-sm table-custom">
+                        <tr><th>Idade</th><th>Peso (Kg)</th><th>FR (cpm)</th><th>FC (bpm)</th></tr>
+                        <tr><td>RN termo</td><td>3,5</td><td>40</td><td>100–180</td></tr>
+                        <tr><td>3 meses</td><td>6,0</td><td>35</td><td>90–180</td></tr>
+                        <tr><td>6 meses</td><td>7,5</td><td>30</td><td>90–180</td></tr>
+                        <tr><td>1 ano</td><td>10</td><td>24</td><td>90–170</td></tr>
+                        <tr><td>2 anos</td><td>12</td><td>22</td><td>90–140</td></tr>
+                        <tr><td>3 anos</td><td>14</td><td>20</td><td>80–140</td></tr>
+                        <tr><td>5 anos</td><td>18</td><td>16–20</td><td>70–120</td></tr>
+                        <tr><td>7 anos</td><td>22</td><td>16–20</td><td>70–120</td></tr>
+                        <tr><td>10 anos</td><td>33</td><td>16–20</td><td>60–110</td></tr>
+                        <tr><td>12 anos</td><td>40</td><td>14–18</td><td>60–100</td></tr>
+                        <tr><td>15 anos</td><td>50</td><td>14–16</td><td>60–100</td></tr>
+                        <tr><td>Adulto</td><td>&gt;50</td><td>14–16</td><td>60–100</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-header bg-secondary text-white">Leitura do cenário</div>
+                <div class="card-body">
+                    <p>Alergénios, toxinas, contentores ou garrafas abertas, caixas de fármacos e armas são exemplos de ameaças que podem explicar muito do que aconteceu à criança.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulo 4: TAP – Triângulo de Avaliação Pediátrica -->
+        <section class="mb-5">
+            <h3 class="module-title assessment-color">🔺 TAP – Triângulo de Avaliação Pediátrica</h3>
+            <div class="card">
+                <div class="card-header">Avaliação dos três lados do TAP</div>
+                <div class="card-body">
+                    <p>Os três lados do TAP podem ser avaliados de forma aleatória, contrariamente ao que acontece na sequência de prioridades ABCDE.</p>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">Aparência (TICLS)</div>
+                        <div class="card-body">
+                            <table class="table table-sm">
+                                <tr><th>Letra</th><th>Avaliação</th></tr>
+                                <tr><td>T</td><td>Tónus</td></tr>
+                                <tr><td>I</td><td>Interatividade</td></tr>
+                                <tr><td>C</td><td>Consolo</td></tr>
+                                <tr><td>L</td><td>Olhar (Look)</td></tr>
+                                <tr><td>S</td><td>Discurso / Fala / Choro</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-success text-white">Trabalho respiratório</div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Identificar sons respiratórios anormais</li>
+                                <li>Observar sinais de esforço ventilatório</li>
+                                <li>Ressonar, estridor e rouquidão sugerem obstrução da via aérea superior</li>
+                                <li>Pieira reflete alterações na via aérea inferior</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-warning text-white">Perfusão periférica</div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Avaliar coloração da pele, lábios, mucosas e leitos ungueais</li>
+                                <li>Pálida? Cianótica? Marmoreada?</li>
+                                <li>Sinais óbvios de hemorragia?</li>
+                                <li>Sudorética?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-header">Interpretação do TAP</div>
+                <div class="card-body">
+                    <ul>
+                        <li>Dificuldade respiratória</li>
+                        <li>Falência respiratória</li>
+                        <li>Choque</li>
+                        <li>Disfunção do SNC e/ou alterações metabólicas</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulo 5: Avaliação primária ABCDE -->
+        <section class="mb-5">
+            <h3 class="module-title assessment-color">📈 Avaliação primária ABCDE</h3>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col"><h5 class="text-danger">A – Via aérea</h5></div>
+                        <div class="col"><h5 class="text-success">B – Ventilação</h5></div>
+                        <div class="col"><h5 class="text-primary">C – Circulação</h5></div>
+                        <div class="col"><h5 class="text-warning">D – Disfunção neurológica</h5></div>
+                        <div class="col"><h5 class="text-info">E – Exposição</h5></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-danger text-white">A – Via aérea</div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Perceber se a via aérea está permeável ou não</li>
+                                <li>Boa expansão torácica, sons respiratórios normais, criança fala ou chora normalmente</li>
+                                <li>Ruídos respiratórios anormais (estridor, gorgolejo, ressonar...) suspeitar de obstrução parcial</li>
+                                <li>Usar uma almofada para promover elevação e manter o plano da face alinhado com o plano do pescoço</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-success text-white">B – Ventilação e Oxigenação</div>
+                        <div class="card-body">
+                            <ul>
+                                <li>A insuficiência respiratória que conduz à paragem respiratória precede, tipicamente, a paragem cardíaca na maioria das crianças</li>
+                                <li>Nunca esperar pelo desenvolvimento da cianose para iniciar o tratamento com oxigénio e/ ou ventilação assistida</li>
+                                <li>Avaliar frequência, amplitude e ritmo da respiração, esforço respiratório, SpO₂</li>
+                                <li>Oxigénio “à face”</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">C – Circulação</div>
+                        <div class="card-body">
+                            <ul>
+                                <li>O objetivo é determinar a qualidade da perfusão</li>
+                                <li>A hipotensão e o pulso fino e fraco são sinais tardios e graves de falência circulatória</li>
+                                <li>Avaliar frequência, amplitude e ritmo do pulso; coloração da pele, mucosas; tempo de preenchimento capilar; PA</li>
+                            </ul>
+                            <table class="table table-sm mt-2">
+                                <tr><th>Idade</th><th>FC (bpm)</th><th>PA mínima (mmHg)</th></tr>
+                                <tr><td>RN</td><td>100–180</td><td>&gt;60</td></tr>
+                                <tr><td>1–12 meses</td><td>80–180</td><td>&gt;70</td></tr>
+                                <tr><td>1–5 anos</td><td>70–140</td><td>&gt;70 + (2 x idade)</td></tr>
+                                <tr><td>6–10 anos</td><td>60–120</td><td>&gt;70 + (2 x idade)</td></tr>
+                                <tr><td>&gt;10 anos</td><td>60–100</td><td>&gt;90</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-header bg-warning text-white">D – Disfunção Neurológica</div>
+                        <div class="card-body">
+                            <ul>
+                                <li>AVDS</li>
+                                <li>Tamanho, simetria e reatividade pupilar</li>
+                                <li>Avaliar défices sensitivos e motores</li>
+                                <li>Avaliar glicémia</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-header bg-info text-white">E – Exposição</div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Quando necessário</li>
+                                <li>Evitar hipotermia</li>
+                                <li>Pesquisar lesões óbvias da pele</li>
+                                <li>Avaliar sinais de maus tratos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulo 6: Emergências Respiratórias -->
+        <section class="mb-5">
+            <h3 class="module-title respiratory-color">🌬️ Emergências Respiratórias</h3>
+            
+            <div class="card">
+                <div class="card-header bg-primary text-white">Asma</div>
+                <div class="card-body">
+                    <p><strong>Doença inflamatória</strong> normalmente desencadeada por infeções respiratórias altas, exercício físico intenso, ar frio, emoções fortes, fumo ou alergénios.</p>
+                    <h6>Sintomatologia:</h6>
+                    <ul>
+                        <li>Dispneia, sinais de esforço ventilatório</li>
+                        <li>Dificuldade em completar frases</li>
+                        <li>Taquipneia e taquicardia</li>
+                        <li>Pieira (som tipo “chiar de chaleira”)</li>
+                        <li>Uso excessivo de músculos abdominais</li>
+                        <li>Cianose ou pele marmoreada</li>
+                    </ul>
+                    <h6>Atuação:</h6>
+                    <ul>
+                        <li>Foco em A e B</li>
+                        <li>Posição de conforto</li>
+                        <li>Administrar O₂ suplementar</li>
+                        <li>Sem oximetria administrar O₂ a 15l/min nas crises moderadas ou graves</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-header bg-success text-white">Bronquiolite</div>
+                <div class="card-body">
+                    <p><strong>Infeção respiratória aguda</strong> com padrão típico de sazonalidade. Caracterizada por inflamação extensa, edema das vias aéreas, aumento da produção de muco.</p>
+                    <h6>Sintomatologia:</h6>
+                    <ul>
+                        <li>Quadro de constipação inicial</li>
+                        <li>Diminuição do apetite, febre geralmente inferior a 39°C</li>
+                        <li>Períodos de apneia (< 2 meses)</li>
+                        <li>Taquipneia, tiragem, adejo nasal</li>
+                        <li>Hipoxemia, taquicardia</li>
+                    </ul>
+                    <h6>Atuação:</h6>
+                    <ul>
+                        <li>Elevação da cabeceira a 30º</li>
+                        <li>Desobstrução nasal suave</li>
+                        <li>Administração de oxigénio conforme orientação</li>
+                        <li>Transporte com elevação da cabeceira</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-header bg-info text-white">Laringite</div>
+                <div class="card-body">
+                    <p><strong>Inflamação da laringe</strong>, geralmente por infeção.</p>
+                    <h6>Sintomatologia:</h6>
+                    <ul>
+                        <li>Tosse laríngea (tosse de “cão”)</li>
+                        <li>Rouquidão ou mudanças na voz</li>
+                        <li>Estridor inspiratório</li>
+                        <li>Dificuldade respiratória durante os episódios de tosse</li>
+                    </ul>
+                    <h6>Atuação:</h6>
+                    <ul>
+                        <li>Elevação da cabeceira a 30º</li>
+                        <li>Minimizar stress que provoque choro</li>
+                        <li>Administrar oxigénio suplementar</li>
+                        <li>Considerar ar frio se estridor em repouso</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulo 7: Outras Emergências Pediátricas -->
+        <section class="mb-5">
+            <h3 class="module-title emergency-color">⚠️ Outras Emergências Pediátricas</h3>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-warning">Desidratação</div>
+                        <div class="card-body">
+                            <p>Geralmente por vómitos e/ou diarreia. Perda associada de eletrólitos.</p>
+                            <h6>Sintomatologia:</h6>
+                            <ul>
+                                <li>Sede, mucosas secas</li>
+                                <li>Língua encortiçada, pele seca</li>
+                                <li>Olhos sem brilho, prega cutânea mantida</li>
+                                <li>Apatia, diminuição do débito urinário</li>
+                                <li>Fontanela anterior deprimida (até 18 meses)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-danger">Convulsões</div>
+                        <div class="card-body">
+                            <p>Contração involuntária dos músculos, com movimentos desorganizados.</p>
+                            <h6>Causas:</h6>
+                            <ul>
+                                <li>Epilepsia, infeções no SNC</li>
+                                <li>Intoxicações, TCE, hipoglicémia, hipóxia</li>
+                            </ul>
+                            <h6>Atuação:</h6>
+                            <ul>
+                                <li>Administrar O₂ alto débito a 15l/min</li>
+                                <li>Solicitar apoio diferenciado</li>
+                                <li>Posição de recuperação</li>
+                                <li>Realizar arrefecimento periférico se febre</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-dark text-white">Sépsis Meningocócica</div>
+                        <div class="card-body">
+                            <p>Patologia grave em contexto pediátrico. Pode evoluir em poucas horas para choque séptico.</p>
+                            <h6>Sintomatologia:</h6>
+                            <ul>
+                                <li>Febre, dor nas pernas, sede</li>
+                                <li>Coloração da pele alterada, mãos e pés frios</li>
+                                <li>Rash hemorrágico, sinais de choque</li>
+                                <li>Rigidez da nuca, fotofobia</li>
+                            </ul>
+                            <h6>Atuação:</h6>
+                            <ul>
+                                <li>Identificar vítima crítica e solicitar apoio diferenciado</li>
+                                <li>Abordar com EPI adequado</li>
+                                <li>Administrar O₂</li>
+                                <li>Realizar arrefecimento se febre</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-secondary text-white">Hipoglicemia</div>
+                        <div class="card-body">
+                            <p>Baixa concentração de glicose no sangue. Valores críticos: <40 mg/dl (RN) e <60 mg/dl (lactentes/crianças).</p>
+                            <h6>Sintomatologia:</h6>
+                            <ul>
+                                <li>Precoce: palidez, náuseas, tremores, suores frios</li>
+                                <li>Tardia: irritabilidade, letargia, confusão, convulsão, coma</li>
+                            </ul>
+                            <h6>Atuação:</h6>
+                            <ul>
+                                <li>Avaliar glicemia se alteração da aparência no TAP</li>
+                                <li>Administrar O₂ se SpO₂ < 92%</li>
+                                <li>Oferecer alimento se seguro (peito, biberão, açúcar)</li>
+                                <li>Melaço de açúcar sob a língua se sem deglutição</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-header bg-dark text-white">Intoxicações</div>
+                <div class="card-body">
+                    <p>Causa frequente de admissão no SU. Principais agentes: fármacos e produtos domésticos.</p>
+                    <h6>Recolher informação (QUEM, O QUÊ, QUANTO, QUANDO, ONDE, COMO):</h6>
+                    <ul>
+                        <li>Tempo de início dos sintomas</li>
+                        <li>Identificação do tóxico, quantidade, via de administração</li>
+                        <li>Idade, peso, patologias prévias, alergias</li>
+                    </ul>
+                    <h6>Atuação:</h6>
+                    <ul>
+                        <li>Informar CODU/CIAV</li>
+                        <li>Administrar O₂ suplementar se SpO₂ < 92%</li>
+                        <li>Usar EPI recomendado, remover roupas contaminadas</li>
+                        <li>Transportar o tóxico em segurança para o SU</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        </div>
+    </main>
+    
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            class="astro-vvvwv3sm"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+        <script src="/script.js"></script> 
+</body>
+
+</html>
