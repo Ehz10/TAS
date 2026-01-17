@@ -1,13 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manual TAS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
+    <style>
+        body { padding-top: 20px; background-color: #f8f9fa; }
+        .card { margin-bottom: 20px; }
+        .card-header { font-weight: bold; }
+        .highlight { background-color: #e7f1ff; padding: 15px; border-radius: 5px; }
+        h1, h2 { color: #0d6efd; }
+        .module-title { color: #dc3545; font-weight: bold; }
+        .section-title { color: #198754; border-left: 4px solid #198754; padding-left: 15px; margin-top: 30px; }
+        .ethics-color { color: #6f42c1; }
+        .legal-color { color: #20c997; }
+        .rights-color { color: #fd7e14; }
+        .duties-color { color: #0dcaf0; }
+        footer { background-color: #343a40; color: white; padding: 20px; border-radius: 5px; margin-top: 40px; }
+        .ethics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .ethics-item { background: #e9ecef; padding: 15px; border-radius: 8px; text-align: center; font-weight: bold; }
+        .constitution-icon { font-size: 1.5rem; margin-right: 10px; color: #6f42c1; }
+    </style>
 </head>
 <body>
     <div class="container"> 
@@ -29,18 +45,18 @@
         <div class="container my-5">
             <h2 class="fw-bold text-body-emphasis border-bottom">
                 <p class="badge bg-primary me-2">TAS</p>
-                Introdução à Emergência Pré-Hospitalar
+                Ética e Aspetos Legais
             </h2>
             <p class="text-muted mb-0">
-                Procedimentos iniciais no contexto pré-hospitalar
+                Princípios éticos, responsabilidade legal e deveres do TAS.
             </p>
         </div>
+
         
         <button id="btnTopo" aria-label="Voltar ao topo">
             <span>↑</span>
         </button>
     </main>
-    
     <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
             class="astro-vvvwv3sm"></script>
@@ -50,6 +66,5 @@
         crossorigin="anonymous"></script>
 
     <script src="/script.js"></script> 
-    </body>
-
+</body>
 </html>
