@@ -1,0 +1,1304 @@
+<!doctype html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manual TAS - Reanimação</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            font-weight: bold;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #0d6efd;
+        }
+
+        .module-title {
+            color: #dc3545;
+            font-weight: bold;
+            border-bottom: 3px solid #dc3545;
+            padding-bottom: 5px;
+        }
+
+        .adult-color {
+            color: #0d6efd;
+        }
+
+        .neonatal-color {
+            color: #e83e8c;
+        }
+
+        .pediatric-color {
+            color: #20c997;
+        }
+
+        .alert-critical {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+
+        .step-card {
+            border-left: 5px solid #0d6efd;
+            margin-bottom: 15px;
+        }
+
+        .process-step {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .checklist-item {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .checklist-item:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #198754;
+            font-weight: bold;
+        }
+
+        .flow-title {
+            color: #0d6efd;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .icon-box {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .header-card {
+            background: linear-gradient(135deg, #0d6efd, #1e88e5);
+            color: white;
+        }
+
+        .compression-details {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #ffc107;
+        }
+
+        .ventilation-details {
+            background-color: #d1ecf1;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #0dcaf0;
+        }
+
+        .nav-tabs .nav-link {
+            font-weight: 600;
+        }
+
+        .nav-tabs .nav-link.active {
+            border-bottom: 3px solid #0d6efd;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        #btnTopo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            font-size: 24px;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #btnTopo:hover {
+            background-color: #0b5ed7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <h2 href="/"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <img src="img/EstrelaDaVida.png" alt="Logo" width="40" height="40" class="me-2">
+                <span class="fs-4">Estudo TAS </span>
+            </h2>
+        </header>
+    </div>
+
+    <div class="container">
+        <div class="container mt-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="main.html">Início</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Reanimação (SBV/DAE)</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="container my-5">
+            <h2 class="fw-bold text-body-emphasis border-bottom">
+                <p class="badge bg-primary me-2">TAS</p>
+                Reanimação - SBV/DAE
+            </h2>
+            <p class="text-muted mb-0">
+                Suporte Básico de Vida para Adulto, Pediátrico e Neonatal.
+            </p>
+        </div>
+
+        <!-- Navegação entre as matérias -->
+        <div class="container mb-4">
+            <ul class="nav nav-tabs" id="reanimationTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="adult-tab" data-bs-toggle="tab" data-bs-target="#adult-content"
+                        type="button" role="tab">
+                        🫀 Adulto
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pediatric-tab" data-bs-toggle="tab" data-bs-target="#pediatric-content"
+                        type="button" role="tab">
+                        🧒 Pediátrico
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="neonatal-tab" data-bs-toggle="tab" data-bs-target="#neonatal-content"
+                        type="button" role="tab">
+                        👶 Neonatal
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Conteúdo das abas -->
+        <div class="tab-content" id="reanimationContent">
+            <!-- ABA ADULTO -->
+            <div class="tab-pane fade show active" id="adult-content" role="tabpanel">
+                <!-- Cabeçalho Adulto -->
+                <header class="text-center mb-5">
+                    <div class="header-card p-4 rounded shadow">
+                        <h1 class="display-5 fw-bold text-dark">Reanimação Adulto – SBV/DAE</h1>
+                        <p class="lead mb-0">Departamento de Formação em Emergência Médica</p>
+                        <p class="mb-0">Março 2024</p>
+                    </div>
+                </header>
+
+                <!-- Objetivos Adulto -->
+                <section class="mb-5">
+                    <h3 class="module-title adult-color">🎯 Objetivos</h3>
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">O formando deve ser capaz de:</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">🔁 Rever o conceito de cadeia de sobrevivência</li>
+                                        <li class="list-group-item">🫀 Executar corretamente as manobras de SBV</li>
+                                        <li class="list-group-item">⚡ Saber o conceito de DAE e as regras de segurança
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">📋 Descrever e executar o algoritmo de SBV-DAE</li>
+                                        <li class="list-group-item">👥 Conhecer estratégias para equipas de reanimação
+                                        </li>
+                                        <li class="list-group-item">🫁 Rever o algoritmo de desobstrução da via aérea
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Cadeia de Sobrevivência Adulto -->
+                <section class="mb-5">
+                    <h3 class="module-title adult-color">🔗 Cadeia de Sobrevivência</h3>
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="icon-box">⛓️</div>
+                            <h5>Conjunto de procedimentos vitais para recuperar uma vítima de PCR</h5>
+                            <p class="lead fw-bold text-danger">Todos os elos têm igual importância. Quebra pelo elo
+                                mais fraco!</p>
+                            <div class="alert alert-critical mt-3">
+                                <h5 class="alert-heading">⏰ Dado Crítico</h5>
+                                <p class="mb-0 fs-5">A cada minuto que passa em PCR, a vítima perde cerca de <strong>10%
+                                        de hipótese de sobrevivência</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Algoritmo SBV-DAE Adulto -->
+                <section class="mb-5">
+                    <h3 class="module-title adult-color">🔄 Algoritmo de SBV-DAE</h3>
+
+                    <!-- 1. Receção da Ocorrência -->
+                    <div class="process-step">
+                        <h5 class="flow-title">📞 1. Receção da Ocorrência</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="checklist-item">Pensar e discutir provável tipo de vítima</div>
+                                <div class="checklist-item">Distribuir tarefas (3º elemento reforça o SBV)</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checklist-item">Preparar EPI adequado</div>
+                                <div class="checklist-item">Antever possíveis cenários</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Caminho do Local -->
+                    <div class="process-step">
+                        <h5 class="flow-title">🗺️ 2. Caminho do Local</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="checklist-item">Garantir segurança</div>
+                                <div class="checklist-item">Material adequado</div>
+                                <div class="checklist-item">Distribuir material consoante funções R1 e R2</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checklist-item"><strong>Recolher informação a caminho da vítima – Não
+                                        atrasar abordagem</strong></div>
+                                <div class="checklist-item">Posicionar equipamento</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Chegada ao Local -->
+                    <div class="process-step">
+                        <h5 class="flow-title">📍 3. Chegada ao Local</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>👁️ Avaliar estado de consciência</h6>
+                                <p>Com estimulação verbal e tátil bilateralmente</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>🫁 Permeabilizar via aérea</h6>
+                                <p><strong>Extensão da cabeça e elevação do queixo</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Se não respira -->
+                    <div class="process-step bg-warning bg-opacity-25">
+                        <h5 class="flow-title text-danger">🫁 4. Se vítima <u>NÃO RESPIRA</u></h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="checklist-item">Efetuar pedido de ajuda ao CODU</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checklist-item"><strong>R2 faz pedido de ajuda ao CODU e simultaneamente
+                                        inicia compressões torácicas</strong></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Ligar DAE e Preparação -->
+                    <div class="process-step">
+                        <h5 class="flow-title">⚡ 5. Ligar DAE - Preparação do Tórax</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>🧼 Condições de segurança:</h6>
+                                <ul>
+                                    <li><strong>Pelos em excesso:</strong> Cortar com lâmina</li>
+                                    <li><strong>Pele molhada:</strong> Retirar roupa/secar</li>
+                                    <li><strong>Pensos transdérmicos:</strong> Remover e limpar</li>
+                                    <li><strong>Pacemaker/CDI:</strong> Afastar elétrodos 8 cm</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>📍 Colocação de elétrodos:</h6>
+                                <ul>
+                                    <li><strong>Direito:</strong> Região infra clavicular</li>
+                                    <li><strong>Esquerdo:</strong> Linha média axilar (junto à axila)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Análise de Ritmo -->
+                    <div class="process-step">
+                        <h5 class="flow-title">📊 6. Análise de Ritmo em Segurança</h5>
+                        <p class="fw-bold">⚠️ Não tocar na vítima, cabos ou equipamento</p>
+                    </div>
+
+                    <!-- 7. Se choque indicado -->
+                    <div class="process-step bg-danger bg-opacity-10">
+                        <h5 class="flow-title">⚡ 7. Se choque indicado, administrar em segurança</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="checklist-item">Compressões durante a carga, se possível</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checklist-item">Afastar fonte de O2 (1 metro)</div>
+                                <div class="checklist-item">Garantir que ninguém toca na vítima</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Se choque não indicado ou após choque -->
+                    <div class="process-step">
+                        <h5 class="flow-title">🫀 8. Se choque não indicado ou após choque</h5>
+                        <div class="compression-details">
+                            <h6>Iniciar 30 compressões torácicas:</h6>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item"><strong>Localização:</strong> centro do tórax</div>
+                                    <div class="checklist-item"><strong>Frequência:</strong> 100 a 120/min</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item"><strong>Depressão:</strong> 5 a 6 cm</div>
+                                    <div class="checklist-item"><strong>Tempo:</strong> compressão = descompressão</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. Ventilações -->
+                    <div class="process-step">
+                        <h5 class="flow-title">💨 9. Realizar 2 insuflações</h5>
+                        <div class="ventilation-details">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Preparar material de via aérea e ventilação</div>
+                                    <div class="checklist-item">Selar máscara com duas mãos</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Cada insuflação: 1 segundo</div>
+                                    <div class="checklist-item">Não demorar mais de 10 segundos</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10. Minimizar pausas -->
+                    <div class="process-step bg-info bg-opacity-10">
+                        <h5 class="flow-title">⏱️ 10. Minimizar pausas de SBV para:</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="checklist-item">Colocação de elétrodos</div>
+                                <div class="checklist-item">Análises de ritmo</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checklist-item">Ventilações</div>
+                                <div class="checklist-item">Desfibrilhação (antes e depois)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 11. Ciclo contínuo -->
+                    <div class="process-step">
+                        <h5 class="flow-title">🔄 11. Ciclo Contínuo</h5>
+                        <p><strong>Seguir instruções do DAE até:</strong></p>
+                        <div class="row">
+                            <div class="col-md-4 text-center">
+                                <div class="p-3 bg-light rounded">
+                                    <div class="icon-box">🚑</div>
+                                    <p class="mb-0">Chegar ajuda e ser substituído</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="p-3 bg-light rounded">
+                                    <div class="icon-box">😴</div>
+                                    <p class="mb-0">Ficar exausto</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="p-3 bg-light rounded">
+                                    <div class="icon-box">❤️</div>
+                                    <p class="mb-0">Vítima recuperar sinais de vida</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-3 alert alert-success">
+                            <h6>📈 Se vítima mostrar sinais de vida:</h6>
+                            <ol>
+                                <li>Confirmar se respira (VOS)</li>
+                                <li>Se sim, ignorar indicações do DAE (manter ligado)</li>
+                                <li>Efetuar exame da vítima</li>
+                                <li>Colocar em PLS e preparar transporte</li>
+                                <li>Vigiar até chegar ajuda</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- 12. Apoio Diferenciado -->
+                    <div class="process-step bg-secondary bg-opacity-10">
+                        <h5 class="flow-title">🚑 12. Apoio Diferenciado</h5>
+                        <p>Conclusão da atuação pré-hospitalar inicial e preparação para transporte.</p>
+                    </div>
+                </section>
+
+                <!-- Funções da Equipa Adulto -->
+                <section class="mb-5">
+                    <h3 class="module-title adult-color">👥 Funções da Equipa (R1 e R2)</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered align-middle">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th class="text-center" style="width: 50%">Reanimador 1 – R1</th>
+                                            <th class="text-center" style="width: 50%">Reanimador 2 – R2</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>✅ Condições de segurança</td>
+                                            <td>✅ Preparação do espaço, vítima e material</td>
+                                        </tr>
+                                        <tr>
+                                            <td>✅ Estado de consciência</td>
+                                            <td>✅ Ligar DAE + Tórax + Elétrodos</td>
+                                        </tr>
+                                        <tr>
+                                            <td>✅ Permeabilizar a via aérea</td>
+                                            <td>✅ CODU + Compressões</td>
+                                        </tr>
+                                        <tr>
+                                            <td>✅ Ver, Ouvir e Sentir (10 seg.)</td>
+                                            <td>✅ Análise em segurança</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>✅ Choque em segurança</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>✅ 30 Compressões + 2 Insuflações</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Transporte com DAE Adulto -->
+                <section class="mb-5">
+                    <h3 class="module-title adult-color">🚐 Transporte da Vítima com DAE</h3>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-warning text-dark">🚨 Se PCR ocorrer DURANTE transporte:
+                                </div>
+                                <div class="card-body">
+                                    <div class="checklist-item">Ambulância deve ser imobilizada</div>
+                                    <div class="checklist-item">Desligar o motor</div>
+                                    <div class="checklist-item">Iniciar protocolo de SBV/DAE</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-danger text-white">⚠️ Durante transporte da vítima em PCR:
+                                </div>
+                                <div class="card-body">
+                                    <div class="checklist-item text-danger"><strong>NÃO desligar o DAE</strong></div>
+                                    <div class="checklist-item text-danger"><strong>IGNORAR as suas ordens</strong>
+                                    </div>
+                                    <div class="checklist-item text-danger"><strong>Manter SBV, se seguro</strong></div>
+                                    <div class="checklist-item text-danger"><strong>NUNCA administrar choque</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Desobstrução Via Aérea Adulto -->
+                <section class="mb-5">
+                    <h3 class="module-title adult-color">🫁 Desobstrução da Via Aérea</h3>
+
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-success text-white">🟢 Obstrução Ligeira</div>
+                                <div class="card-body">
+                                    <div class="checklist-item">Existe passagem de ar</div>
+                                    <div class="checklist-item">Consegue falar</div>
+                                    <div class="checklist-item">Tosse eficaz</div>
+                                    <div class="checklist-item">Respiração eficaz</div>
+                                    <div class="mt-3 alert alert-success">
+                                        <strong>Atuação:</strong> Encorajar a tossir até resolver ou tosse ineficaz
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-danger text-white">🔴 Obstrução Grave</div>
+                                <div class="card-body">
+                                    <div class="checklist-item">Sem passagem de ar</div>
+                                    <div class="checklist-item">Não consegue falar</div>
+                                    <div class="checklist-item">Tosse ineficaz ou inexistente</div>
+                                    <div class="checklist-item">Respiração ruidosa</div>
+                                    <div class="checklist-item">Pode ficar inconsciente</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header bg-info text-white">📋 Algoritmo de Desobstrução</div>
+                        <div class="card-body">
+                            <h5>1. Condições de Segurança</h5>
+                            <h5 class="mt-3">2. Avaliar Tosse:</h5>
+                            <ul>
+                                <li><strong>Tosse Eficaz:</strong> Encorajar a tossir até resolver ou tosse ineficaz
+                                </li>
+                                <li><strong>Tosse Ineficaz:</strong>
+                                    <ol>
+                                        <li>Até 5 pancadas nas costas</li>
+                                        <li>Até 5 compressões abdominais</li>
+                                        <li>Até resolver ou ficar inconsciente</li>
+                                    </ol>
+                                </li>
+                            </ul>
+                            <h5 class="mt-3">3. Se ficar inconsciente:</h5>
+                            <ul>
+                                <li>Ligar 112</li>
+                                <li>Iniciar SBV</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Aspetos Legais Adulto -->
+                <section class="mb-5">
+                    <h3 class="module-title adult-color">📝 Aspetos Legais e Regulamentares</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6>📄 Documentação obrigatória:</h6>
+                                    <div class="checklist-item">iTeams ou Verbete Nacional de Socorro</div>
+                                    <div class="checklist-item"><strong>Registo Nacional de Paragem Cardiorrespiratória
+                                            até 48h (obrigatório)</strong></div>
+                                    <div class="checklist-item">Descarga após cada evento de PCR</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>⚖️ Legislação aplicável:</h6>
+                                    <div class="checklist-item">Decreto-Lei n.º 188/2009 de 12 de Agosto</div>
+                                    <div class="checklist-item">Decreto-Lei n.º 184/2012 de 8 de agosto</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Pontos-Chave Adulto -->
+                <section class="mb-5">
+                    <h3 class="module-title adult-color">✅ Pontos-Chave para Reanimação de Qualidade</h3>
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-md-3 mb-3">
+                                    <div class="p-3 bg-white rounded shadow-sm">
+                                        <div class="icon-box">⏰</div>
+                                        <h6>Pedido de ajuda precoce</h6>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <div class="p-3 bg-white rounded shadow-sm">
+                                        <div class="icon-box">⚡</div>
+                                        <h6>DAE precoce</h6>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <div class="p-3 bg-white rounded shadow-sm">
+                                        <div class="icon-box">🫀</div>
+                                        <h6>RCP de qualidade</h6>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <div class="p-3 bg-white rounded shadow-sm">
+                                        <div class="icon-box">🛡️</div>
+                                        <h6>Segurança na análise/choque</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ABA PEDIÁTRICO -->
+            <div class="tab-pane fade" id="pediatric-content" role="tabpanel">
+                <!-- Cabeçalho Pediátrico -->
+                <header class="text-center mb-5">
+                    <div class="header-card p-4 rounded shadow"
+                        style="background: linear-gradient(135deg, #20c997, #17a589);">
+                        <h1 class="display-5 fw-bold text-dark">Reanimação Pediátrica – SBV</h1>
+                        <p class="lead mb-0">Departamento de Formação em Emergência Médica</p>
+                        <p class="mb-0">Março 2024</p>
+                    </div>
+                </header>
+
+                <!-- Objetivos Pediátrico -->
+                <section class="mb-5">
+                    <h3 class="module-title pediatric-color">🎯 Objetivos</h3>
+                    <div class="card">
+                        <div class="card-header text-white" style="background-color: #20c997;">Contexto e
+                            Particularidades</div>
+                        <div class="card-body">
+                            <ul>
+                                <li><strong>🔴 Principal causa de PCR na idade pediátrica é a HIPÓXIA</strong></li>
+                                <li>Causas primárias cardíacas são raras, mas podem ocorrer</li>
+                                <li>Princípios gerais são os mesmos do adulto, mas com adaptações</li>
+                            </ul>
+                            <h5 class="mt-3">🧒 Particularidades anatómicas e fisiológicas:</h5>
+                            <ul>
+                                <li>Cabeça maior que o corpo em proporção</li>
+                                <li>Via aérea com menor diâmetro</li>
+                                <li>Língua com maior dimensão</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Cadeia de Sobrevivência Pediátrica -->
+                <section class="mb-5">
+                    <h3 class="module-title pediatric-color">🔗 Cadeia de Sobrevivência Pediátrica</h3>
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="icon-box">⛓️</div>
+                            <h5>Conjunto de procedimentos vitais para recuperar uma vítima de PCR</h5>
+                            <p class="lead fw-bold text-danger">Todos os elos têm igual importância. Quebra pelo elo
+                                mais fraco!</p>
+                            <div class="alert alert-critical mt-3">
+                                <h5 class="alert-heading">⏰ Dado Crítico</h5>
+                                <p class="mb-0 fs-5">A cada minuto que passa em PCR, a vítima perde cerca de <strong>10%
+                                        de hipótese de sobrevivência</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Algoritmo Pediátrico -->
+                <section class="mb-5">
+                    <h3 class="module-title pediatric-color">🔄 Algoritmo de SBV Pediátrico</h3>
+
+                    <!-- Receção da Ocorrência -->
+                    <div class="process-step" style="background: linear-gradient(135deg, #d4edda, #c3e6cb);">
+                        <h5 class="flow-title" style="color: #20c997;">📞 Receção da Ocorrência (Pediátrica)</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="checklist-item">Pensar e discutir provável tipo de vítima pediátrica</div>
+                                <div class="checklist-item">Equacionar eventual Obstrução da Via Aérea (OVA)</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checklist-item">Distribuir tarefas (3º elemento reforça o SBV)</div>
+                                <div class="checklist-item">Preparar EPI adequado</div>
+                                <div class="checklist-item">Antever possíveis cenários</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chegada ao Local -->
+                    <div class="process-step" style="background: linear-gradient(135deg, #d1ecf1, #bee5eb);">
+                        <h5 class="flow-title" style="color: #20c997;">📍 Chegada ao Local – Avaliação Inicial</h5>
+
+                        <h6>1. 🛡️ Condições de Segurança</h6>
+                        <p>Riscos: Ambientais, Toxicológicos, Infeciosos.</p>
+
+                        <h6>2. 👁️ Estado de Consciência</h6>
+                        <p>Estimular suavemente:
+                        <ul>
+                            <li><strong>Lactente:</strong> tocar nos pés e mãos</li>
+                            <li><strong>Criança:</strong> tocar nos ombros</li>
+                        </ul>
+                        </p>
+
+                        <h6>3. 🫁 Permeabilizar a Via Aérea</h6>
+                        <p>
+                            <strong>Lactente:</strong> Com uma mão na testa e dois dedos no queixo, faça elevação do
+                            queixo<br>
+                            <strong>Criança:</strong> Incline ligeiramente a cabeça para trás
+                        </p>
+
+                        <h6>4. 👂 Ver, Ouvir e Sentir (10 seg.)</h6>
+                        <p>Avaliar se a respiração é normal:
+                        <ul>
+                            <li>Ver expansão torácica</li>
+                            <li>Ouvir entrada/saída de ar</li>
+                            <li>Sentir ar na face</li>
+                        </ul>
+                        </p>
+                    </div>
+
+                    <!-- Se não respira -->
+                    <div class="process-step bg-warning bg-opacity-25">
+                        <h5 class="flow-title text-danger">🫁 5. Se <u>NÃO RESPIRA</u></h5>
+                        <div class="checklist-item">→ Realizar <strong>5 insuflações iniciais</strong> (cada de 1
+                            segundo)</div>
+                    </div>
+
+                    <!-- Ligar 112 -->
+                    <div class="process-step" style="background: linear-gradient(135deg, #fff3cd, #ffeaa7);">
+                        <h5 class="flow-title" style="color: #20c997;">📞 6. Ligar 112 (CODU)</h5>
+                        <ul>
+                            <li>Se 2 reanimadores: O 2º liga 112 assim que se verifica que a vítima não responde</li>
+                            <li>Chamada com função alta voz</li>
+                            <li>As compressões torácicas devem iniciar-se em simultâneo</li>
+                            <li>Aplicar DAE na presença de colapso súbito, se disponível</li>
+                        </ul>
+                    </div>
+
+                    <!-- SBV 15:2 -->
+                    <div class="process-step" style="background: linear-gradient(135deg, #f8d7da, #f5c6cb);">
+                        <h5 class="flow-title" style="color: #20c997;">🫀 7. SBV (15:2) – Compressões e Ventilações</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>👶 Se <strong>Lactente</strong>:</h6>
+                                <ul>
+                                    <li>Local: metade inferior do esterno</li>
+                                    <li>Ritmo: 100 a 120/min</li>
+                                    <li>Profundidade: 1/3 diâmetro ântero-posterior do tórax</li>
+                                    <li>Técnica: 2 dedos (1 reanimador) ou técnica do abraço (2 reanimadores)</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>🧒 Se <strong>Criança</strong>:</h6>
+                                <ul>
+                                    <li>Local: metade inferior do esterno</li>
+                                    <li>Ritmo: 100 a 120/min</li>
+                                    <li>Profundidade: 1/3 diâmetro ântero-posterior do tórax</li>
+                                    <li>Técnica: base de uma mão</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h6 class="mt-3">🔄 Ciclo:</h6>
+                        <p><strong>15 compressões : 2 insuflações</strong></p>
+                        <h6>⏱️ Continuar até:</h6>
+                        <ul>
+                            <li>Chegada de ajuda diferenciada</li>
+                            <li>Vítima recuperar sinais de vida</li>
+                            <li>Exaustão do reanimador</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- DAE em Pediatria -->
+                <section class="mb-5">
+                    <h3 class="module-title pediatric-color">⚡ DAE em Pediatria</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <ul>
+                                <li>Se a criança colapsou subitamente, provável ritmo desfibrilhável</li>
+                                <li>Utilização respeita os mesmos princípios do adulto</li>
+                                <li>Cumprir regras do Programa Nacional de DAE do INEM</li>
+                            </ul>
+                            <h5 class="mt-3">📍 Colocação dos Elétrodos:</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header text-white" style="background-color: #20c997;">Elétrodos
+                                            Pediátricos Disponíveis</div>
+                                        <div class="card-body">
+                                            <p>Colocar um elétrodo abaixo da clavícula direita e o outro abaixo da axila
+                                                esquerda</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header text-white" style="background-color: #20c997;">Elétrodos
+                                            Grandes ou Apenas Adulto</div>
+                                        <div class="card-body">
+                                            <p>Colocar um elétrodo na zona do esterno e outro entre as omoplatas</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Desobstrução Via Aérea Pediátrica -->
+                <section class="mb-5">
+                    <h3 class="module-title pediatric-color">🫁 Desobstrução da Via Aérea (Pediatria)</h3>
+
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-success text-white">🟢 Obstrução Ligeira</div>
+                                <div class="card-body">
+                                    <div class="checklist-item">Chora e/ou consegue falar</div>
+                                    <div class="checklist-item">Tosse audível</div>
+                                    <div class="checklist-item">Consegue inspirar antes de tossir</div>
+                                    <div class="checklist-item">Completamente reativo</div>
+                                    <div class="mt-3 alert alert-success">
+                                        <strong>Atuação:</strong> Encorajar a tossir
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-danger text-white">🔴 Obstrução Grave</div>
+                                <div class="card-body">
+                                    <div class="checklist-item">Incapaz de falar</div>
+                                    <div class="checklist-item">Tosse silenciosa</div>
+                                    <div class="checklist-item">Respiração ineficaz</div>
+                                    <div class="checklist-item">Cianose</div>
+                                    <div class="checklist-item">Diminuição estado de consciência</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header text-white" style="background-color: #20c997;">📋 Algoritmo para Tosse
+                            Ineficaz</div>
+                        <div class="card-body">
+                            <h6>👶 Lactente:</h6>
+                            <ol>
+                                <li>5 pancadas nas costas</li>
+                                <li>5 compressões torácicas</li>
+                            </ol>
+
+                            <h6 class="mt-3">🧒 Criança:</h6>
+                            <ol>
+                                <li>5 pancadas nas costas</li>
+                                <li>5 compressões abdominais</li>
+                            </ol>
+
+                            <p class="mt-3">Repetir até resolver ou vítima inconsciente</p>
+
+                            <h6>😴 Se vítima inconsciente:</h6>
+                            <ol>
+                                <li>Pesquisar via aérea</li>
+                                <li>5 insuflações</li>
+                                <li>Ligar 112</li>
+                                <li>Iniciar SBV 15:2</li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Síntese -->
+                <section class="mb-5">
+                    <h3 class="module-title pediatric-color">✅ Síntese Pediátrica</h3>
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <div class="checklist-item">Manobras de SBV otimizam ventilação e oxigenação</div>
+                            <div class="checklist-item">Garantir SBV de qualidade imediata</div>
+                            <div class="checklist-item">Minimizar pausas nas manobras</div>
+                            <div class="checklist-item">Uso do DAE em pediatria é seguro</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ABA NEONATAL -->
+            <div class="tab-pane fade" id="neonatal-content" role="tabpanel">
+                <!-- Cabeçalho Neonatal -->
+                <header class="text-center mb-5">
+                    <div class="header-card p-4 rounded shadow"
+                        style="background: linear-gradient(135deg, #e83e8c, #d63384);">
+                        <h1 class="display-5 fw-bold text-dark">Reanimação Neonatal</h1>
+                        <p class="lead mb-0">Departamento de Formação em Emergência Médica</p>
+                        <p class="mb-0">Março 2024</p>
+                    </div>
+                </header>
+
+                <!-- Objetivos Neonatal -->
+                <section class="mb-5">
+                    <h3 class="module-title neonatal-color">🎯 Objetivos</h3>
+                    <div class="card">
+                        <div class="card-header text-white" style="background-color: #e83e8c;">Ao final desta formação,
+                            o formando deve ser capaz de:</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">👶 Assegurar transição segura ao meio extra-uterino
+                                        </li>
+                                        <li class="list-group-item">🛡️ Estar apto a prestar cuidados iniciais ao RN
+                                        </li>
+                                        <li class="list-group-item">⚠️ Identificar critérios de gravidade no RN</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">🔄 Desempenhar algoritmo de reanimação neonatal</li>
+                                        <li class="list-group-item">📊 Conhecer o índice de Apgar</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contexto e Importância -->
+                <section class="mb-5">
+                    <h3 class="module-title neonatal-color">📊 Contexto e Importância</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <ul>
+                                <li>Aplica-se apenas à reanimação do RN nos primeiros minutos de vida</li>
+                                <li>Algoritmo adaptado às características do RN</li>
+                                <li>6% a 10% dos RN necessitam de ajuda para adaptação à vida extra-uterina</li>
+                                <li>Apenas 1% necessita de reanimação avançada (compressões e fármacos)</li>
+                                <li class="mt-2"><strong>👶 Parto em contexto pré-hospitalar:</strong> Será parto de
+                                    termo, RN com viabilidade para vida extra-uterina</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Preparação do Parto -->
+                <section class="mb-5">
+                    <h3 class="module-title neonatal-color">🔥 Preparação do Parto – Controlo Térmico</h3>
+                    <div class="card">
+                        <div class="card-header bg-warning text-dark">⚠️ Exposição ao frio compromete oxigenação e
+                            reanimação</div>
+                        <div class="card-body">
+                            <h6>Medidas:</h6>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Pré-aquecer ambiente/célula sanitária</div>
+                                    <div class="checklist-item">Evitar exposição do RN ao meio ambiente</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Secar imediatamente após parto, cobrindo cabeça e corpo
+                                    </div>
+                                    <div class="checklist-item">Fonte de calor radiante ou pele-a-pele com mãe</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Equipamento Neonatal -->
+                <section class="mb-5">
+                    <h3 class="module-title neonatal-color">🎒 Equipamento Necessário</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6>👜 Básico:</h6>
+                                    <div class="checklist-item">Superfície plana</div>
+                                    <div class="checklist-item">Fonte de calor radiante</div>
+                                    <div class="checklist-item">Luvas descartáveis</div>
+                                    <div class="checklist-item">Panos secos e quentes</div>
+                                    <div class="checklist-item">Clamp de cordão umbilical e tesoura</div>
+                                    <div class="checklist-item">Sistema de aspiração</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>⚙️ Avançado:</h6>
+                                    <div class="checklist-item">Sondas de aspiração (Fr 6, 8, 10 ou Yankauer)</div>
+                                    <div class="checklist-item">Tubo orofaríngeo</div>
+                                    <div class="checklist-item">Insuflador manual neonatal</div>
+                                    <div class="checklist-item">Máscaras faciais (tamanho 00, 0, 1)</div>
+                                    <div class="checklist-item">Fonte de oxigénio</div>
+                                    <div class="checklist-item">Monitor de SpO2</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Abordagem Inicial ao RN -->
+                <section class="mb-5">
+                    <h3 class="module-title neonatal-color">👁️ Abordagem Inicial ao RN – Avaliação Rápida</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-header text-white" style="background-color: #e83e8c;">👐
+                                            Estimulação Táctil</div>
+                                        <div class="card-body">
+                                            <p>Evitar métodos vigorosos. Secar é suficiente para estimular ventilação.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-header text-white" style="background-color: #e83e8c;">💪 Tónus
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Avaliar se RN tem bom tónus muscular ou se está flácido/hipotónico.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-header text-white" style="background-color: #e83e8c;">🎨 Cor
+                                        </div>
+                                        <div class="card-body">
+                                            <p>RN nasce azulado, ficando rosado a partir dos 30 segundos. Cianose
+                                                periférica comum.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-header text-white" style="background-color: #e83e8c;">🫁
+                                            Atividade Respiratória</div>
+                                        <div class="card-body">
+                                            <p>Maior parte começa a respirar nos primeiros 90 segundos. Choro vigoroso
+                                                indica ventilação adequada.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header text-white" style="background-color: #e83e8c;">❤️
+                                            Frequência Cardíaca</div>
+                                        <div class="card-body">
+                                            <p>Avaliada com estetoscópio (não palpação do cordão umbilical)</p>
+                                            <div class="alert alert-warning mt-2">
+                                                <strong>A FC é o indicador mais sensível do sucesso da
+                                                    reanimação</strong><br>
+                                                FC < 100 bpm=ANORMAL, exige intervenção </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card h-100">
+                                            <div class="card-header text-white" style="background-color: #e83e8c;">📊
+                                                Saturação Alvo (RN Termo)</div>
+                                            <div class="card-body">
+                                                <table class="table table-bordered">
+                                                    <thead class="table-custom"
+                                                        style="background-color: #e83e8c; color: white;">
+                                                        <tr>
+                                                            <th>Tempo após parto</th>
+                                                            <th>SpO₂ no punho/mão direita</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>2 min</td>
+                                                            <td>65%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>5 min</td>
+                                                            <td>85%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>10 min</td>
+                                                            <td>90%</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+
+                <!-- Cuidados Imediatos -->
+                <section class="mb-5">
+                    <h3 class="module-title neonatal-color">👶 Cuidados Imediatos ao RN</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <p><strong>✅ Imediatamente após o nascimento:</strong></p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Secar, aquecer e estimular</div>
+                                    <div class="checklist-item">Envolver RN num pano seco e quente</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Clampagem tardia (após 60 segundos)</div>
+                                    <div class="checklist-item">Registar hora de nascimento</div>
+                                </div>
+                            </div>
+
+                            <p class="mt-3"><strong>🔍 Avaliação durante primeiros cuidados:</strong></p>
+                            <div class="row">
+                                <div class="col-md-4 text-center">
+                                    <div class="p-3 bg-light rounded">
+                                        <div class="icon-box">💪</div>
+                                        <p class="mb-0">Tónus</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="p-3 bg-light rounded">
+                                        <div class="icon-box">😭</div>
+                                        <p class="mb-0">Choro/Ventilação</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="p-3 bg-light rounded">
+                                        <div class="icon-box">❤️</div>
+                                        <p class="mb-0">FC por auscultação</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Via Aérea e Ventilação -->
+                <section class="mb-5">
+                    <h3 class="module-title neonatal-color">🫁 Via Aérea e Ventilação</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6>👶 Via Aérea:</h6>
+                                    <div class="checklist-item">Cabeça alinhada em posição neutra</div>
+                                    <div class="checklist-item">Cobertor/toalha 2-3 cm debaixo dos ombros</div>
+                                    <div class="checklist-item">Aspiração só se VA estiver obstruída</div>
+                                    <div class="checklist-item">Pressão negativa < 150 mmHg e < 5 segundos</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6>💨 Ventilação (Prioridade se não respira/FC<100bpm):< /h6>
+                                                <div class="checklist-item">Começar com 5 insuflações iniciais</div>
+                                                <div class="checklist-item">RN termo – ar ambiente</div>
+                                                <div class="checklist-item">Prematuros (28-32 semanas) – ar ambiente ou
+                                                    oxigénio</div>
+                                                <div class="checklist-item">Titular O₂ para SpO₂ ≥85% aos 5 minutos
+                                                </div>
+                                    </div>
+                                </div>
+
+                                <div class="alert alert-warning mt-3">
+                                    <strong>⚠️ Se RN não responder (FC<100 bpm), suspeitar de:</strong>
+                                            <ul class="mb-0">
+                                                <li>Permeabilização incorreta da VA</li>
+                                                <li>Ventilações inadequadas</li>
+                                            </ul>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+
+                <!-- Suporte Circulatório -->
+                <section class="mb-5">
+                    <h3 class="module-title neonatal-color">🫀 Suporte Circulatório (Compressões)</h3>
+                    <div class="card">
+                        <div class="card-header text-white" style="background-color: #e83e8c;">📋 Critérios para iniciar
+                            compressões:</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Suporte circulatório só é eficaz se ventilação for
+                                        conseguida</div>
+                                    <div class="checklist-item"><strong>Iniciar compressões se FC < 60 bpm</strong>
+                                    </div>
+                                    <div class="checklist-item">Após pelo menos 30 segundos de ventilação adequada</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Relação <strong>3:1</strong> (compressões:ventilações)
+                                    </div>
+                                    <div class="checklist-item">~120 eventos/min (90 compressões + 30 ventilações)</div>
+                                    <div class="checklist-item">Evitar compressões e ventilações em simultâneo</div>
+                                    <div class="checklist-item">Verificar FC a cada 30 segundos</div>
+                                    <div class="checklist-item"><strong>Suspender quando FC > 60 bpm</strong></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Algoritmo Resumo -->
+                <section class="mb-5">
+                    <h3 class="module-title neonatal-color">🔄 Algoritmo de Reanimação Neonatal</h3>
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <h5>1. 📊 Avaliação Inicial: FR, FC e Tónus</h5>
+                            <h5>2. 🫁 Se não respira ou FC < 100 bpm:</h5>
+                                    <p>→ Ventilar (5 insuflações iniciais, depois 30/min)</p>
+                                    <h5>3. 🔄 Reavaliar FC a cada 30 segundos</h5>
+                                    <h5>4. ❤️ Se FC < 60 bpm após ventilação adequada:</h5>
+                                            <p>→ Iniciar compressões torácicas (relação 3:1)</p>
+                                            <h5>5. 🔁 Continuar ciclos de 3 compressões : 1 insuflação</h5>
+                                            <h5>6. ⏹️ Suspender compressões quando FC > 60 bpm</h5>
+                                            <div class="alert alert-info mt-3">
+                                                <strong>💡 Nota:</strong> Se tiver dúvidas na avaliação da FC do RN não
+                                                reativo, assuma que não tem pulso e inicie compressões e insuflações
+                                                (3:1)
+                                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Pontos-Chave -->
+                <section class="mb-5">
+                    <h3 class="module-title neonatal-color">✅ Pontos-Chave Neonatal</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Maioria dos RN não necessita de reanimação</div>
+                                    <div class="checklist-item">Manter RN seco e quente</div>
+                                    <div class="checklist-item">Não aspirar por rotina (apenas mecónio espesso)</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Foco em "A" (via aérea) e "B" (ventilação)</div>
+                                    <div class="checklist-item">Primeiras 5 insuflações com ar (2-3 segundos)</div>
+                                    <div class="checklist-item">Reavaliações de 30 em 30 segundos são críticas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="text-center mt-5 p-4 bg-dark text-white rounded">
+            <h5>🌐 Mantenha-se atualizado</h5>
+            <a href="https://aprender.inem.pt" class="btn btn-light mt-2" target="_blank">https://aprender.inem.pt</a>
+            <p class="mt-3 mb-0">Departamento de Formação em Emergência Médica | Março 2024</p>
+        </footer>
+    </div>
+
+    <button id="btnTopo" aria-label="Voltar ao topo">
+        <span>↑</span>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script    
+    <script src="/script.js"></script>
+</body>
+
+</html>

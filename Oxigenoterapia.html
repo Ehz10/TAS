@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manual TAS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    <style>
+        body { 
+            background-color: #f8f9fa; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            color: #333;
+            line-height: 1.6;
+        }
+        .card { 
+            margin-bottom: 20px; 
+            border: none; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+            border-radius: 8px;
+        }
+        .card-header { 
+            font-weight: bold; 
+            border-radius: 8px 8px 0 0 !important;
+        }
+        h1, h2, h3 { 
+            color: #0d6efd; 
+        }
+        .module-title { 
+            color: #dc3545; 
+            font-weight: bold; 
+            border-bottom: 3px solid #dc3545; 
+            padding-bottom: 8px;
+            margin: 1.5rem 0 1rem 0;
+        }
+        .checklist-item { 
+            padding-left: 25px; 
+            position: relative; 
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        .checklist-item:before { 
+            content: "✓"; 
+            position: absolute; 
+            left: 0; 
+            color: #198754; 
+            font-weight: bold;
+        }
+        .icon-box { 
+            font-size: 2rem; 
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        .header-card { 
+            background: linear-gradient(135deg, #0d6efd, #1e88e5); 
+            color: white; 
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        .nav-tabs .nav-link { 
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+        }
+        .nav-tabs .nav-link.active { 
+            border-bottom: 3px solid #0d6efd;
+            background-color: transparent;
+            color: #0d6efd;
+        }
+        .process-step { 
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb); 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin-bottom: 20px;
+            border-left: 5px solid #0d6efd;
+        }
+        .oxygen-device { 
+            background-color: #d1ecf1; 
+            padding: 15px; 
+            border-radius: 8px; 
+            border-left: 5px solid #0dcaf0;
+            margin-bottom: 15px;
+        }
+        .compression-details { 
+            background-color: #fff3cd; 
+            padding: 15px; 
+            border-radius: 8px; 
+            border-left: 5px solid #ffc107;
+        }
+        .flow-title { 
+            color: #0d6efd; 
+            font-weight: bold; 
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        .formula-box {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #0d6efd;
+        }
+        #btnTopo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            font-size: 24px;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #btnTopo:hover {
+            background-color: #0b5ed7;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .info-box {
+            background-color: #d1ecf1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #0dcaf0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .danger-box {
+            background-color: #f8d7da;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #dc3545;
+        }
+        .table-custom {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .table-custom thead th {
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            font-weight: 600;
+        }
+        .procedure-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 5px solid #198754;
+            text-align: center;
+        }
+        .objective-item {
+            background: #e7f1ff;
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border-left: 4px solid #0d6efd;
+        }
+        @media (max-width: 768px) {
+            .header-card {
+                padding: 1.5rem;
+            }
+            .nav-tabs .nav-link {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+            .process-step {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="container"> 
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> 
+            <h2 href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> 
+                <img src="img/EstrelaDaVida.png" alt="Logo" width="40" height="40" class="me-2"> 
+                <span class="fs-4">Estudo TAS </span></h2> 
+        </header>
+    </div>    
+    <button id="btnTopo" aria-label="Voltar ao topo">
+        <span>↑</span>
+    </button>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <div class="container mt-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="main.html">Início</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Via Aérea e Oxigenoterapia</li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- Page Header -->
+         <div class="container my-5">
+            <h2 class="fw-bold text-body-emphasis border-bottom">
+                <p class="badge bg-primary me-2">TAS</p>
+                Via Aérea e Oxigenoterapia
+            </h2>
+            <p class="text-muted mb-0">
+                Técnicas de permeabilização da via aérea e administração de oxigénio
+            </p>
+        </div>
+
+        <!-- Navegação entre as matérias -->
+        <div class="container mb-4">
+            <ul class="nav nav-tabs" id="airwayTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="airway-tab" data-bs-toggle="tab" data-bs-target="#airway-content" type="button" role="tab">
+                        🫁 Via Aérea
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="oxygen-tab" data-bs-toggle="tab" data-bs-target="#oxygen-content" type="button" role="tab">
+                        💨 Oxigenoterapia
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="equipment-tab" data-bs-toggle="tab" data-bs-target="#equipment-content" type="button" role="tab">
+                        🩺 Equipamento
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Conteúdo das abas -->
+        <div class="tab-content" id="airwayContent">
+            
+            <!-- ABA VIA AÉREA -->
+            <div class="tab-pane fade show active" id="airway-content" role="tabpanel">
+                
+                <!-- Objetivos -->
+                <section class="mb-5">
+                    <h3 class="module-title">📋 Objetivos</h3>
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">O formando deve ser capaz de:</div>
+                        <div class="card-body">
+                            <div class="objective-item"> Conhecer as técnicas manuais de permeabilização da via aérea</div>
+                            <div class="objective-item"> Permeabilizar a via aérea, utilizando técnicas para posicionamento, colocação de adjuvantes, aspiração de secreções e remoção de corpos estranhos</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Enquadramento -->
+                <section class="mb-5">
+                    <h3 class="module-title">🎯 Enquadramento</h3>
+                    <div class="card">
+                        <div class="card-header bg-info text-white">Conhecimentos Necessários</div>
+                        <div class="card-body">
+                            <p>A abordagem correta da via aérea e ventilação pressupõem o conhecimento de:</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">o Anatomofisiologia do sistema respiratório</div>
+                                    <div class="checklist-item">o Tipos de obstrução da via aérea</div>
+                                    <div class="checklist-item">o Técnicas manuais de desobstrução / permeabilização da via aérea</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">o Adjuvantes básicos da via aérea</div>
+                                    <div class="checklist-item">o Outras técnicas (p.ex. aspiração da via aérea)</div>
+                                    <div class="checklist-item">o Dispositivos de administração de oxigénio</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tipos de Obstrução -->
+                <section class="mb-5">
+                    <h3 class="module-title">🚨 Tipos de Obstrução da Via Aérea</h3>
+                    <div class="card">
+                        <div class="card-header bg-warning text-dark">Classificação</div>
+                        <div class="card-body">
+                            <p> Existem vários tipos de obstrução da VA, nomeadamente:</p>
+                            
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-header bg-primary text-white">Obstrução Anatómica</div>
+                                        <div class="card-body">
+                                            <p>Ocorre na vítima com alteração do estado de consciência, onde há o relaxamento das estruturas anatómicas levando à obstrução.</p>
+                                            <div class="info-box">
+                                                <strong> Corrigir a obstrução anatómica</strong><br>
+                                                <strong> Som mais característico é o ressonar</strong>
+                                            </div>
+                                            <p class="text-muted small mb-0">Na vítima inconsciente há disfunção dos músculos da língua, faringe, pescoço e laringe</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-header bg-danger text-white">Obstrução Mecânica</div>
+                                        <div class="card-body">
+                                            <p>Ocorre pela presença de corpo estranho na via aérea, este pode ser objeto, alimento, fluídos.</p>
+                                            <div class="warning-box">
+                                                <strong> A remoção de corpos estranhos poderá ser realizada com a pinça de Maguill até à região da hipofaringe em vítimas inconscientes.</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-header bg-secondary text-white">Obstrução Patológica</div>
+                                        <div class="card-body">
+                                            <p>Ocorre por edema das estruturas da via aérea.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Técnicas Manuais -->
+                <section class="mb-5">
+                    <h3 class="module-title">🔄 Técnicas Manuais de Permeabilização</h3>
+                    <div class="card">
+                        <div class="card-header bg-success text-white">Manobras para Vítima Inconsciente</div>
+                        <div class="card-body">
+                            <p> Existem três manobras que podem ser usadas para permeabilizar a via aérea obstruída por estruturas da via aérea superior, num doente inconsciente:</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-4 mb-3">
+                                    <div class="procedure-card">
+                                        <h5 class="text-primary">o Extensão da cabeça</h5>
+                                        <div class="icon-box">👤</div>
+                                        <p class="text-muted mb-0"># Procedimento de extensão da cabeça e elevação do mento</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4 mb-3">
+                                    <div class="procedure-card">
+                                        <h5 class="text-primary">o Elevação do mento</h5>
+                                        <div class="icon-box">👆</div>
+                                        <p class="text-muted mb-0"># Procedimento de extensão da cabeça e elevação do mento</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4 mb-3">
+                                    <div class="procedure-card">
+                                        <h5 class="text-primary">o Protusão da mandíbula</h5>
+                                        <div class="icon-box">🦷</div>
+                                        <p class="text-muted mb-0"># Procedimento protusão da mandíbula</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Adjuvantes Básicos -->
+                <section class="mb-5">
+                    <h3 class="module-title">🩺 Adjuvantes Básicos da Via Aérea</h3>
+                    <div class="card">
+                        <div class="card-header bg-info text-white">Tubos Nasofaríngeos e Orofaríngeos</div>
+                        <div class="card-body">
+                            <div class="checklist-item">o A eficácia do adjuvante, tal como nas técnicas manuais, pode ser avaliada caso a vítima ventile, pela eliminação do "ressonar"</div>
+                            <div class="checklist-item">o A aplicação dos adjuvantes básicos, por si só, pode não garantir a permeabilização da VA e não eliminam a necessidade de manutenção da posição apropriada da cabeça</div>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-6 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-header bg-primary text-white">Tubo Nasofaríngeo</div>
+                                        <div class="card-body">
+                                            <p><strong>Características:</strong></p>
+                                            <p>O comprimento adequado do tubo é aquele que correspondente à distância entre a asa do nariz e o ângulo da mandíbula da vítima</p>
+                                            
+                                            <div class="info-box">
+                                                <h6>Indicações:</h6>
+                                                <div class="checklist-item">o Vítimas reativas à dor e com risco de OVA</div>
+                                                <div class="checklist-item">o Por AEC e com mandíbula cerrada (trismos)</div>
+                                                <div class="checklist-item">o Quando não toleram o tubo orofaríngeo</div>
+                                            </div>
+                                            
+                                            <div class="warning-box">
+                                                <h6>Contraindicações:</h6>
+                                                <div class="checklist-item">o Suspeita de fratura da base do crânio</div>
+                                                <div class="checklist-item">o Traumatismos do nariz</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-header bg-success text-white">Tubo Orofaríngeo</div>
+                                        <div class="card-body">
+                                            <div class="checklist-item"> Tubos de plástico curvos e achatados, reforçados na extremidade oral, para permitir que se adaptem perfeitamente entre a língua e o palato duro</div>
+                                            <div class="checklist-item"> Medição: Distância entre os incisivos e o ângulo da mandíbula da vítima</div>
+                                            <div class="mt-3 text-center">
+                                                <div class="icon-box">👄</div>
+                                                <p class="text-muted"># Procedimento Tubo Orofaringeo</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Aspiração -->
+                <section class="mb-5">
+                    <h3 class="module-title">💨 Aspiração da Via Aérea</h3>
+                    <div class="card">
+                        <div class="card-header bg-warning text-dark">Pressões Recomendadas</div>
+                        <div class="card-body">
+                            <div class="objective-item"> Checklist e manutenção adequada do aspirador portátil</div>
+                            <div class="objective-item"> Pressões de aspiração adequadas à vítima de acordo a faixa etária:</div>
+                            
+                            <div class="row mt-3">
+                                <div class="col-md-4">
+                                    <div class="info-box text-center">
+                                        <h6>Lactente:</h6>
+                                        <p class="mb-0 fs-5">&lt;100 mmHg</p>
+                                        <p class="text-muted small">(0,13 bar)</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4">
+                                    <div class="info-box text-center">
+                                        <h6>Crianças:</h6>
+                                        <p class="mb-0 fs-5">100 a 150 mmHg</p>
+                                        <p class="text-muted small">(0,13-0,15 bar)</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4">
+                                    <div class="info-box text-center">
+                                        <h6>Adulto:</h6>
+                                        <p class="mb-0 fs-5">&gt;100 mmHg</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- ABA OXIGENOTERAPIA -->
+            <div class="tab-pane fade" id="oxygen-content" role="tabpanel">
+                
+                <!-- Enquadramento -->
+                <section class="mb-5">
+                    <h3 class="module-title">💊 Enquadramento da Oxigenoterapia</h3>
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">Conceitos Fundamentais</div>
+                        <div class="card-body">
+                            <div class="checklist-item">o A fração inspiratória de oxigénio (FiO₂) é a quantidade de oxigénio que entra no organismo em cada inspiração</div>
+                            <div class="checklist-item">o Numa inspiração normal, com ar atmosférico, o valor é de 21%. O objetivo da oxigenoterapia é aumentar este valor e a concentração de O₂ no organismo</div>
+                            <div class="checklist-item">• O O₂ deve, em geral, ser administrado a todas as vítimas com hipóxia, suspeita de hipóxia ou risco de a desenvolver, choque e nas vítimas com alterações de causa desconhecida</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Dispositivos -->
+                <section class="mb-5">
+                    <h3 class="module-title">🎭 Oxigenoterapia por Inalação</h3>
+                    <div class="card">
+                        <div class="card-header bg-info text-white">Dispositivos de Administração</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="checklist-item">o Cânula nasal</div>
+                                    <div class="checklist-item">o Máscara simples</div>
+                                    <div class="checklist-item">o Máscara de alta concentração</div>
+                                    <div class="checklist-item">o Máscara de nebulização</div>
+                                    <div class="checklist-item">o Máscara de Venturi</div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-6 mb-3">
+                                    <div class="oxygen-device">
+                                        <h6 class="text-primary">Cânula Nasal</h6>
+                                        <div class="checklist-item"> FiO de 24% a 44%, com um débito de 1 a 6 L/min</div>
+                                        <div class="checklist-item"> Um débito superior a 6 L/min seca a mucosa nasal e causa normalmente desconforto</div>
+                                        <div class="checklist-item"> Permite a expiração, não havendo inalação de ar expirado, evitando a retenção de CO, principalmente nos DPOC</div>
+                                        <div class="checklist-item"> As narinas têm que estar permeáveis para a utilização deste método</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <div class="oxygen-device">
+                                        <h6 class="text-primary">Máscara Simples</h6>
+                                        <div class="checklist-item"> Fixada com uma fita elástica e em alguns modelos permitem um ajuste nasal com um adaptador metálico</div>
+                                        <div class="checklist-item">o FiO₂ de 40% a 60%, com um débito de 5 a 10 L/min e não deve usada com um débito inferior 5 L/min, uma vez que pode permitir a acumulação de CO₂ expirado no interior da máscara</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <div class="oxygen-device">
+                                        <h6 class="text-primary">Máscara de Alta Concentração</h6>
+                                        <div class="checklist-item">o Tem reservatório onde se processa a acumulação de oxigénio para que seja fornecido numa maior percentagem em cada inspiração</div>
+                                        <div class="checklist-item">o FiO₂ de 60% a 100%, com um débito de 12 a 15 L/min</div>
+                                        <div class="checklist-item">o Antes de ser colocada na vítima o saco reservatório deve estar preenchido com O₂</div>
+                                        <div class="checklist-item">o Se a máscara perder as válvulas laterais, há entrada de ar ambiente e diminuição da FiO₂</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Ventilação Assistida -->
+                <section class="mb-5">
+                    <h3 class="module-title">🫁 Ventilação Assistida</h3>
+                    <div class="card">
+                        <div class="card-header bg-warning text-dark">Indicações e Procedimentos</div>
+                        <div class="card-body">
+                            <h5 class="flow-title"># Ventilação assistida</h5>
+                            <div class="info-box">
+                                <p class="mb-0"><strong>Realizada quando a vítima não ventila ou quando a ventilação não é eficaz – FR &lt; 8 cpm ou &gt; 35 cpm</strong></p>
+                            </div>
+                            
+                            <h5 class="flow-title mt-4">## Ventilação assistida</h5>
+                            <div class="checklist-item">o As insuflações devem ter a duração de 1 segundo e o volume de ar insuflado deve ser o suficiente para causar uma elevação visível do tórax da vítima</div>
+                            <div class="checklist-item">o A frequência da ventilação assistida é de 10 ventilações por minuto, ou seja, 1 ventilação a cada 6 segundos. A vítima deve ser reavaliada a cada minuto</div>
+                            
+                            <h5 class="flow-title mt-4">## Vítimas traqueostomizadas</h5>
+                            <div class="checklist-item">o A administração de oxigénio e a ventilação assistida são feitas através da cânula de traqueostomia</div>
+                            <div class="checklist-item">o Nestas vítimas não é necessário executar técnicas manuais de permeabilização, uso de adjuvantes ou permeabilização intermédia ou avançada da via aérea</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Cálculo Autonomia -->
+                <section class="mb-5">
+                    <h3 class="module-title">🧮 Cálculo da Autonomia das Garrafas de Oxigénio</h3>
+                    <div class="card">
+                        <div class="card-header bg-success text-white">Fórmula de Cálculo</div>
+                        <div class="card-body">
+                            <h5 class="flow-title"># Cálculo da autonomia das garrafas de oxigénio</h5>
+                            <div class="checklist-item">o Identificar as seguintes variáveis:</div>
+                            <div class="checklist-item" style="padding-left: 40px;">o Capacidade da garrafa (litros) – inscrita na garrafa</div>
+                            <div class="checklist-item" style="padding-left: 40px;">o Pressão a que se encontra o oxigénio (em bar) – visualizada no manómetro no momento do cálculo</div>
+                            <div class="checklist-item" style="padding-left: 40px;">o Débito a administrar</div>
+                            
+                            <div class="formula-box mt-4">
+                                <h6 class="text-primary">Fórmula de Cálculo:</h6>
+                                <p><strong>1° - Calcular o Volume utilizável (litros)</strong> = capacidade da garrafa (litros) × pressão de oxigénio (bar)</p>
+                                <p><strong>2° - Calcular os minutos disponíveis</strong> = volume utilizável ÷ débito a administrar</p>
+                            </div>
+                            
+                            <div class="card mt-3">
+                                <div class="card-header bg-secondary text-white">Exemplo Prático</div>
+                                <div class="card-body">
+                                    <div class="checklist-item"> Capacidade da garrafa = 20 litros</div>
+                                    <div class="checklist-item"> Pressão de oxigénio na garrafa = 200 bar</div>
+                                    <div class="checklist-item"> Débito pretendido = 15 L/min</div>
+                                    <hr>
+                                    <p><strong>Cálculo da autonomia (minutos disponíveis):</strong></p>
+                                    <div class="checklist-item">o Volume utilizável – 20 × 200 = 4.000 litros</div>
+                                    <div class="checklist-item">o Minutos disponíveis – 4.000 ÷ 15 = ~267 minutos (4h27m)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Monitorização -->
+                <section class="mb-5">
+                    <h3 class="module-title">📊 Monitorização da Oxigenoterapia</h3>
+                    <div class="card">
+                        <div class="card-header bg-info text-white">Aspetos a Considerar</div>
+                        <div class="card-body">
+                            <p> Para a oxigenoterapia existem dois aspetos a ter em consideração:</p>
+                            <div class="checklist-item">o Valores de saturação periférica de oxigénio (SpO₂)</div>
+                            <div class="checklist-item">o Sinais de dificuldade respiratória</div>
+                            
+                            <div class="warning-box mt-4">
+                                <h6>Sinais de dificuldade respiratória grave:</h6>
+                                <div class="checklist-item">o FR > 30 cpm</div>
+                                <div class="checklist-item">o Esforço respiratório com utilização de musculatura acessória e tiragem</div>
+                                <div class="checklist-item">o Cianose</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Administração -->
+                <section class="mb-5">
+                    <h3 class="module-title">💨 Administração de oxigénio</h3>
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h4 class="text-primary"># Administração de oxigénio</h4>
+                            <p class="text-muted">Procedimentos específicos de administração</p>
+                            <div class="mt-4">
+                                <div class="procedure-card">
+                                    <div class="icon-box">💨</div>
+                                    <p class="text-muted">Procedimento de Administração de Oxigénio</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- ABA EQUIPAMENTO -->
+            <div class="tab-pane fade" id="equipment-content" role="tabpanel">
+                
+                <!-- Aspiração -->
+                <section class="mb-5">
+                    <h3 class="module-title">🔧 Aspiração de Secreções</h3>
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">Checklist e Manutenção</div>
+                        <div class="card-body">
+                            <div class="objective-item"> Checklist e manutenção adequada do aspirador portátil</div>
+                            
+                            <div class="row mt-3">
+                                <div class="col-md-4">
+                                    <div class="info-box text-center">
+                                        <h6>Pressões de aspiração</h6>
+                                        <p class="mb-0">Adequadas à faixa etária</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4">
+                                    <div class="info-box text-center">
+                                        <h6>Checklist regular</h6>
+                                        <p class="mb-0">Verificação de funcionamento</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4">
+                                    <div class="info-box text-center">
+                                        <h6>Manutenção</h6>
+                                        <p class="mb-0">Limpeza e desinfeção</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Remoção Corpos Estranhos -->
+                <section class="mb-5">
+                    <h3 class="module-title">🔪 Remoção de Corpos Estranhos</h3>
+                    <div class="card">
+                        <div class="card-header bg-danger text-white">Pinça de Maguill</div>
+                        <div class="card-body text-center">
+                            <div class="icon-box mb-3">🔧</div>
+                            <h5 class="text-primary"> A remoção de corpos estranhos poderá ser realizada com a pinça de Maguill até à região da hipofaringe em vítimas inconscientes.</h5>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <div class="info-box">
+                                        <h6>Indicação</h6>
+                                        <p class="mb-0">Vítimas inconscientes com suspeita de corpo estranho</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="info-box">
+                                        <h6>Limite</h6>
+                                        <p class="mb-0">Até à região da hipofaringe</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Procedimentos -->
+                <section class="mb-5">
+                    <h3 class="module-title">📋 Procedimentos</h3>
+                    <div class="card">
+                        <div class="card-header bg-success text-white">Demonstração de Procedimentos</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="procedure-card">
+                                        <h5># Procedimento</h5>
+                                        <div class="icon-box">👤</div>
+                                        <p class="text-muted mb-0">Extensão da cabeça e elevação do mento</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4 mb-3">
+                                    <div class="procedure-card">
+                                        <h5># Procedimento</h5>
+                                        <div class="icon-box">🦷</div>
+                                        <p class="text-muted mb-0">Protusão da mandíbula</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4 mb-3">
+                                    <div class="procedure-card">
+                                        <h5># Procedimento</h5>
+                                        <div class="icon-box">👃</div>
+                                        <p class="text-muted mb-0">Tubo Nasofaríngeo</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <div class="procedure-card">
+                                        <h5># Procedimento</h5>
+                                        <div class="icon-box">👄</div>
+                                        <p class="text-muted mb-0">Tubo Orofaringeo</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <div class="procedure-card">
+                                        <h5># Administração</h5>
+                                        <div class="icon-box">💨</div>
+                                        <p class="text-muted mb-0">Administração de oxigénio</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Resumo Equipamentos -->
+                <section class="mb-5">
+                    <h3 class="module-title">📦 Equipamentos de Via Aérea</h3>
+                    <div class="card">
+                        <div class="card-header bg-info text-white">Resumo</div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-custom">
+                                    <thead>
+                                        <tr>
+                                            <th>Equipamento</th>
+                                            <th>Indicação</th>
+                                            <th>Considerações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Tubo Nasofaríngeo</strong></td>
+                                            <td>Vítimas reativas, trismos, não toleram OPA</td>
+                                            <td>Contraindicado em fratura base crânio</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Tubo Orofaríngeo (OPA)</strong></td>
+                                            <td>Vítimas inconscientes sem reflexo de vómito</td>
+                                            <td>Medir incisivo-ângulo mandíbula</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Cânula Nasal</strong></td>
+                                            <td>FiO₂ 24-44%, débito 1-6 L/min</td>
+                                            <td>Não usar >6 L/min (desconforto)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Máscara Simples</strong></td>
+                                            <td>FiO₂ 40-60%, débito 5-10 L/min</td>
+                                            <td>Não usar <5 L/min (acumulação CO₂)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Máscara Alta Concentração</strong></td>
+                                            <td>FiO₂ 60-100%, débito 12-15 L/min</td>
+                                            <td>Encher reservatório antes</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Aspirador</strong></td>
+                                            <td>Remoção secreções/corpos estranhos</td>
+                                            <td>Pressões conforme faixa etária</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center mt-5 p-4 bg-dark text-white rounded">
+            <h5>🌐 Mantenha-se atualizado</h5>
+            <a href="https://aprender.inem.pt" class="btn btn-light mt-2" target="_blank">https://aprender.inem.pt</a>
+            <p class="mt-3 mb-0">Departamento de Formação em Emergência Médica | Março 2024</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+        <script src="/script.js"></script> 
+</body>
+
+</html>

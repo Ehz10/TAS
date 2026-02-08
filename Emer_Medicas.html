@@ -9,7 +9,7 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
     <style>
-        body { padding-top: 20px; background-color: #f8f9fa; }
+        body { background-color: #f8f9fa; }
         .card { margin-bottom: 20px; }
         .card-header { font-weight: bold; }
         .highlight { background-color: #e7f1ff; padding: 15px; border-radius: 5px; }
@@ -21,17 +21,17 @@
     </style>
 </head>
 <body>
-    <div class="container"> 
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> 
-            <h2 href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> 
-                <img src="img/EstrelaDaVida.png" alt="Logo" width="40" height="40" class="me-2"> 
-                <span class="fs-4">Estudo TAS </span></h2> 
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <h2 href="/"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <img src="img/EstrelaDaVida.png" alt="Logo" width="40" height="40" class="me-2">
+                <span class="fs-4">Estudo TAS </span>
+            </h2>
         </header>
     </div>
-    <button id="btnTopo" aria-label="Voltar ao topo">
-            <span>↑</span>
-        </button>
-    <main>
+
+    <div class="container">
         <div class="container mt-5">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -40,6 +40,7 @@
                 </ol>
             </nav>
         </div>
+
         <div class="container my-5">
             <h2 class="fw-bold text-body-emphasis border-bottom">
                 <p class="badge bg-primary me-2">TAS</p>
@@ -50,853 +51,1257 @@
             </p>
         </div>
 
-        <div class="container mt-5">
-            <section class="mb-5">
-            <h3 class="module-title">🩺 Anafilaxia e Reação Alérgica</h3>
-            <div class="card">
-                <div class="card-header">Objetivos</div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">o Diferenciar reação alérgica de reação anafilática</li>
-                        <li class="list-group-item">o Compreender a sintomatologia da reação alérgica e anafilática</li>
-                        <li class="list-group-item">o Conhecer a atuação para a reação alérgica e anafilática</li>
-                    </ul>
-                </div>
-            </div>
+        <!-- Navegação por Tipos de Emergências -->
+        <div class="container mb-4">
+            <ul class="nav nav-tabs" id="emergencyTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="allergy-tab" data-bs-toggle="tab" data-bs-target="#allergy-content" type="button" role="tab">
+                        🤧 Alergias
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="respiratory-tab" data-bs-toggle="tab" data-bs-target="#respiratory-content" type="button" role="tab">
+                        🫁 Respiratórias
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="cardiac-tab" data-bs-toggle="tab" data-bs-target="#cardiac-content" type="button" role="tab">
+                        ❤️ Cardíacas
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="neuro-tab" data-bs-toggle="tab" data-bs-target="#neuro-content" type="button" role="tab">
+                        🧠 Neurológicas
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="other-tab" data-bs-toggle="tab" data-bs-target="#other-content" type="button" role="tab">
+                        ⚕️ Outras
+                    </button>
+                </li>
+            </ul>
+        </div>
 
-            <div class="card mt-3">
-                <div class="card-header">Enquadramento</div>
-                <div class="card-body">
-                    <p>A alergia é uma resposta exagerada do sistema imunitário a uma substância estranha ao organismo.</p>
-                    <p>o Tipos de resposta:</p>
-                    <ul>
-                        <li>o Localizada</li>
-                        <li>o Sistémica</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card mt-3">
-                <div class="card-header">Anafilaxia</div>
-                <div class="card-body">
-                    <p>Reação de hiperssensibilidade após ingestão, injeção, inalação ou contacto direto com agente desencadeante.</p>
-                </div>
-            </div>
-
-            <div class="card mt-3">
-                <div class="card-header">Sintomatologia</div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">o Edema das mucosas</li>
-                        <li class="list-group-item">o Aumento das secreções nasais</li>
-                        <li class="list-group-item">o Tosse</li>
-                        <li class="list-group-item">o Dor abdominal, náuseas, vómitos e diarreia</li>
-                        <li class="list-group-item">o Eritema, Prurido, Urticária</li>
-                        <li class="list-group-item">o Alteração do estado de consciência</li>
-                        <li class="list-group-item">o Olhos vermelhos com ardor e lacrimejo</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card mt-3">
-                <div class="card-header">Atuação</div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">o Afastar o fator desencadeante ou retirar a vítima do local</li>
-                        <li class="list-group-item">o Administrar oxigénio</li>
-                        <li class="list-group-item">o Recolha de informação</li>
-                        <li class="list-group-item">o Perante sinais de gravidade, nomeadamente perante sintomatologia de reação anafilática identificar vítima crítica e solicitar apoio diferenciado ao CODU</li>
-                        <li class="list-group-item">o Transporte da vítima mantendo a via aérea permeável</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-5">
-            <h3 class="module-title">🌬️ Emergências Respiratórias</h3>
+        <!-- Conteúdo das Abas -->
+        <div class="tab-content" id="emergencyContent">
             
-            <div class="card">
-                <div class="card-header">Objetivos</div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">o Identificar as principais emergências respiratórias</li>
-                        <li class="list-group-item">o Identificar os sinais e sintomas associados às diferentes emergências respiratórias</li>
-                        <li class="list-group-item">o Conhecer a atuação especifica de acordo com o tipo de emergência respiratória</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card mt-3">
-                <div class="card-header">Enquadramento</div>
-                <div class="card-body">
-                    <p>Em Portugal, as doenças respiratórias representam a terceira causa de morte prevendo-se que, até 2030, venham a ocupar o primeiro lugar</p>
-                    <p>Milhões de pessoas em todo o mundo sofrem de doenças respiratórias, com maior prevalência para a DPOC, seguida da Asma, Tuberculose e Cancro</p>
-                </div>
-            </div>
-
-            <h4 class="section-title mt-4">🫁 Asma</h4>
-            <div class="card">
-                <div class="card-body">
-                    <p><strong>Definição:</strong> Doença inflamatória crónica das vias aéreas</p>
-                    <p>Vias aéreas cronicamente hiperreativas e obstruídas</p>
-                    <p><strong>LIMITAÇÃO DO FLUXO DE AR</strong></p>
+            <!-- ABA ALERGIAS -->
+            <div class="tab-pane fade show active" id="allergy-content" role="tabpanel">
+                
+                <section class="mb-5">
+                    <h3 class="module-title">🩺 Anafilaxia e Reação Alérgica</h3>
                     
-                    <div class="mt-3">
-                        <h5>Fatores Desencadeantes:</h5>
-                        <ul>
-                            <li>o Exposição a alergénios</li>
-                            <li>o Exercício físico</li>
-                            <li>o Fármacos</li>
-                            <li>o Irritantes químicos</li>
-                            <li>o Fumo do tabaco</li>
-                            <li>o Infeções virais</li>
-                        </ul>
+                    <!-- Objetivos -->
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">Objetivos</div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">o Diferenciar reação alérgica de reação anafilática</li>
+                                <li class="list-group-item">o Compreender a sintomatologia da reação alérgica e anafilática</li>
+                                <li class="list-group-item">o Conhecer a atuação para a reação alérgica e anafilática</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="table-responsive mt-3">
-                        <table class="table table-bordered table-custom">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th>Tipo de crise</th>
-                                    <th>Sintomatologia</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Ligeira</td>
-                                    <td>
-                                        <strong>Estado geral:</strong> Calma ou ligeiramente ansiosa<br>
-                                        <strong>Características/Posicionamento:</strong> Dispneia com a marcha<br>
-                                        <strong>Sintomatologia:</strong> Pieira expiratória discreta<br>
-                                        <strong>Parâmetros:</strong> FV normal ou ligeiramente ↑
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Moderada</td>
-                                    <td>
-                                        <strong>Estado geral:</strong> Ansiedade<br>
-                                        <strong>Características/Posicionamento:</strong> Dispneia pequenos esforços; Prefere estar sentada<br>
-                                        <strong>Sintomatologia:</strong> Pieira; Incapacidade de completar frases; Utilização musc. acessórios; Tiragens<br>
-                                        <strong>Parâmetros:</strong> FV ↑; SAT. O₂ ↓; FC ↑
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Grave</td>
-                                    <td>
-                                        <strong>Estado geral:</strong> Ansiedade ou agitação<br>
-                                        <strong>Características/Posicionamento:</strong> Dispneia em repouso; Posição de tripé<br>
-                                        <strong>Sintomatologia:</strong> Pieira; Incapacidade de completar frases; Utilização musc. acessórios; Tiragens<br>
-                                        <strong>Parâmetros:</strong> FV ↑; SAT. O₂ ↓; FC ↑
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>PCR Iminente</td>
-                                    <td>
-                                        <strong>Estado geral:</strong> Prostração; Desorientação<br>
-                                        <strong>Características/Posicionamento:</strong> Dispneia em repouso; Posição de tripé<br>
-                                        <strong>Sintomatologia:</strong> Sons ventilatórios inaudíveis (silêncio ventilatório)<br>
-                                        <strong>Parâmetros:</strong> Apneia; Bradicardia
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <!-- Enquadramento -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-info text-white">Enquadramento</div>
+                        <div class="card-body">
+                            <p>A alergia é uma resposta exagerada do sistema imunitário a uma substância estranha ao organismo.</p>
+                            <p>o Tipos de resposta:</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="info-box">
+                                        <h6>Localizada</h6>
+                                        <p class="mb-0">Afeta apenas uma área específica do corpo</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="danger-box">
+                                        <h6>Sistémica</h6>
+                                        <p class="mb-0">Afeta todo o organismo (Anafilaxia)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="mt-3">
-                        <h5>Atuação:</h5>
-                        <ul>
-                            <li>o Afastar o fator desencadeante, ou retirar a vítima do local</li>
-                            <li>o Posicionar vítima para facilitar a respiração (elevação do tronco)</li>
-                            <li>o Administrar oxigénio</li>
-                            <li>o Recolha de informação</li>
-                            <li>o Minimizar esforços</li>
-                            <li>o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</li>
-                            <li>o Transportar a vítima em posição de Fowler</li>
-                        </ul>
+                    <!-- Anafilaxia -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-danger text-white">Anafilaxia</div>
+                        <div class="card-body">
+                            <p>Reação de hiperssensibilidade após ingestão, injeção, inalação ou contacto direto com agente desencadeante.</p>
+                            <div class="warning-box">
+                                <h6>⚠️ Urgência Médica</h6>
+                                <p class="mb-0">Pode progredir rapidamente para colapso cardiovascular e respiratório</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
+
+                    <!-- Sintomatologia -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-warning text-dark">Sintomatologia</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">o Edema das mucosas</div>
+                                    <div class="checklist-item">o Aumento das secreções nasais</div>
+                                    <div class="checklist-item">o Tosse</div>
+                                    <div class="checklist-item">o Dor abdominal, náuseas, vómitos e diarreia</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">o Eritema, Prurido, Urticária</div>
+                                    <div class="checklist-item">o Alteração do estado de consciência</div>
+                                    <div class="checklist-item">o Olhos vermelhos com ardor e lacrimejo</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Atuação -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-success text-white">Atuação</div>
+                        <div class="card-body">
+                            <div class="procedure-card">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Afastar o fator desencadeante ou retirar a vítima do local</div>
+                                        <div class="checklist-item">o Administrar oxigénio</div>
+                                        <div class="checklist-item">o Recolha de informação</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Perante sinais de gravidade, nomeadamente perante sintomatologia de reação anafilática identificar vítima crítica e solicitar apoio diferenciado ao CODU</div>
+                                        <div class="checklist-item">o Transporte da vítima mantendo a via aérea permeável</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
 
-            <h4 class="section-title mt-4">🫁 DPOC</h4>
-            <div class="card">
-                <div class="card-body">
-                    <p>800 mil portugueses com DPOC</p>
-                    <p>Enfisema pulmonar e bronquite crónica são as duas patologias mais comuns que contribuem para a DPOC</p>
-                    <p>Tabagismo; Doenças profissionais por exposição a poeiras e produtos químicos; Infecções recorrentes; Predisposição genética</p>
+            <!-- ABA RESPIRATÓRIAS -->
+            <div class="tab-pane fade" id="respiratory-content" role="tabpanel">
+                
+                <section class="mb-5">
+                    <h3 class="module-title">🌬️ Emergências Respiratórias</h3>
                     
-                    <div class="mt-3">
-                        <h5>Sintomatologia:</h5>
-                        <ul>
-                            <li>o Expectoração purulenta</li>
-                            <li>o Cianose</li>
-                            <li>o Tosse persistente</li>
-                            <li>o Dispneia mais exacerbada que o habitual</li>
-                            <li>o Respiração ruidosa provocada pela acumulação de expetoração e acentuada diminuição do lúmen dos brônquios</li>
-                            <li>o Agitação e ansiedade</li>
-                            <li>o Alterações de estado de consciência (situações mais graves)</li>
-                            <li>o Febre</li>
-                        </ul>
+                    <!-- Objetivos -->
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">Objetivos</div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">o Identificar as principais emergências respiratórias</li>
+                                <li class="list-group-item">o Identificar os sinais e sintomas associados às diferentes emergências respiratórias</li>
+                                <li class="list-group-item">o Conhecer a atuação especifica de acordo com o tipo de emergência respiratória</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="mt-3">
-                        <h5>Atuação:</h5>
-                        <ul>
-                            <li>o Posicionar vítima para facilitar a respiração (elevação do tronco)</li>
-                            <li>o Perante secreções que a vítima não consegue expelir, proceder à aspiração</li>
-                            <li>o Administrar oxigénio</li>
-                            <li>o Recolha de informação</li>
-                            <li>o Minimizar esforços</li>
-                            <li>o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</li>
-                            <li>o Transportar a vítima em posição de Fowler</li>
-                        </ul>
+                    <!-- Enquadramento -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-info text-white">Enquadramento</div>
+                        <div class="card-body">
+                            <p>Em Portugal, as doenças respiratórias representam a terceira causa de morte prevendo-se que, até 2030, venham a ocupar o primeiro lugar</p>
+                            <p>Milhões de pessoas em todo o mundo sofrem de doenças respiratórias, com maior prevalência para a DPOC, seguida da Asma, Tuberculose e Cancro</p>
+                        </div>
                     </div>
-                </div>
+
+                    <!-- Asma -->
+                    <h4 class="section-title mt-4">🫁 Asma</h4>
+                    <div class="card">
+                        <div class="card-body">
+                            <p><strong>Definição:</strong> Doença inflamatória crónica das vias aéreas</p>
+                            <p>Vias aéreas cronicamente hiperreativas e obstruídas</p>
+                            <div class="danger-box">
+                                <h6 class="mb-0"><strong>LIMITAÇÃO DO FLUXO DE AR</strong></h6>
+                            </div>
+                            
+                            <div class="mt-3">
+                                <h5>Fatores Desencadeantes:</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Exposição a alergénios</div>
+                                        <div class="checklist-item">o Exercício físico</div>
+                                        <div class="checklist-item">o Fármacos</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Irritantes químicos</div>
+                                        <div class="checklist-item">o Fumo do tabaco</div>
+                                        <div class="checklist-item">o Infeções virais</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tabela Asma -->
+                            <div class="table-responsive mt-3">
+                                <table class="table table-bordered table-custom">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Tipo de crise</th>
+                                            <th>Sintomatologia</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Ligeira</strong></td>
+                                            <td>
+                                                <div class="checklist-item"><strong>Estado geral:</strong> Calma ou ligeiramente ansiosa</div>
+                                                <div class="checklist-item"><strong>Características/Posicionamento:</strong> Dispneia com a marcha</div>
+                                                <div class="checklist-item"><strong>Sintomatologia:</strong> Pieira expiratória discreta</div>
+                                                <div class="checklist-item"><strong>Parâmetros:</strong> FV normal ou ligeiramente ↑</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Moderada</strong></td>
+                                            <td>
+                                                <div class="checklist-item"><strong>Estado geral:</strong> Ansiedade</div>
+                                                <div class="checklist-item"><strong>Características/Posicionamento:</strong> Dispneia pequenos esforços; Prefere estar sentada</div>
+                                                <div class="checklist-item"><strong>Sintomatologia:</strong> Pieira; Incapacidade de completar frases; Utilização musc. acessórios; Tiragens</div>
+                                                <div class="checklist-item"><strong>Parâmetros:</strong> FV ↑; SAT. O₂ ↓; FC ↑</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Grave</strong></td>
+                                            <td>
+                                                <div class="checklist-item"><strong>Estado geral:</strong> Ansiedade ou agitação</div>
+                                                <div class="checklist-item"><strong>Características/Posicionamento:</strong> Dispneia em repouso; Posição de tripé</div>
+                                                <div class="checklist-item"><strong>Sintomatologia:</strong> Pieira; Incapacidade de completar frases; Utilização musc. acessórios; Tiragens</div>
+                                                <div class="checklist-item"><strong>Parâmetros:</strong> FV ↑; SAT. O₂ ↓; FC ↑</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>PCR Iminente</strong></td>
+                                            <td>
+                                                <div class="checklist-item"><strong>Estado geral:</strong> Prostração; Desorientação</div>
+                                                <div class="checklist-item"><strong>Características/Posicionamento:</strong> Dispneia em repouso; Posição de tripé</div>
+                                                <div class="checklist-item"><strong>Sintomatologia:</strong> Sons ventilatórios inaudíveis (silêncio ventilatório)</div>
+                                                <div class="checklist-item"><strong>Parâmetros:</strong> Apneia; Bradicardia</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="mt-3">
+                                <h5>Atuação:</h5>
+                                <div class="procedure-card">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Afastar o fator desencadeante, ou retirar a vítima do local</div>
+                                            <div class="checklist-item">o Posicionar vítima para facilitar a respiração (elevação do tronco)</div>
+                                            <div class="checklist-item">o Administrar oxigénio</div>
+                                            <div class="checklist-item">o Recolha de informação</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Minimizar esforços</div>
+                                            <div class="checklist-item">o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</div>
+                                            <div class="checklist-item">o Transportar a vítima em posição de Fowler</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DPOC -->
+                    <h4 class="section-title mt-4">🫁 DPOC</h4>
+                    <div class="card">
+                        <div class="card-body">
+                            <p><strong>800 mil portugueses com DPOC</strong></p>
+                            <p>Enfisema pulmonar e bronquite crónica são as duas patologias mais comuns que contribuem para a DPOC</p>
+                            <div class="info-box">
+                                <h6>Fatores de Risco:</h6>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Tabagismo</div>
+                                        <div class="checklist-item">o Doenças profissionais por exposição a poeiras e produtos químicos</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Infecções recorrentes</div>
+                                        <div class="checklist-item">o Predisposição genética</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-3">
+                                <h5>Sintomatologia:</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Expectoração purulenta</div>
+                                        <div class="checklist-item">o Cianose</div>
+                                        <div class="checklist-item">o Tosse persistente</div>
+                                        <div class="checklist-item">o Dispneia mais exacerbada que o habitual</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Respiração ruidosa provocada pela acumulação de expetoração e acentuada diminuição do lúmen dos brônquios</div>
+                                        <div class="checklist-item">o Agitação e ansiedade</div>
+                                        <div class="checklist-item">o Alterações de estado de consciência (situações mais graves)</div>
+                                        <div class="checklist-item">o Febre</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-3">
+                                <h5>Atuação:</h5>
+                                <div class="procedure-card">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Posicionar vítima para facilitar a respiração (elevação do tronco)</div>
+                                            <div class="checklist-item">o Perante secreções que a vítima não consegue expelir, proceder à aspiração</div>
+                                            <div class="checklist-item">o Administrar oxigénio</div>
+                                            <div class="checklist-item">o Recolha de informação</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Minimizar esforços</div>
+                                            <div class="checklist-item">o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</div>
+                                            <div class="checklist-item">o Transportar a vítima em posição de Fowler</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Edema Agudo do Pulmão -->
+                    <h4 class="section-title mt-4">💧 Edema Agudo do Pulmão</h4>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Acumulação de fluido nos alvéolos e no espaço intersticial pulmonar, proveniente dos capilares pulmonares, o que impede o aporte de oxigénio, dificulta as trocas gasosas e provoca uma oxigenação deficiente.</p>
+                            
+                            <div class="mt-3">
+                                <h5>Sintomatologia:</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Secreções de características aquosas, espumosas e de coloração rosada</div>
+                                        <div class="checklist-item">o Cianose, Dispneia, Ortopneia</div>
+                                        <div class="checklist-item">o Aumento da frequência respiratória</div>
+                                        <div class="checklist-item">o Sensação de afogamento</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Ruído respiratório tipo farfalheira (ou fervores), semelhantes a um borbulhar ou "panela a ferver"</div>
+                                        <div class="checklist-item">o Ansiedade e agitação</div>
+                                        <div class="checklist-item">o Aumento da frequência cardíaca</div>
+                                        <div class="checklist-item">o Aumento da pressão arterial (na maioria dos casos)</div>
+                                        <div class="checklist-item">o Palidez e sudorese</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-3">
+                                <h5>Atuação:</h5>
+                                <div class="procedure-card">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Posicionar vítima para facilitar a respiração (sentada ou Fowler), com as pernas pendentes para diminuir o retorno venoso</div>
+                                            <div class="checklist-item">o Administrar oxigénio</div>
+                                            <div class="checklist-item">o Recolha de informação</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Minimizar esforços</div>
+                                            <div class="checklist-item">o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</div>
+                                            <div class="checklist-item">o Transportar a vítima em posição de Fowler (com as pernas pendentes)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Infecção respiratória -->
+                    <h4 class="section-title mt-4">🦠 Infecção respiratória</h4>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>A infeção respiratória ocorre quando uma parte do aparelho respiratório é infetada por um microrganismo que pode ser um vírus, uma bactéria, um fungo ou um parasita.</p>
+                            
+                            <div class="mt-3">
+                                <h5>Sintomatologia:</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Expectoração purulenta</div>
+                                        <div class="checklist-item">o Congestão e corrimento nasal</div>
+                                        <div class="checklist-item">o Tosse</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Febre</div>
+                                        <div class="checklist-item">o Mialgias (dores musculares)</div>
+                                        <div class="checklist-item">o Astenia (fraqueza, cansaço)</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-3">
+                                <h5>Atuação:</h5>
+                                <div class="procedure-card">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Posicionar vítima para facilitar a respiração (sentada ou Fowler)</div>
+                                            <div class="checklist-item">o Administrar oxigénio</div>
+                                            <div class="checklist-item">o Recolha de informação</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Minimizar esforços</div>
+                                            <div class="checklist-item">o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</div>
+                                            <div class="checklist-item">o Transportar a vítima em posição de Fowler</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pneumotórax -->
+                    <h4 class="section-title mt-4">💨 Pneumotórax</h4>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>O pneumotórax caracteriza-se pela existência de ar no interior da cavidade pleural.</p>
+                            
+                            <div class="mt-3">
+                                <h5>Características:</h5>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="info-box">
+                                            <h6>Lesão traumática ou espontânea</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="info-box">
+                                            <h6>Indivíduos jovens (20-40 anos)</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="info-box">
+                                            <h6>Sexo masculino, altos, magros e fumadores</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="mt-2">o Pode ocorrer após um espirro, tosse forte ou exercício físico</p>
+                            </div>
+
+                            <div class="mt-3">
+                                <h5>Sintomatologia:</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Desvio da traqueia (tardio)</div>
+                                        <div class="checklist-item">o Inngurgitamento jugular</div>
+                                        <div class="checklist-item">o Enfisema subcutâneo</div>
+                                        <div class="checklist-item">o Cianose, dispneia</div>
+                                        <div class="checklist-item">o Respiração superficial</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Assimetria da parede torácica</div>
+                                        <div class="checklist-item">o Dor intensa tipo pontada ou facada, localizada ao tórax e sem irradiação</div>
+                                        <div class="checklist-item">o Pele pálida, sudorese</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-3">
+                                <h5>Atuação:</h5>
+                                <div class="procedure-card">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Posicionar vítima para facilitar a respiração (sentada ou Fowler)</div>
+                                            <div class="checklist-item">o Administrar oxigénio</div>
+                                            <div class="checklist-item">o Recolha de informação</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Minimizar esforços</div>
+                                            <div class="checklist-item">o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</div>
+                                            <div class="checklist-item">o Transportar a vítima em posição de Fowler</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
 
-            <h4 class="section-title mt-4">💧 Edema Agudo do Pulmão</h4>
-            <div class="card">
-                <div class="card-body">
-                    <p>Acumulação de fluido nos alvéolos e no espaço intersticial pulmonar, proveniente dos capilares pulmonares, o que impede o aporte de oxigénio, dificulta as trocas gasosas e provoca uma oxigenação deficiente.</p>
+            <!-- ABA CARDÍACAS -->
+            <div class="tab-pane fade" id="cardiac-content" role="tabpanel">
+                
+                <section class="mb-5">
+                    <h3 class="module-title">❤️ Emergências Cardiovasculares</h3>
                     
-                    <div class="mt-3">
-                        <h5>Sintomatologia:</h5>
-                        <ul>
-                            <li>o Secreções de características aquosas, espumosas e de coloração rosada</li>
-                            <li>o Cianose, Dispneia, Ortopneia</li>
-                            <li>o Aumento da frequência respiratória</li>
-                            <li>o Sensação de afogamento</li>
-                            <li>o Ruído respiratório tipo farfalheira (ou fervores), semelhantes a um borbulhar ou "panela a ferver"</li>
-                            <li>o Ansiedade e agitação</li>
-                            <li>o Aumento da frequência cardíaca</li>
-                            <li>o Aumento da pressão arterial (na maioria dos casos)</li>
-                            <li>o Palidez e sudorese</li>
-                        </ul>
+                    <!-- Objetivos -->
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">Objetivos</div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">o Identificar as principais emergências cardiovasculares</li>
+                                <li class="list-group-item">o Identificar a sintomatologia associados à dor torácica de origem cardíaca</li>
+                                <li class="list-group-item">o Compreender a sintomatologia da disseção da aorta</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="mt-3">
-                        <h5>Atuação:</h5>
-                        <ul>
-                            <li>o Posicionar vítima para facilitar a respiração (sentada ou Fowler), com as pernas pendentes para diminuir o retorno venoso</li>
-                            <li>o Administrar oxigénio</li>
-                            <li>o Recolha de informação</li>
-                            <li>o Minimizar esforços</li>
-                            <li>o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</li>
-                            <li>o Transportar a vítima em posição de Fowler (com as pernas pendentes)</li>
-                        </ul>
+                    <!-- Dor Torácica Cardíaca -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-danger text-white">Dor torácica de origem cardíaca</div>
+                        <div class="card-body">
+                            <p>Uma dor cardíaca representa uma situação em que o miocárdio não está a receber a quantidade de oxigénio suficiente para as suas necessidades do momento</p>
+                            
+                            <!-- Comparação Angina vs EAM -->
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header bg-warning text-dark">Angina de Peito</div>
+                                        <div class="card-body">
+                                            <div class="info-box">
+                                                <h6>Causa:</h6>
+                                                <p class="mb-0">Aterosclerose</p>
+                                            </div>
+                                            <div class="info-box">
+                                                <h6>Duração:</h6>
+                                                <p class="mb-0">1-5 minutos (ocasionalmente até 15 minutos)</p>
+                                            </div>
+                                            <div class="success-box">
+                                                <h6>Alívio:</h6>
+                                                <p class="mb-0">Geralmente alivia com o repouso ou com a administração de fármacos (vasodilatadores)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header bg-danger text-white">Enfarte Agudo do Miocárdio</div>
+                                        <div class="card-body">
+                                            <div class="info-box">
+                                                <h6>Causa:</h6>
+                                                <p class="mb-0">Aterosclerose; Tromboembolismo; Espasmo coronário por overdose de cocaína; Disritmias graves</p>
+                                            </div>
+                                            <div class="danger-box">
+                                                <h6>Duração:</h6>
+                                                <p class="mb-0">Prolongada</p>
+                                            </div>
+                                            <div class="danger-box">
+                                                <h6>Alívio:</h6>
+                                                <p class="mb-0">Não alivia com o repouso ou com a administração de vasodilatadores Coronários</p>
+                                            </div>
+                                            <div class="warning-box">
+                                                <h6>Irradiação:</h6>
+                                                <p class="mb-0">Pode irradiar para os membros superiores (principalmente o esquerdo), pescoço, mandíbula e/ou região dorsal</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sintomatologia -->
+                            <div class="mt-3">
+                                <h5>Sintomatologia:</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Dispneia</div>
+                                        <div class="checklist-item">o Cansaço de início súbito</div>
+                                        <div class="checklist-item">o Dor ou desconforto retroesternal tipo opressão, peso, ardor ou pressão</div>
+                                        <div class="checklist-item">o Dor epigástrica</div>
+                                        <div class="checklist-item">o Em alguns casos, irradiação da dor para os membros superiores (principalmente o esquerdo), pescoço e mandíbula</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Palpitacões</div>
+                                        <div class="checklist-item">o Palidez</div>
+                                        <div class="checklist-item">o Sudorese</div>
+                                        <div class="checklist-item">o Náuseas e/ou vómitos</div>
+                                        <div class="checklist-item">o Ansiedade e agitação</div>
+                                        <div class="checklist-item">o Lipotimia ou síncope</li>
+                                        <div class="checklist-item">o Angústia</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Atuação -->
+                            <div class="mt-3">
+                                <h5>Atuação:</h5>
+                                <div class="procedure-card">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Evitar que a vítima faça esforços, qualquer esforço pode agravar a sua condição clínica</div>
+                                            <div class="checklist-item">o Posicionar vítima numa posição de conforto</div>
+                                            <div class="checklist-item">o Administrar oxigénio</div>
+                                            <div class="checklist-item">o Caracterizar a dor torácica</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Recolha de informação</div>
+                                            <div class="checklist-item">o Minimizar esforços</div>
+                                            <div class="checklist-item">o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</div>
+                                            <div class="checklist-item">o Transportar a vítima em posição de Fowler</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+
+                    <!-- Disseção da Aorta -->
+                    <h4 class="section-title mt-4">🩸 Disseção da Aorta</h4>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>A disseção da aorta consiste no rompimento longitudinal da sua túnica íntima, tendo como consequência a saída do sangue do lúmen verdadeiro da aorta para um falso lúmen.</p>
+                            
+                            <div class="danger-box">
+                                <h6>⚠️ Urgência Cirúrgica</h6>
+                                <p class="mb-0">Elevada mortalidade se não tratada rapidamente</p>
+                            </div>
+
+                            <div class="mt-3">
+                                <h5>Sintomatologia:</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Cianose periférica</div>
+                                        <div class="checklist-item">o Dor torácica ou interescapular de início súbito, muito intensa e sem precedência de outros sinais e sintomas</div>
+                                        <div class="checklist-item">o Palidez</div>
+                                        <div class="checklist-item">o Sudorese</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Hipotensão</div>
+                                        <div class="checklist-item">o Assimetria dos pulsos periféricos, com possibilidade de ausência de um deles</div>
+                                        <div class="checklist-item">o Diferenças nas pressões arteriais entre os membros superior a 10mmHg</div>
+                                        <div class="checklist-item">o Síncope</div>
+                                    </div>
+                                </div>
+                                <div class="info-box mt-3">
+                                    <p class="mb-0"><strong>A atuação em situação de disseção da aorta é similar à avaliação e atuação da dor de origem cardíaca</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
 
-            <h4 class="section-title mt-4">🦠 Infecção respiratória</h4>
-            <div class="card">
-                <div class="card-body">
-                    <p>A infeção respiratória ocorre quando uma parte do aparelho respiratório é infetada por um microrganismo que pode ser um vírus, uma bactéria, um fungo ou um parasita.</p>
+            <!-- ABA NEUROLÓGICAS -->
+            <div class="tab-pane fade" id="neuro-content" role="tabpanel">
+                
+                <section class="mb-5">
+                    <h3 class="module-title">🧠 Emergências Neurológicas</h3>
                     
-                    <div class="mt-3">
-                        <h5>Sintomatologia:</h5>
-                        <ul>
-                            <li>o Expectoração purulenta</li>
-                            <li>o Congestão e corrimento nasal</li>
-                            <li>o Tosse</li>
-                            <li>o Febre</li>
-                            <li>o Mialgias (dores musculares)</li>
-                            <li>o Astenia (fraqueza, cansaço)</li>
-                        </ul>
+                    <!-- Objetivos -->
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">Objetivos</div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">o Identificar as principais causas das emergências neurológicas</li>
+                                <li class="list-group-item">o Compreender a sintomatologia e atuação na sincope, crise convulsiva e AVC</li>
+                                <li class="list-group-item">o Conhecer os critérios de inclusão na Via Verde AVC</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="mt-3">
-                        <h5>Atuação:</h5>
-                        <ul>
-                            <li>o Posicionar vítima para facilitar a respiração (sentada ou Fowler)</li>
-                            <li>o Administrar oxigénio</li>
-                            <li>o Recolha de informação</li>
-                            <li>o Minimizar esforços</li>
-                            <li>o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</li>
-                            <li>o Transportar a vítima em posição de Fowler</li>
-                        </ul>
+                    <!-- Síncope -->
+                    <h4 class="section-title mt-4">😵 Síncope</h4>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>A síncope é a perda de consciência de forma súbita, causada por uma diminuição do fluxo sanguíneo cerebral com inevitável perda do tónus postural.</p>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="info-box text-center">
+                                        <h6>Transitória</h6>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="info-box text-center">
+                                        <h6>Curta duração</h6>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="info-box text-center">
+                                        <h6>Recuperação total e espontânea</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="warning-box mt-2">
+                                <h6 class="mb-0">o Síncope ≠ Lipotimia</h6>
+                            </div>
+                            
+                            <div class="mt-3">
+                                <h5>Sintomatologia:</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Alteração do estado de consciência</div>
+                                        <div class="checklist-item">o Lipotimia – sensação de perda dos sentidos</div>
+                                        <div class="checklist-item">o Tonturas</div>
+                                        <div class="checklist-item">o Visão turva</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Astenia</div>
+                                        <div class="checklist-item">o Hipotensão</div>
+                                        <div class="checklist-item">o Palidez</div>
+                                        <div class="checklist-item">o Sudorese</div>
+                                        <div class="checklist-item">o Náuseas e vómitos</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-3">
+                                <h5>Atuação:</h5>
+                                <div class="procedure-card">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Pré-síncope - promover manobras de contrapressão física até ser possível deitar a vítima</div>
+                                            <div class="checklist-item">o Desidratação - promover a ingestão de pequenas quantidades de água administrada repetidamente</div>
+                                            <div class="checklist-item">o Avaliar glicemia capilar para despiste causa de síncope</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Administrar oxigénio</div>
+                                            <div class="checklist-item">o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</div>
+                                            <div class="checklist-item">o Transporte da vítima mantendo a permeabilidade da VA, devido à AEC</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+
+                    <!-- Convulsão -->
+                    <h4 class="section-title mt-4">⚡ Convulsão</h4>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>As convulsões são uma alteração eletrofisiológica temporária que ocorre no cérebro.</p>
+                            
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header bg-warning text-dark">Durante a crise</div>
+                                        <div class="card-body">
+                                            <div class="checklist-item">o Afastar objetos que possam causar traumatismos e proteger a cabeça</div>
+                                            <div class="checklist-item">o Permeabilizar a VA com adjuvantes básicos (sem forçar a introdução)</div>
+                                            <div class="checklist-item">o Administrar O2</div>
+                                            <div class="checklist-item">o Não restringir movimentos</div>
+                                            <div class="checklist-item">o Registar duração, zonas do corpo envolvidas e intervalos</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header bg-success text-white">Pós-crise</div>
+                                        <div class="card-body">
+                                            <div class="checklist-item">o Colocar em PLS</div>
+                                            <div class="checklist-item">o Administrar oxigénio</div>
+                                            <div class="checklist-item">o Se sinais de AVC verificar critérios para inclusão em VVAVC</div>
+                                            <div class="checklist-item">o Reduzir a estimulação sensorial</div>
+                                            <div class="checklist-item">o Avaliar glicemia capilar, temperatura corporal</div>
+                                            <div class="checklist-item">o Recolher informação</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="info-box mt-3">
+                                <h6>Criticidade:</h6>
+                                <p class="mb-0">Perante sinais de gravidade, ou convulsão tónico-clónica presenciada pela equipa de socorro, identificar criticidade e solicitar apoio diferenciado ao CODU. Transporte da vítima mantendo a permeabilidade da VA, devido à AEC.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AVC -->
+                    <h4 class="section-title mt-4">🧠 AVC</h4>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Evento grave no qual há uma interrupção do fluxo sanguíneo cerebral que leva à isquemia dos tecidos.</p>
+                            <div class="danger-box">
+                                <h6>Constitui a 1ª causa de morte e incapacidade permanente*, em Portugal</h6>
+                            </div>
+                            
+                            <div class="mt-3">
+                                <h5>Via Verde AVC:</h5>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="info-box text-center">
+                                            <h6>Tempo é cérebro</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="info-box text-center">
+                                            <h6>Inicio dos sintomas até 24h de evolução</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="info-box text-center">
+                                            <h6>Idade ≥18 anos (sem limite superior de idade)</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-3">
+                                <h5>Atuação:</h5>
+                                <div class="procedure-card">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Identificar sintomatologia compatível com AVC</div>
+                                            <div class="checklist-item">o Identificar critérios para inclusão em Via Verde AVC</div>
+                                            <div class="checklist-item">o Contactar precocemente o CODU para validação de inclusão em Via Verde AVC</div>
+                                            <div class="checklist-item">o Administrar oxigénio</div>
+                                            <div class="checklist-item">o Avaliar a escala de Cincinnati e RACE</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Avaliar glicemia capilar</div>
+                                            <div class="checklist-item">o Posicionar a vítima com elevação do tronco a 30º</div>
+                                            <div class="checklist-item">o Recolha de informação</div>
+                                            <div class="checklist-item">o Perante sinais de gravidade, ou convulsão tónico-clónica presenciada pela equipa de socorro, identificar criticidade e solicitar apoio diferenciado ao CODU</div>
+                                            <div class="checklist-item">o Transporte da vítima mantendo a permeabilidade da VA, devido à AEC</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
 
-            <h4 class="section-title mt-4">💨 Pneumotórax</h4>
-            <div class="card">
-                <div class="card-body">
-                    <p>O pneumotórax caracteriza-se pela existência de ar no interior da cavidade pleural.</p>
+            <!-- ABA OUTRAS -->
+            <div class="tab-pane fade" id="other-content" role="tabpanel">
+                
+                <!-- Gastrointestinais -->
+                <section class="mb-5">
+                    <h3 class="module-title">🤢 Dor Abdominal e Distúrbios Gastrointestinais</h3>
                     
-                    <div class="mt-3">
-                        <h5>Características:</h5>
-                        <ul>
-                            <li>o Lesão traumática ou espontânea</li>
-                            <li>o Prevalência: Indivíduos jovens (entre os 20 e os 40 anos de idade); Sexo masculino, altos, magros e fumadores</li>
-                            <li>o Pode ocorrer após um espirro, tosse forte ou exercício físico</li>
-                        </ul>
+                    <div class="card">
+                        <div class="card-header bg-warning text-dark">Hemorragia Digestivas</div>
+                        <div class="card-body">
+                            <p>Perda de sangue do trato gastrointestinal, podendo ser grave ao ponto de colocar a vida da vítima em risco.</p>
+                            
+                            <div class="mt-3">
+                                <h5>Tipos de hemorragia:</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="info-box">
+                                            <h6>o Hematemeses:</h6>
+                                            <p class="mb-0">Vómito acompanhado com sangue</p>
+                                        </div>
+                                        <div class="info-box">
+                                            <h6>o Melenas:</h6>
+                                            <p class="mb-0">Fezes com sangue escuro</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="info-box">
+                                            <h6>o Hematoquésias:</h6>
+                                            <p class="mb-0">Dejeções com sangue vermelho vivo, isoladas ou associadas às fezes</p>
+                                        </div>
+                                        <div class="info-box">
+                                            <h6>o Retorragias:</h6>
+                                            <p class="mb-0">Perda de sangue vermelho vivo durante a dejeção</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-3">
+                                <h5>Sintomatologia:</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Presença de vómito ou dejeção com características hemáticas</div>
+                                        <div class="checklist-item">o Sudorese</div>
+                                        <div class="checklist-item">o Palidez</div>
+                                        <div class="checklist-item">o Pulso rápido</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Náuseas</div>
+                                        <div class="checklist-item">o Hipotensão</div>
+                                        <div class="checklist-item">o Tonturas</div>
+                                        <div class="checklist-item">o Síncope</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-3">
+                                <h5>Atuação:</h5>
+                                <div class="procedure-card">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Caracterizar o vómito ou dejeção quanto à quantidade e aspeto</div>
+                                            <div class="checklist-item">o Perante vítimas com AEC ou que não consigam expelir o vómito, permeabilizar a via aérea</div>
+                                            <div class="checklist-item">o Administrar oxigénio</div>
+                                            <div class="checklist-item">o Posicionar vítima numa posição de conforto</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Recolha de informação</div>
+                                            <div class="checklist-item">o Minimizar esforços</div>
+                                            <div class="checklist-item">o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</div>
+                                            <div class="checklist-item">o Transporte da vítima mantendo a permeabilidade da VA</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="mt-3">
-                        <h5>Sintomatologia:</h5>
-                        <ul>
-                            <li>o Desvio da traqueia (tardio)</li>
-                            <li>o Inngurgitamento jugular</li>
-                            <li>o Enfisema subcutâneo</li>
-                            <li>o Cianose, dispneia</li>
-                            <li>o Respiração superficial</li>
-                            <li>o Assimetria da parede torácica</li>
-                            <li>o Dor intensa tipo pontada ou facada, localizada ao tórax e sem irradiação</li>
-                            <li>o Pele pálida, sudorese</li>
-                        </ul>
+                    <!-- Dor Abdominal Geral -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-info text-white">Dor Abdominal</div>
+                        <div class="card-body">
+                            <p>A dor abdominal pode ter diversas origens sendo que vamos abordar:</p>
+                            <div class="row">
+                                <div class="col-md-4 text-center">
+                                    <div class="p-3 bg-light rounded">
+                                        <div class="emergency-icon">🦪</div>
+                                        <p class="mb-0">Apendicite</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="p-3 bg-light rounded">
+                                        <div class="emergency-icon">🌀</div>
+                                        <p class="mb-0">Oclusão intestinal</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="p-3 bg-light rounded">
+                                        <div class="emergency-icon">💎</div>
+                                        <p class="mb-0">Cólica Renal</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="warning-box mt-3">
+                                <h6 class="mb-0"><strong>Fundamental caracterizar a dor e condição clínica do doente</strong></h6>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="mt-3">
-                        <h5>Atuação:</h5>
-                        <ul>
-                            <li>o Posicionar vítima para facilitar a respiração (sentada ou Fowler)</li>
-                            <li>o Administrar oxigénio</li>
-                            <li>o Recolha de informação</li>
-                            <li>o Minimizar esforços</li>
-                            <li>o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</li>
-                            <li>o Transportar a vítima em posição de Fowler</li>
-                        </ul>
+                    <!-- Atuação Geral -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-success text-white">Atuação Geral</div>
+                        <div class="card-body">
+                            <div class="procedure-card">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Caracterizar a dor abdominal de acordo com a mnemónica TILIDAS e identificar a causa da dor (apendicite, oclusão intestinal, cólica renal)</div>
+                                        <div class="checklist-item">o Administrar oxigénio</div>
+                                        <div class="checklist-item">o Posicionar a vítima em posição de conforto que permita o alívio da dor</div>
+                                        <div class="checklist-item">o Desaconselhar a ingestão de qualquer líquido ou alimento</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Recolha de informação</div>
+                                        <div class="checklist-item">o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</div>
+                                        <div class="checklist-item">o Transporte da vítima numa posição confortável</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <section class="mb-5">
-            <h3 class="module-title">❤️ Emergências Cardiovasculares</h3>
-            
-            <div class="card">
-                <div class="card-header">Objetivos</div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">o Identificar as principais emergências cardiovasculares</li>
-                        <li class="list-group-item">o Identificar a sintomatologia associados à dor torácica de origem cardíaca</li>
-                        <li class="list-group-item">o Compreender a sintomatologia da disseção da aorta</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card mt-3">
-                <div class="card-header">Dor torácica de origem cardíaca</div>
-                <div class="card-body">
-                    <p>Uma dor cardíaca representa uma situação em que o miocárdio não está a receber a quantidade de oxigénio suficiente para as suas necessidades do momento</p>
+                <!-- Diabetes -->
+                <section class="mb-5">
+                    <h3 class="module-title">🩸 Diabetes mellitus: hipoglicemia e hiperglicemia</h3>
                     
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">Objetivos</div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">o Conhecer os diferentes tipos de Diabetes</li>
+                                <li class="list-group-item">o Compreender a sintomatologia da hipoglicemia e da hiperglicemia</li>
+                                <li class="list-group-item">o Conhecer a atuação perante uma hipoglicemia</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Comparação Hipoglicemia vs Hiperglicemia -->
                     <div class="row mt-3">
                         <div class="col-md-6">
                             <div class="card h-100">
-                                <div class="card-header bg-danger text-white">Angina de Peito</div>
+                                <div class="card-header bg-warning text-dark">Hipoglicemia</div>
                                 <div class="card-body">
-                                    <p><strong>Causa:</strong> Aterosclerose</p>
-                                    <p><strong>Duração:</strong> 1-5 minutos (ocasionalmente até 15 minutos)</p>
-                                    <p><strong>Alívio:</strong> Geralmente alivia com o repouso ou com a administração de fármacos (vasodilatadores)</p>
+                                    <div class="danger-box">
+                                        <h6>Definição:</h6>
+                                        <p class="mb-0">Diminuição da concentração de glicose no sangue, inferior a 60mg/dL sangue.</p>
+                                    </div>
+                                    
+                                    <div class="mt-3">
+                                        <h6>Sintomatologia:</h6>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="checklist-item">o AEC (agitação, agressividade, irritabilidade, confusão ou coma)</div>
+                                                <div class="checklist-item">o Cefaleias</div>
+                                                <div class="checklist-item">o Tonturas</div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="checklist-item">o Fraqueza muscular</div>
+                                                <div class="checklist-item">o Tremores</div>
+                                                <div class="checklist-item">o Visão turva</div>
+                                                <div class="checklist-item">o Taquicardia</div>
+                                                <div class="checklist-item">o Sudorese</div>
+                                                <div class="checklist-item">o Polifagia (sensação de fome)</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="card h-100">
-                                <div class="card-header bg-danger text-white">Enfarte Agudo do Miocárdio</div>
+                                <div class="card-header bg-danger text-white">Hiperglicemia</div>
                                 <div class="card-body">
-                                    <p><strong>Causa:</strong> Aterosclerose; Tromboembolismo; Espasmo coronário por overdose de cocaína; Disritmias graves</p>
-                                    <p><strong>Duração:</strong> Prolongada</p>
-                                    <p><strong>Alívio:</strong> Não alivia com o repouso ou com a administração de vasodilatadores Coronários</p>
-                                    <p><strong>Irradiação:</strong> Pode irradiar para os membros superiores (principalmente o esquerdo), pescoço, mandíbula e/ou região dorsal</p>
+                                    <div class="danger-box">
+                                        <h6>Definição:</h6>
+                                        <p class="mb-0">Concentração de glicose no sangue superior a 200mg/dl</p>
+                                    </div>
+                                    
+                                    <div class="mt-3">
+                                        <h6>Sintomatologia:</h6>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="checklist-item">o AEC (confusão ou coma)</div>
+                                                <div class="checklist-item">o Sonolência</div>
+                                                <div class="checklist-item">o Prostração</div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="checklist-item">o Pulso rápido e cheio</div>
+                                                <div class="checklist-item">o Náuseas e vómitos</div>
+                                                <div class="checklist-item">o Hálito frutado (cetónico)</div>
+                                                <div class="checklist-item">o Pele seca e ruborizada</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="mt-3">
-                        <h5>Sintomatologia:</h5>
-                        <ul>
-                            <li>o Dispneia</li>
-                            <li>o Cansaço de início súbito</li>
-                            <li>o Dor ou desconforto retroesternal tipo opressão, peso, ardor ou pressão</li>
-                            <li>o Dor epigástrica</li>
-                            <li>o Em alguns casos, irradiação da dor para os membros superiores (principalmente o esquerdo), pescoço e mandíbula</li>
-                            <li>o Palpitacões</li>
-                            <li>o Palidez</li>
-                            <li>o Sudorese</li>
-                            <li>o Náuseas e/ou vómitos</li>
-                            <li>o Ansiedade e agitação</li>
-                            <li>o Lipotimia ou síncope</li>
-                            <li>o Angústia</li>
-                        </ul>
-                    </div>
-
-                    <div class="mt-3">
-                        <h5>Atuação:</h5>
-                        <ul>
-                            <li>o Evitar que a vítima faça esforços, qualquer esforço pode agravar a sua condição clínica</li>
-                            <li>o Posicionar vítima numa posição de conforto</li>
-                            <li>o Administrar oxigénio</li>
-                            <li>o Caracterizar a dor torácica</li>
-                            <li>o Recolha de informação</li>
-                            <li>o Minimizar esforços</li>
-                            <li>o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</li>
-                            <li>o Transportar a vítima em posição de Fowler</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <h4 class="section-title mt-4">🩸 Disseção da Aorta</h4>
-            <div class="card">
-                <div class="card-body">
-                    <p>A disseção da aorta consiste no rompimento longitudinal da sua túnica íntima, tendo como consequência a saída do sangue do lúmen verdadeiro da aorta para um falso lúmen.</p>
-                    
-                    <div class="mt-3">
-                        <h5>Sintomatologia:</h5>
-                        <ul>
-                            <li>o Cianose periférica</li>
-                            <li>o Dor torácica ou interescapular de início súbito, muito intensa e sem precedência de outros sinais e sintomas</li>
-                            <li>o Palidez</li>
-                            <li>o Sudorese</li>
-                            <li>o Hipotensão</li>
-                            <li>o Assimetria dos pulsos periféricos, com possibilidade de ausência de um deles</li>
-                            <li>o Diferenças nas pressões arteriais entre os membros superior a 10mmHg</li>
-                            <li>o Síncope</li>
-                        </ul>
-                        <p><strong>A atuação em situação de disseção da aorta é similar à avaliação e atuação da dor de origem cardíaca</strong></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-5">
-            <h3 class="module-title">🤢 Dor Abdominal e Distúrbios Gastrointestinais</h3>
-            
-            <div class="card">
-                <div class="card-header">Hemorragia Digestivas</div>
-                <div class="card-body">
-                    <p>Perda de sangue do trato gastrointestinal, podendo ser grave ao ponto de colocar a vida da vítima em risco.</p>
-                    
-                    <div class="mt-3">
-                        <h5>Tipos de hemorragia:</h5>
-                        <ul>
-                            <li><strong>o Hematemeses:</strong> Vómito acompanhado com sangue</li>
-                            <li><strong>o Melenas:</strong> Fezes com sangue escuro</li>
-                            <li><strong>o Hematoquésias:</strong> Dejeções com sangue vermelho vivo, isoladas ou associadas às fezes</li>
-                            <li><strong>o Retorragias:</strong> Perda de sangue vermelho vivo durante a dejeção</li>
-                        </ul>
-                    </div>
-
-                    <div class="mt-3">
-                        <h5>Sintomatologia:</h5>
-                        <ul>
-                            <li>o Presença de vómito ou dejeção com características hemáticas</li>
-                            <li>o Sudorese</li>
-                            <li>o Palidez</li>
-                            <li>o Pulso rápido</li>
-                            <li>o Náuseas</li>
-                            <li>o Hipotensão</li>
-                            <li>o Tonturas</li>
-                            <li>o Síncope</li>
-                        </ul>
-                    </div>
-
-                    <div class="mt-3">
-                        <h5>Atuação:</h5>
-                        <ul>
-                            <li>o Caracterizar o vómito ou dejeção quanto à quantidade e aspeto</li>
-                            <li>o Perante vítimas com AEC ou que não consigam expelir o vómito, permeabilizar a via aérea</li>
-                            <li>o Administrar oxigénio</li>
-                            <li>o Posicionar vítima numa posição de conforto</li>
-                            <li>o Recolha de informação</li>
-                            <li>o Minimizar esforços</li>
-                            <li>o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</li>
-                            <li>o Transporte da vítima mantendo a permeabilidade da VA</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mt-3">
-                <div class="card-header">Dor Abdominal</div>
-                <div class="card-body">
-                    <p>A dor abdominal pode ter diversas origens sendo que vamos abordar:</p>
-                    <ul>
-                        <li>o Apendicite</li>
-                        <li>o Oclusão intestinal</li>
-                        <li>o Cólica Renal</li>
-                    </ul>
-                    <p><strong>Fundamental caracterizar a dor e condição clínica do doente</strong></p>
-                </div>
-            </div>
-
-            <div class="card mt-3">
-                <div class="card-header">Atuação Geral</div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">o Caracterizar a dor abdominal de acordo com a mnemónica TILIDAS e identificar a causa da dor (apendicite, oclusão intestinal, cólica renal)</li>
-                        <li class="list-group-item">o Administrar oxigénio</li>
-                        <li class="list-group-item">o Posicionar a vítima em posição de conforto que permita o alívio da dor</li>
-                        <li class="list-group-item">o Desaconselhar a ingestão de qualquer líquido ou alimento</li>
-                        <li class="list-group-item">o Recolha de informação</li>
-                        <li class="list-group-item">o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</li>
-                        <li class="list-group-item">o Transporte da vítima numa posição confortável</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-5">
-            <h3 class="module-title">🧠 Emergências Neurológicas</h3>
-            
-            <div class="card">
-                <div class="card-header">Objetivos</div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">o Identificar as principais causas das emergências neurológicas</li>
-                        <li class="list-group-item">o Compreender a sintomatologia e atuação na sincope, crise convulsiva e AVC</li>
-                        <li class="list-group-item">o Conhecer os critérios de inclusão na Via Verde AVC</li>
-                    </ul>
-                </div>
-            </div>
-
-            <h4 class="section-title mt-4">😵 Síncope</h4>
-            <div class="card">
-                <div class="card-body">
-                    <p>A síncope é a perda de consciência de forma súbita, causada por uma diminuição do fluxo sanguíneo cerebral com inevitável perda do tónus postural.</p>
-                    <p>o Transitória o Curta duração o Recuperação total e espontânea</p>
-                    <p>o Síncope ≠ Lipotimia</p>
-                    
-                    <div class="mt-3">
-                        <h5>Sintomatologia:</h5>
-                        <ul>
-                            <li>o Alteração do estado de consciência</li>
-                            <li>o Lipotimia – sensação de perda dos sentidos</li>
-                            <li>o Tonturas</li>
-                            <li>o Visão turva</li>
-                            <li>o Astenia</li>
-                            <li>o Hipotensão</li>
-                            <li>o Palidez</li>
-                            <li>o Sudorese</li>
-                            <li>o Náuseas e vómitos</li>
-                        </ul>
-                    </div>
-
-                    <div class="mt-3">
-                        <h5>Atuação:</h5>
-                        <ul>
-                            <li>o Pré-síncope - promover manobras de contrapressão física até ser possível deitar a vítima</li>
-                            <li>o Desidratação - promover a ingestão de pequenas quantidades de água administrada repetidamente</li>
-                            <li>o Avaliar glicemia capilar para despiste causa de síncope</li>
-                            <li>o Administrar oxigénio</li>
-                            <li>o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</li>
-                            <li>o Transporte da vítima mantendo a permeabilidade da VA, devido à AEC</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <h4 class="section-title mt-4">⚡ Convulsão</h4>
-            <div class="card">
-                <div class="card-body">
-                    <p>As convulsões são uma alteração eletrofisiológica temporária que ocorre no cérebro.</p>
-                    
-                    <div class="mt-3">
-                        <h5>Atuação - Vítima em crise convulsiva tónico-clónica:</h5>
-                        <ul>
-                            <li>o Afastar objetos que possam causar traumatismos e proteger a cabeça</li>
-                            <li>o Permeabilizar a VA com adjuvantes básicos (sem forçar a introdução)</li>
-                            <li>o Administrar O2</li>
-                            <li>o Não restringir movimentos</li>
-                            <li>o Registar duração, zonas do corpo envolvidas e intervalos</li>
-                        </ul>
-                    </div>
-
-                    <div class="mt-3">
-                        <h5>Atuação - Vítima em pós crise convulsiva:</h5>
-                        <ul>
-                            <li>o Colocar em PLS</li>
-                            <li>o Administrar oxigénio</li>
-                            <li>o Se sinais de AVC verificar critérios para inclusão em VVAVC</li>
-                            <li>o Reduzir a estimulação sensorial</li>
-                            <li>o Avaliar glicemia capilar, temperatura corporal</li>
-                            <li>o Recolher informação</li>
-                            <li>o Perante sinais de gravidade, ou convulsão tónico-clónica presenciada pela equipa de socorro, identificar criticidade e solicitar apoio diferenciado ao CODU</li>
-                            <li>o Transporte da vítima mantendo a permeabilidade da VA, devido à AEC</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <h4 class="section-title mt-4">🧠 AVC</h4>
-            <div class="card">
-                <div class="card-body">
-                    <p>Evento grave no qual há uma interrupção do fluxo sanguíneo cerebral que leva à isquemia dos tecidos.</p>
-                    <p>Constitui a 1ª causa de morte e incapacidade permanente*, em Portugal</p>
-                    
-                    <div class="mt-3">
-                        <h5>Via Verde AVC:</h5>
-                        <ul>
-                            <li><strong>Tempo é cérebro</strong></li>
-                            <li>Inicio dos sintomas até 24h de evolução (última hora em que o doente foi visto bem/sem sintomas)</li>
-                            <li>Idade ≥18 anos (sem limite superior de idade)</li>
-                        </ul>
-                    </div>
-
-                    <div class="mt-3">
-                        <h5>Atuação:</h5>
-                        <ul>
-                            <li>o Identificar sintomatologia compatível com AVC</li>
-                            <li>o Identificar critérios para inclusão em Via Verde AVC</li>
-                            <li>o Contactar precocemente o CODU para validação de inclusão em Via Verde AVC</li>
-                            <li>o Administrar oxigénio</li>
-                            <li>o Avaliar a escala de Cincinnati e RACE</li>
-                            <li>o Avaliar glicemia capilar</li>
-                            <li>o Posicionar a vítima com elevação do tronco a 30º</li>
-                            <li>o Recolha de informação</li>
-                            <li>o Perante sinais de gravidade, ou convulsão tónico-clónica presenciada pela equipa de socorro, identificar criticidade e solicitar apoio diferenciado ao CODU</li>
-                            <li>o Transporte da vítima mantendo a permeabilidade da VA, devido à AEC</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-5">
-            <h3 class="module-title">🩸 Diabetes mellitus: hipoglicemia e hiperglicemia</h3>
-            
-            <div class="card">
-                <div class="card-header">Objetivos</div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">o Conhecer os diferentes tipos de Diabetes</li>
-                        <li class="list-group-item">o Compreender a sintomatologia da hipoglicemia e da hiperglicemia</li>
-                        <li class="list-group-item">o Conhecer a atuação perante uma hipoglicemia</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="row mt-3">
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-header bg-warning">Hipoglicemia</div>
+                    <!-- Atuação Hipoglicemia -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-success text-white">Atuação - Hipoglicemia</div>
                         <div class="card-body">
-                            <p><strong>Definição:</strong> Diminuição da concentração de glicose no sangue, inferior a 60mg/dL sangue.</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header bg-danger text-white">Se glicemia capilar inferior a 60 mg/dL</div>
+                                        <div class="card-body">
+                                            <div class="info-box">
+                                                <h6>Vítima consciente (A na escala AVDS):</h6>
+                                                <div class="checklist-item">- Administrar via oral 25gr de glicose</div>
+                                                <div class="checklist-item">- Seguidamente promover a ingestão de alimentos ricos em hidratos de carbono e açucares</div>
+                                            </div>
+                                            <div class="warning-box mt-2">
+                                                <h6>Vítima em V D ou S na escala AVDS:</h6>
+                                                <div class="checklist-item">- Administrar papa espessa de açúcar na mucosa oral</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header bg-warning text-dark">Se glicemia capilar entre 60mg/dL e 80mg/dl</div>
+                                        <div class="card-body">
+                                            <div class="success-box">
+                                                <h6>Ação:</h6>
+                                                <div class="checklist-item">o Promover a ingestão de alimentos ricos em hidratos de carbono e açucares (pão, bolachas...)</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Intoxicações -->
+                <section class="mb-5">
+                    <h3 class="module-title">⚠️ Intoxicações</h3>
+                    
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">Objetivos</div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">o Conhecer as vias de intoxicação</li>
+                                <li class="list-group-item">o A sintomatologia associada às intoxicações</li>
+                                <li class="list-group-item">o Conhecer a atuação nas intoxicações</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card mt-3">
+                        <div class="card-header bg-warning text-dark">Atuação Geral</div>
+                        <div class="card-body">
+                            <div class="procedure-card">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Utilizar o EPI adequado atendendo ao produto de intoxicação</div>
+                                        <div class="checklist-item">o Na abordagem ao local de ocorrência, garantir que o local está seguro, com especial atenção à intoxicação por monóxido de carbono. Perante essa suspeita, arejar o local e retirar a vítima do local</div>
+                                        <div class="checklist-item">o Afastar o tóxico, ou retirar a vítima do local, o mais precocemente possível</div>
+                                        <div class="checklist-item">o Administrar oxigénio: Se intoxicação por monóxido de carbono administrar O2 a 15L/min, independentemente dos valores de SPO2</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Recolher e transportar para o hospital as embalagens do tóxico, desde que tal não constitua perigo para a equipa</div>
+                                        <div class="checklist-item">o Avaliar a glicemia capilar</div>
+                                        <div class="checklist-item">o Recolha de informação</div>
+                                        <div class="checklist-item">o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</div>
+                                        <div class="checklist-item">o Transporte da vítima mantendo a permeabilidade da VA</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sépsis -->
+                <section class="mb-5">
+                    <h3 class="module-title">🦠 Sépsis</h3>
+                    
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">Objetivos</div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">o Conhecer a Via Verde Sépsis</li>
+                                <li class="list-group-item">o Conhecer os critérios da Via Verde Sépsis</li>
+                                <li class="list-group-item">o Compreender a atuação na sépsis</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card mt-3">
+                        <div class="card-header bg-danger text-white">Sintomatologia</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">o Alteração do estado de consciência</div>
+                                    <div class="checklist-item">o FR>22 cpm | SPO2 < 90%</div>
+                                    <div class="checklist-item">o Dispneia | Tosse</div>
+                                    <div class="checklist-item">o FC>90bpm | PAS<90mmHg</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">o Temperatura corporal ≥38ºC ou <35ºC</div>
+                                    <div class="checklist-item">o Dor e/ou distensão abdominal</div>
+                                    <div class="checklist-item">o Obstipação / Diarreia</div>
+                                    <div class="checklist-item">o Cefaleias</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mt-3">
+                        <div class="card-header bg-success text-white">Atuação</div>
+                        <div class="card-body">
+                            <div class="procedure-card">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Identificar sinais compatíveis com sépsis</div>
+                                        <div class="checklist-item">o Administrar oxigénio</div>
+                                        <div class="checklist-item">o Recolha de informação</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Perante sinais de gravidade, ou sinais compatíveis com caso suspeito ou provável VV Sépsis, contactar ao CODU</div>
+                                        <div class="checklist-item">o Transporte da vítima mantendo a permeabilidade da VA</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Choque -->
+                <section class="mb-5">
+                    <h3 class="module-title">🫀 Choque</h3>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="danger-box">
+                                <h6>Definição:</h6>
+                                <p class="mb-0">Estado de hipoperfusão celular generalizada, em que o aporte de oxigénio a nível celular é inadequado para satisfazer as necessidades metabólicas.</p>
+                            </div>
                             
                             <div class="mt-3">
-                                <h6>Sintomatologia:</h6>
-                                <ul>
-                                    <li>o AEC (agitação, agressividade, irritabilidade, confusão ou coma)</li>
-                                    <li>o Cefaleias</li>
-                                    <li>o Tonturas</li>
-                                    <li>o Fraqueza muscular</li>
-                                    <li>o Tremores</li>
-                                    <li>o Visão turva</li>
-                                    <li>o Taquicardia</li>
-                                    <li>o Sudorese</li>
-                                    <li>o Polifagia (sensação de fome)</li>
-                                </ul>
+                                <h5>Tipos de choque:</h5>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-header bg-danger text-white">Hipovolémico</div>
+                                            <div class="card-body">
+                                                <div class="checklist-item">Hemorrágico</div>
+                                                <div class="checklist-item">Não hemorrágico</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-header bg-warning text-dark">Distributivo</div>
+                                            <div class="card-body">
+                                                <div class="checklist-item">Neurogénico</div>
+                                                <div class="checklist-item">Anafilático</div>
+                                                <div class="checklist-item">Séptico</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-header bg-info text-white">Cardiogénico</div>
+                                            <div class="card-body">
+                                                <div class="checklist-item">Obstrutivo</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-header bg-danger text-white">Hiperglicemia</div>
-                        <div class="card-body">
-                            <p><strong>Definição:</strong> Concentração de glicose no sangue superior a 200mg/dl</p>
-                            
+
                             <div class="mt-3">
-                                <h6>Sintomatologia:</h6>
-                                <ul>
-                                    <li>o AEC (confusão ou coma)</li>
-                                    <li>o Sonolência</li>
-                                    <li>o Prostração</li>
-                                    <li>o Pulso rápido e cheio</li>
-                                    <li>o Náuseas e vómitos</li>
-                                    <li>o Hálito frutado (cetónico)</li>
-                                    <li>o Pele seca e ruborizada</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mt-3">
-                <div class="card-header">Atuação - Hipoglicemia</div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card h-100">
-                                <div class="card-header bg-info text-white">Se glicemia capilar inferior a 60 mg/dL</div>
-                                <div class="card-body">
-                                    <p><strong>Vítima consciente (A na escala AVDS):</strong></p>
-                                    <ul>
-                                        <li>- Administrar via oral 25gr de glicose</li>
-                                        <li>- Seguidamente promover a ingestão de alimentos ricos em hidratos de carbono e açucares</li>
-                                    </ul>
-                                    <p><strong>Vítima em V D ou S na escala AVDS:</strong></p>
-                                    <ul>
-                                        <li>- Administrar papa espessa de açúcar na mucosa oral</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card h-100">
-                                <div class="card-header bg-success text-white">Se glicemia capilar entre 60mg/dL e 80mg/dl</div>
-                                <div class="card-body">
-                                    <ul>
-                                        <li>o Promover a ingestão de alimentos ricos em hidratos de carbono e açucares (pão, bolachas...)</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-5">
-            <h3 class="module-title">⚠️ Intoxicações</h3>
-            
-            <div class="card">
-                <div class="card-header">Objetivos</div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">o Conhecer as vias de intoxicação</li>
-                        <li class="list-group-item">o A sintomatologia associada às intoxicações</li>
-                        <li class="list-group-item">o Conhecer a atuação nas intoxicações</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card mt-3">
-                <div class="card-header">Atuação Geral</div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">o Utilizar o EPI adequado atendendo ao produto de intoxicação</li>
-                        <li class="list-group-item">o Na abordagem ao local de ocorrência, garantir que o local está seguro, com especial atenção à intoxicação por monóxido de carbono. Perante essa suspeita, arejar o local e retirar a vítima do local</li>
-                        <li class="list-group-item">o Afastar o tóxico, ou retirar a vítima do local, o mais precocemente possível</li>
-                        <li class="list-group-item">o Administrar oxigénio: Se intoxicação por monóxido de carbono administrar O2 a 15L/min, independentemente dos valores de SPO2</li>
-                        <li class="list-group-item">o Recolher e transportar para o hospital as embalagens do tóxico, desde que tal não constitua perigo para a equipa</li>
-                        <li class="list-group-item">o Avaliar a glicemia capilar</li>
-                        <li class="list-group-item">o Recolha de informação</li>
-                        <li class="list-group-item">o Perante sinais de gravidade, identificar vítima crítica e solicitar apoio diferenciado ao CODU</li>
-                        <li class="list-group-item">o Transporte da vítima mantendo a permeabilidade da VA</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-5">
-            <h3 class="module-title">🦠 Sépsis</h3>
-            
-            <div class="card">
-                <div class="card-header">Objetivos</div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">o Conhecer a Via Verde Sépsis</li>
-                        <li class="list-group-item">o Conhecer os critérios da Via Verde Sépsis</li>
-                        <li class="list-group-item">o Compreender a atuação na sépsis</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card mt-3">
-                <div class="card-header">Sintomatologia</div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">o Alteração do estado de consciência</li>
-                        <li class="list-group-item">o FR>22 cpm | SPO2 < 90%</li>
-                        <li class="list-group-item">o Dispneia | Tosse</li>
-                        <li class="list-group-item">o FC>90bpm | PAS<90mmHg</li>
-                        <li class="list-group-item">o Temperatura corporal ≥38ºC ou <35ºC</li>
-                        <li class="list-group-item">o Dor e/ou distensão abdominal</li>
-                        <li class="list-group-item">o Obstipação / Diarreia</li>
-                        <li class="list-group-item">o Cefaleias</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card mt-3">
-                <div class="card-header">Atuação</div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">o Identificar sinais compatíveis com sépsis</li>
-                        <li class="list-group-item">o Administrar oxigénio</li>
-                        <li class="list-group-item">o Recolha de informação</li>
-                        <li class="list-group-item">o Perante sinais de gravidade, ou sinais compatíveis com caso suspeito ou provável VV Sépsis, contactar ao CODU</li>
-                        <li class="list-group-item">o Transporte da vítima mantendo a permeabilidade da VA</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-5">
-            <h3 class="module-title">🫀 Choque</h3>
-            
-            <div class="card">
-                <div class="card-body">
-                    <p><strong>Definição:</strong> Estado de hipoperfusão celular generalizada, em que o aporte de oxigénio a nível celular é inadequado para satisfazer as necessidades metabólicas.</p>
-                    
-                    <div class="mt-3">
-                        <h5>Tipos de choque:</h5>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card h-100">
-                                    <div class="card-header bg-danger text-white">Hipovolémico</div>
-                                    <div class="card-body">
-                                        <ul>
-                                            <li>Hemorrágico</li>
-                                            <li>Não hemorrágico</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card h-100">
-                                    <div class="card-header bg-warning">Distributivo</div>
-                                    <div class="card-body">
-                                        <ul>
-                                            <li>Neurogénico</li>
-                                            <li>Anafilático</li>
-                                            <li>Séptico</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card h-100">
-                                    <div class="card-header bg-info text-white">Cardiogénico</div>
-                                    <div class="card-body">
-                                        <p>Obstrutivo</p>
+                                <h5>Atuação:</h5>
+                                <div class="procedure-card">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Identificar sintomatologia compatível com diferentes tipos de choque</div>
+                                            <div class="checklist-item">o Atuar sobre a causa do choque</div>
+                                            <div class="checklist-item">o Garantir a manutenção da temperatura corporal</div>
+                                            <div class="checklist-item">o Administrar oxigénio</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="checklist-item">o Se PAS <90mmHg elevar os membros inferiores</div>
+                                            <div class="checklist-item">o Recolha de informação</div>
+                                            <div class="checklist-item">o Perante uma vítima com sinais de choque, identificar vítima crítica e contactar ao CODU</div>
+                                            <div class="checklist-item">o Transporte da vítima mantendo a permeabilidade da VA</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="mt-3">
-                        <h5>Atuação:</h5>
-                        <ul>
-                            <li>o Identificar sintomatologia compatível com diferentes tipos de choque</li>
-                            <li>o Atuar sobre a causa do choque</li>
-                            <li>o Garantir a manutenção da temperatura corporal</li>
-                            <li>o Administrar oxigénio</li>
-                            <li>o Se PAS <90mmHg elevar os membros inferiores</li>
-                            <li>o Recolha de informação</li>
-                            <li>o Perante uma vítima com sinais de choque, identificar vítima crítica e contactar ao CODU</li>
-                            <li>o Transporte da vítima mantendo a permeabilidade da VA</li>
-                        </ul>
-                    </div>
-                </div>
+                </section>
             </div>
-        </section>
         </div>
     </main>
     
-    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-            class="astro-vvvwv3sm"></script>
+    </div>
+    <footer class="text-center mt-5 p-4 bg-dark text-white">
+            <h5>🌐 Mantenha-se atualizado</h5>
+            <a href="https://aprender.inem.pt" class="btn btn-light mt-2" target="_blank">https://aprender.inem.pt</a>
+            <p class="mt-3 mb-0">Departamento de Formação em Emergência Médica | Março 2024</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-        <script src="/script.js"></script> 
+    <script>
+        // Botão voltar ao topo
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnTopo = document.getElementById('btnTopo');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    btnTopo.style.display = 'block';
+                } else {
+                    btnTopo.style.display = 'none';
+                }
+            });
+            
+            btnTopo.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Ativar tabs corretamente
+        const triggerTabList = document.querySelectorAll('#emergencyTabs button')
+        triggerTabList.forEach(triggerEl => {
+            const tabTrigger = new bootstrap.Tab(triggerEl)
+
+            triggerEl.addEventListener('click', event => {
+                event.preventDefault()
+                tabTrigger.show()
+            })
+        });
+    </script>
 </body>
 
 </html>
