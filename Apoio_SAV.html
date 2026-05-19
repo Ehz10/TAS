@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manual TAS</title>
+    <link rel="icon" type="image/png" href="img/EstrelaDaVida.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+
+    <style>
+        body { 
+            background-color: #f8f9fa; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            color: #333;
+            line-height: 1.6;
+        }
+        .card { 
+            margin-bottom: 20px; 
+            border: none; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+            border-radius: 8px;
+        }
+        .card-header { 
+            font-weight: bold; 
+            border-radius: 8px 8px 0 0 !important;
+        }
+        h1, h2, h3 { 
+            color: #0d6efd; 
+        }
+        .module-title { 
+            color: #dc3545; 
+            font-weight: bold; 
+            border-bottom: 3px solid #dc3545; 
+            padding-bottom: 8px;
+            margin: 1.5rem 0 1rem 0;
+        }
+        .table-custom { 
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .section-title { 
+            color: #198754; 
+            border-left: 4px solid #198754; 
+            padding-left: 15px; 
+            margin-top: 30px;
+            font-weight: 600;
+        }
+        .emergency-icon { 
+            font-size: 1.5rem; 
+            margin-right: 10px;
+            display: inline-block;
+        }
+        .list-group-item { 
+            border: none;
+            border-bottom: 1px dashed #dee2e6;
+            padding: 0.75rem 0;
+            background: transparent;
+        }
+        .list-group-item:last-child {
+            border-bottom: none;
+        }
+        .highlight { 
+            background-color: #e7f1ff; 
+            padding: 15px; 
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .info-box {
+            background-color: #d1ecf1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #0dcaf0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .danger-box {
+            background-color: #f8d7da;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #dc3545;
+        }
+        .success-box {
+            background-color: #d1e7dd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #198754;
+        }
+        #btnTopo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            font-size: 24px;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #btnTopo:hover {
+            background-color: #0b5ed7;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .nav-tabs .nav-link { 
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+        }
+        .nav-tabs .nav-link.active { 
+            border-bottom: 3px solid #0d6efd;
+            background-color: transparent;
+            color: #0d6efd;
+        }
+        .procedure-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 5px solid #198754;
+        }
+        .equipment-card {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 5px solid #0d6efd;
+        }
+        .checklist-item { 
+            padding-left: 25px; 
+            position: relative; 
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        .checklist-item:before { 
+            content: "✓"; 
+            position: absolute; 
+            left: 0; 
+            color: #198754; 
+            font-weight: bold;
+        }
+        .header-card { 
+            background: linear-gradient(135deg, #0d6efd, #1e88e5); 
+            color: white; 
+            padding: 2rem; 
+            border-radius: 10px; 
+            margin-bottom: 2rem;
+        }
+        @media (max-width: 768px) {
+            .nav-tabs .nav-link {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+            .header-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Header -->
+        <div class="container"> 
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> 
+                <h2 href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> 
+                    <img src="img/EstrelaDaVida.png" alt="Logo" width="40" height="40" class="me-2"> 
+                    <span class="fs-4">Estudo TAS </span></h2> 
+            </header>
+        </div>  
+
+        <!-- Botão Voltar ao Topo -->
+        <button id="btnTopo" aria-label="Voltar ao topo">
+            <span>↑</span>
+        </button>
+
+        <!-- Breadcrumb -->
+        <div class="container">
+            <div class="container mt-5">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="main.html">Início</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Apoio ao SAV</li>
+                    </ol>
+                </nav>
+            </div>
+
+            <!-- Page Header -->
+             <div class="container my-5">
+                <h2 class="fw-bold text-body-emphasis border-bottom">
+                    <p class="badge bg-primary me-2">TAS</p>
+                    Apoio ao Suporte Avançado de Vida (SAV)
+                </h2>
+                <p class="text-muted mb-0">
+                    Trabalho em equipa com meios diferenciados • ISBAR • Assepsia • Equipamento
+                </p>
+            </div>
+
+            <!-- Navegação por Tópicos -->
+        <div class="container mb-4">
+            <ul class="nav nav-tabs" id="savTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="intro-tab" data-bs-toggle="tab" data-bs-target="#intro-content" type="button" role="tab">
+                        🤝 Trabalho em Equipa
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="equipment-tab" data-bs-toggle="tab" data-bs-target="#equipment-content" type="button" role="tab">
+                        🩺 Equipamento SAV
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="rcp-tab" data-bs-toggle="tab" data-bs-target="#rcp-content" type="button" role="tab">
+                        🫀 RCP
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="post-tab" data-bs-toggle="tab" data-bs-target="#post-content" type="button" role="tab">
+                        🏥 Pós-Reanimação
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="safety-tab" data-bs-toggle="tab" data-bs-target="#safety-content" type="button" role="tab">
+                        ✅ 9 Certezas
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Conteúdo das Abas -->
+        <div class="tab-content" id="savContent">
+            
+            <!-- ABA TRABALHO EM EQUIPA -->
+            <div class="tab-pane fade show active" id="intro-content" role="tabpanel">
+                
+                <!-- Objetivos -->
+                <section class="mb-5">
+                    <h3 class="module-title">📋 Objetivos</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="checklist-item"> Trabalhar em equipa com os meios diferenciados</div>
+                            <div class="checklist-item"> Usar metodologia ISBAR na transmissão de informação das vítimas</div>
+                            <div class="checklist-item"> Manter assepsia nos procedimentos e cuidados prestados às vítimas</div>
+                            <div class="checklist-item"> Reconhecer equipamento usados pelos meios diferenciados</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Trabalhar em equipa -->
+                <section class="mb-5">
+                    <h3 class="module-title">🤝 Trabalhar em equipa</h3>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="procedure-card">
+                                <h5 class="flow-title">Quando? Em que condições?</h5>
+                                <p class="text-muted">Até o meio diferenciado chegar ao local, qual a estratégia de cuidados a desenvolver com as vítimas? E qual o meio diferenciado para a ocorrência?</p>
+                            </div>
+                            
+                            <div class="info-box">
+                                <h5>Contexto pré-hospitalar</h5>
+                                <p>Há oportunidade para o TAS, em complementaridade, auxiliar sob indicação e supervisão, determinadas tarefas</p>
+                                <p>A gravidade da avaliação da vítima vai ditar os cuidados que são prestados e a ordem pela qual são executados</p>
+                                <p>A equipa de cuidados que se assume deve criar a sinergia necessária à recuperação ou manutenção da vida da vítima.</p>
+                            </div>
+                            
+                            <div class="danger-box">
+                                <h5>Vítima com sinais de gravidade e critérios de instabilidade.</h5>
+                                <p class="mb-0">Os momentos frequentes onde os elementos TAS se unem com os elementos diferenciados são:</p>
+                                <div class="row mt-2">
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Em PCR</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">o Em Cuidados pós-reanimação</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Assistência à vítima -->
+                <section class="mb-5">
+                    <h3 class="module-title">🫁 Apoio Ventilatório</h3>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item"> Assistir no melhor posicionamento para minimizar esforço do doente</div>
+                                    <div class="checklist-item"> Assegurar oxigénio disponível</div>
+                                    <div class="checklist-item"> Assegurar um circuito eficaz de condução de oxigénio até à vítima</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item"> Colaborar, sob solicitação na ventilação manual assistida</div>
+                                    <div class="checklist-item"> Colaborar na monitorização do padrão ventilatório do doente</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-5">
+                    <h3 class="module-title">📊 Apoio à Monitorização</h3>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item"> Colaborar com a equipa no posicionamento da vítima</div>
+                                    <div class="checklist-item"> Auxiliar na monitorização de parâmetros com equipamento do meio diferenciado:</div>
+                                    <div class="checklist-item" style="padding-left: 40px;"> SpO₂</div>
+                                    <div class="checklist-item" style="padding-left: 40px;"> Tensões arteriais</div>
+                                    <div class="checklist-item" style="padding-left: 40px;"> Monitorização básica eletrocardiográfica (4 elétrodos)</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item"> Preparar sistema de soro</div>
+                                    <div class="checklist-item"> Facilitar ambiente de trabalho na célula sanitária</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-5">
+                    <h3 class="module-title">🧠 Apoio Neurológico e Comportamental</h3>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item"> Vigiar de forma contínua o estado de consciência da vítima</div>
+                                    <div class="checklist-item"> Situações com AEC, convulsões e agressividade, colaborar na promoção de ambiente calmo e seguro, para a própria vítima e equipa</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item"> Situações com necessidade de imobilização, colaborar com a equipa na recolocação de material</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-5">
+                    <h3 class="module-title">🌡️ Controlo Térmico</h3>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item"> Promover, quando indicado, o aquecimento da vítima</div>
+                                    <div class="checklist-item"> Prevenir perda de temperatura da vítima e da célula sanitária</div>
+                                    <div class="checklist-item"> Facilitar, quando indicado e oportuno, a exposição da vítima com o devido controlo da temperatura</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item"> Manter preocupação para que nada do que foi iniciado se perca ou se exteriorize</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-5">
+                    <h3 class="module-title">📋 Recolha de Informação</h3>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="checklist-item"> Colaborar na obtenção de informação clínica pertinente da vítima:</div>
+                            <div class="checklist-item" style="padding-left: 40px;"> Exames complementares</div>
+                            <div class="checklist-item" style="padding-left: 40px;"> Medicação</div>
+                            <div class="checklist-item" style="padding-left: 40px;"> Documento de identificação</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-5">
+                    <h3 class="module-title">🚚 Transporte de Equipamento</h3>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item"> Colaborar no transporte de equipamento do meio diferenciado:</div>
+                                    <div class="checklist-item" style="padding-left: 40px;"> Monitor desfibrilhador</div>
+                                    <div class="checklist-item" style="padding-left: 40px;"> Malas médicas</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item" style="padding-left: 40px;"> Ventilador</div>
+                                    <div class="checklist-item" style="padding-left: 40px;"> Bombas infusoras para seringas</div>
+                                    <div class="checklist-item" style="padding-left: 40px;"> Compressor torácico mecânico</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ABA EQUIPAMENTO SAV -->
+            <div class="tab-pane fade" id="equipment-content" role="tabpanel">
+                
+                <section class="mb-5">
+                    <h3 class="module-title">🩺 Equipamento SAV</h3>
+                    
+                    <!-- Monitor Desfibrilhador -->
+                    <div class="equipment-card">
+                        <h4 class="text-primary"># Monitor desfibrilhador</h4>
+                        <div class="text-center my-3">
+                            <div class="emergency-icon">🖥️</div>
+                        </div>
+                    </div>
+
+                    <!-- Tensões arteriais -->
+                    <div class="equipment-card">
+                        <h4 class="text-primary"># Monitor desfibrilhador – Tensões arteriais</h4>
+                        <div class="text-center my-3">
+                            <div class="emergency-icon">💓</div>
+                        </div>
+                    </div>
+
+                    <!-- SpO2 -->
+                    <div class="equipment-card">
+                        <h4 class="text-primary"># Monitor desfibrilhador – SpO2</h4>
+                        <div class="text-center my-3">
+                            <div class="emergency-icon">🩸</div>
+                        </div>
+                    </div>
+
+                    <!-- ECG -->
+                    <div class="equipment-card">
+                        <h4 class="text-primary"># Monitor desfibrilhador – ECG 6 derivações</h4>
+                        <div class="text-center my-3">
+                            <div class="emergency-icon">📈</div>
+                        </div>
+                    </div>
+
+                    <!-- Ventiladores -->
+                    <div class="equipment-card">
+                        <h4 class="text-primary"># Ventiladores</h4>
+                        <div class="text-center my-3">
+                            <div class="emergency-icon">💨</div>
+                        </div>
+                    </div>
+
+                    <!-- Bombas infusoras -->
+                    <div class="equipment-card">
+                        <h4 class="text-primary"># Bombas infusoras para seringas</h4>
+                        <div class="text-center my-3">
+                            <div class="emergency-icon">💉</div>
+                        </div>
+                    </div>
+
+                    <!-- Compressor torácico -->
+                    <div class="equipment-card">
+                        <h4 class="text-primary"># Compressor torácico mecânico</h4>
+                        <div class="text-center my-3">
+                            <div class="emergency-icon">🫀</div>
+                        </div>
+                    </div>
+
+                    <!-- Preparação sistema de soro -->
+                    <div class="card mt-4">
+                        <div class="card-header bg-success text-white">## Preparação sistema de soro</div>
+                        <div class="card-body">
+                            <div class="procedure-card">
+                                <h5># Preparação sistema de soro</h5>
+                                <div class="text-center my-2">
+                                    <div class="emergency-icon">💧</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ABA RCP -->
+            <div class="tab-pane fade" id="rcp-content" role="tabpanel">
+                
+                <section class="mb-5">
+                    <h3 class="module-title">🫀 Equipa durante a RCP</h3>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="info-box">
+                                <p class="mb-0">As manobras SAV, são da exclusiva responsabilidade da equipa diferenciada. Com indicação e supervisão desta, alguns procedimentos poderão ser feitos pelos tripulantes.</p>
+                            </div>
+                            
+                            <div class="procedure-card">
+                                <h5># RCP – Apoio à VA e Ventilação</h5>
+                                <div class="text-center my-2">
+                                    <div class="emergency-icon">🫁</div>
+                                </div>
+                            </div>
+                            
+                            <div class="procedure-card">
+                                <h5># RCP – Monitorização dos dois minutos de SBV</h5>
+                                <div class="warning-box">
+                                    <h6>Para cronometrar:</h6>
+                                    <div class="checklist-item">o Um elemento monitoriza no relógio do monitor</div>
+                                    <div class="checklist-item">o No fim de 5 ciclos de 30:2, a 100-120 cpm, passaram dois minutos</div>
+                                    <div class="checklist-item">o Ou o elemento que está nas ventilações, com dispositivo supra-glótico, ou tubo endotraqueal, quando terminar as 20 ventilações a cada 5/6 segundos informa</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ABA PÓS-REANIMAÇÃO -->
+            <div class="tab-pane fade" id="post-content" role="tabpanel">
+                
+                <section class="mb-5">
+                    <h3 class="module-title">🏥 Equipa em cuidados pós-reanimação</h3>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="info-box">
+                                <p>Há que considerar todos os momentos em que a vítima sofre transferência. Isto porque, são iniciados cuidados, executados procedimentos, aplicadas monitorizações que têm que ser mantidas durante a transferência do doente:</p>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">● Do local inicial para a maca da ambulância</div>
+                                    <div class="checklist-item">● Para o interior da ambulância</div>
+                                    <div class="checklist-item">● Durante o transporte do doente</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">● Saída da ambulância no Hospital de destino</div>
+                                    <div class="checklist-item">● Transferência para a maca do Hospital</div>
+                                </div>
+                            </div>
+                            
+                            <div class="danger-box mt-4">
+                                <h5>Os erros mais comuns e complicações:</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="checklist-item"> Na avaliação inicial do doente</div>
+                                        <div class="checklist-item"> Durante a estabilização hemodinâmica</div>
+                                        <div class="checklist-item"> Na manutenção da permeabilidade da Via Aérea</div>
+                                        <div class="checklist-item"> Pneumotórax / Hemotórax</div>
+                                        <div class="checklist-item"> Nos acessos vasculares</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checklist-item"> Na monitorização</div>
+                                        <div class="checklist-item"> Nos equipamentos de perfusão</div>
+                                        <div class="checklist-item"> Nos fármacos</div>
+                                        <div class="checklist-item"> No suporte ventilatório</div>
+                                        <div class="checklist-item"> Na agitação do doente</div>
+                                        <div class="checklist-item"> Na avaliação e registos durante o transporte</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ABA 9 CERTEZAS -->
+            <div class="tab-pane fade" id="safety-content" role="tabpanel">
+                
+                <section class="mb-5">
+                    <h3 class="module-title">✅ 9 certezas - Segurança na Administração</h3>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="procedure-card">
+                                <h4 class="text-center text-primary">9 certezas</h4>
+                                
+                                <div class="row mt-4">
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">1. Confirmar a administração para a vítima certa</div>
+                                        <div class="checklist-item">2. Confirmar a medicação</div>
+                                        <div class="checklist-item">3. Confirmar a via</div>
+                                        <div class="checklist-item">4. Confirmar a dose</div>
+                                        <div class="checklist-item">5. Confirmar a hora</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checklist-item">6. Registar da hora de administração</div>
+                                        <div class="checklist-item">7. Ter conhecimento da ação esperada</div>
+                                        <div class="checklist-item">8. Conhecer a forma farmacêutica</div>
+                                        <div class="checklist-item">9. Manter monitorização/vigilância</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="success-box mt-4">
+                                <h5>Lembrete de Segurança:</h5>
+                                <p class="mb-0">A verificação sistemática destes 9 pontos previne erros de medicação e garante a segurança da vítima.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+
+    </main>
+    <footer class="text-center mt-5 p-4 bg-dark text-white rounded">
+        <h5>🌐 Mantenha-se atualizado</h5>
+        <a href="https://aprender.inem.pt" class="btn btn-light mt-2" target="_blank">https://aprender.inem.pt</a>
+        <p class="mt-3 mb-0">Departamento de Formação em Emergência Médica | Março 2024</p>
+    </footer>
+    
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            class="astro-vvvwv3sm"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+    <script>
+        // Botão voltar ao topo
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnTopo = document.getElementById('btnTopo');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    btnTopo.style.display = 'block';
+                } else {
+                    btnTopo.style.display = 'none';
+                }
+            });
+            
+            btnTopo.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Ativar tabs corretamente
+        const triggerTabList = document.querySelectorAll('#savTabs button')
+        triggerTabList.forEach(triggerEl => {
+            const tabTrigger = new bootstrap.Tab(triggerEl)
+
+            triggerEl.addEventListener('click', event => {
+                event.preventDefault()
+                tabTrigger.show()
+            })
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manual TAS - Competências Psicológicas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        body { 
+            background-color: #f8f9fa; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            color: #333;
+            line-height: 1.6;
+        }
+        .card { 
+            margin-bottom: 20px; 
+            border: none; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+            border-radius: 8px;
+        }
+        .card-header { 
+            font-weight: bold; 
+            border-radius: 8px 8px 0 0 !important;
+        }
+        h1, h2, h3 { 
+            color: #0d6efd; 
+        }
+        .module-title { 
+            color: #dc3545; 
+            font-weight: bold; 
+            border-bottom: 3px solid #dc3545; 
+            padding-bottom: 8px;
+            margin: 1.5rem 0 1rem 0;
+        }
+        .section-title { 
+            color: #198754; 
+            border-left: 4px solid #198754; 
+            padding-left: 15px; 
+            margin-top: 30px;
+            font-weight: 600;
+        }
+        .list-group-item { 
+            border: none;
+            border-bottom: 1px dashed #dee2e6;
+            padding: 0.75rem 0;
+            background: transparent;
+        }
+        .list-group-item:last-child {
+            border-bottom: none;
+        }
+        .info-box {
+            background-color: #d1ecf1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #0dcaf0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .danger-box {
+            background-color: #f8d7da;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #dc3545;
+        }
+        .success-box {
+            background-color: #d1e7dd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #198754;
+        }
+        .grief-box {
+            background: linear-gradient(135deg, #e7f1ff, #d4e4ff);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 5px solid #6c757d;
+        }
+        #btnTopo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            font-size: 24px;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #btnTopo:hover {
+            background-color: #0b5ed7;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .nav-tabs .nav-link { 
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+        }
+        .nav-tabs .nav-link.active { 
+            border-bottom: 3px solid #0d6efd;
+            background-color: transparent;
+            color: #0d6efd;
+        }
+        .procedure-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 5px solid #198754;
+        }
+        .checklist-item { 
+            padding-left: 25px; 
+            position: relative; 
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        .checklist-item:before { 
+            content: "✓"; 
+            position: absolute; 
+            left: 0; 
+            color: #198754; 
+            font-weight: bold;
+        }
+        .header-card { 
+            background: linear-gradient(135deg, #0d6efd, #1e88e5); 
+            color: white; 
+            padding: 2rem; 
+            border-radius: 10px; 
+            margin-bottom: 2rem;
+        }
+        .stress-symptoms {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        .badge-icon {
+            background-color: #e9ecef;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            display: inline-block;
+        }
+        @media (max-width: 768px) {
+            .nav-tabs .nav-link {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+            .header-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="container"> 
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> 
+            <h2 href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> 
+                <div style="width: 40px; height: 40px; background-color: #0d6efd; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px; font-weight: bold;">TAS</div>
+                <span class="fs-4">Estudo TAS</span>
+            </h2> 
+        </header>
+    </div>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="btnTopo" aria-label="Voltar ao topo">
+        <span>↑</span>
+    </button>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <div class="container mt-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="main.html">Início</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Competências Psicológicas</li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- Page Header -->
+        <div class="container my-4">
+            <div class="header-card">
+                <h2 class="fw-bold text-white">
+                    <span class="badge bg-light text-primary me-2 fs-5">TAS</span>
+                    Competências Psicológicas III
+                </h2>
+                <p class="lead mb-0">
+                    Notificação de morte • Processo de luto • Incidente Crítico • Primeiros Socorros Psicológicos • Stress no profissional
+                </p>
+            </div>
+        </div>
+
+        <!-- Navegação por Tópicos -->
+        <div class="container mb-4">
+            <ul class="nav nav-tabs" id="psychTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="grief-tab" data-bs-toggle="tab" data-bs-target="#grief-content" type="button" role="tab">
+                        🕊️ Luto e Notificação
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="critical-tab" data-bs-toggle="tab" data-bs-target="#critical-content" type="button" role="tab">
+                        ⚠️ Incidente Crítico
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="psychfirst-tab" data-bs-toggle="tab" data-bs-target="#psychfirst-content" type="button" role="tab">
+                        🫂 Primeiros Socorros Psicológicos
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="stress-tab" data-bs-toggle="tab" data-bs-target="#stress-content" type="button" role="tab">
+                        😰 Stress no TAS
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="coping-tab" data-bs-toggle="tab" data-bs-target="#coping-content" type="button" role="tab">
+                        💪 Estratégias de Confronto
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Conteúdo das Abas -->
+        <div class="tab-content" id="psychContent">
+            
+            <!-- ABA LUTO E NOTIFICAÇÃO -->
+            <div class="tab-pane fade show active" id="grief-content" role="tabpanel">
+                
+                <!-- Objetivos -->
+                <section class="mb-5">
+                    <h3 class="module-title">📋 Objetivos</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="checklist-item">Identificar as atitudes comunicacionais e postura profissional mais adequadas a adotar nas situações de notificação de morte e início do processo de luto</div>
+                            <div class="checklist-item">Definir um incidente crítico e a sintomatologia associada</div>
+                            <div class="checklist-item">Adquirir competências para a intervenção com vítimas de trauma psicológico</div>
+                            <div class="checklist-item">Identificar os principais fatores de stress para o tripulante de ambulância</div>
+                            <div class="checklist-item">Descrever estratégias de confronto adequadas para lidar com situações mais exigentes</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Início do Processo de Luto -->
+                <section class="mb-5">
+                    <h3 class="module-title">🕊️ Início do Processo de Luto</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="grief-box">
+                                <p>Face a qualquer perda significativa, de uma pessoa ou até de um objeto estimado, inicia-se um processo necessário e fundamental para que o vazio deixado, com o tempo, possa voltar a ser preenchido. Muitas vezes estas perdas são acompanhadas de reações que podem ser muito intensas e, por isso, justificar a intervenção psicológica de emergência.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contexto de Notificação -->
+                <section class="mb-5">
+                    <h3 class="module-title">📢 Contexto de Notificação de Morte</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="info-box">
+                                <p>A notificação de morte é um momento particularmente complexo e difícil, tanto para a família quanto para os técnicos envolvidos. Apesar de não serem os TAS a fazê-lo, é importante que saibam como reagir e atuar, se estiverem presentes nesse momento, a acompanhar as equipas médicas.</p>
+                            </div>
+                            
+                            <h5 class="mt-4">Etapas da Notificação (Protocolo P-I-C-C-E-C):</h5>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="checklist-item"><strong>I:</strong> Início - Privacidade, contacto visual, tempo necessário</div>
+                                    <div class="checklist-item"><strong>P:</strong> Perceções - O que a pessoa sabe, corrigir informação que esteja errada</div>
+                                    <div class="checklist-item"><strong>I:</strong> Informação - Dar a informação em si, notificar a morte</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item"><strong>C:</strong> Conhecimento - Confirmar a compreensão – “compreendeu o que acabei de dizer?”, evitar confronto excessivo</div>
+                                    <div class="checklist-item"><strong>E:</strong> Emoções - permitir e validar a resposta emocional; empatia</div>
+                                    <div class="checklist-item"><strong>C:</strong> Confronto - Estabilizar e formular estratégias juntamente com o familiar</div>
+                                </div>
+                            </div>
+                            <p class="text-muted mt-2">(Baile, Buckman et al, 2000; Fallowfield & Jenkins, 2004)</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Considerações Notificação -->
+                <section class="mb-5">
+                    <h3 class="module-title">📌 Considerações na Notificação</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Local apropriado - lugar calmo e com privacidade</div>
+                                    <div class="checklist-item">Cumprimentar, identificar-se pelo nome e função</div>
+                                    <div class="checklist-item">Posicionar-se adequadamente (ao mesmo nível da pessoa)</div>
+                                    <div class="checklist-item">Sentar-se e pedir às pessoas presentes para se sentarem também</div>
+                                    <div class="checklist-item">Devemos sempre notificar primeiro a pessoa mais chegada</div>
+                                    <div class="checklist-item">Estar preparado para uma situação particularmente emotiva</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Devemos tratar a vítima pelo nome</div>
+                                    <div class="checklist-item">Nunca notificar uma criança sozinha; será o familiar mais próximo a fazê-lo</div>
+                                    <div class="checklist-item">Sempre presente o contacto ocular e, eventualmente contacto físico</div>
+                                    <div class="checklist-item">A notificação é realizada de uma forma simples e direta</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Expressões a evitar/usar -->
+                <section class="mb-5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-danger text-white">❌ Não usar expressões como:</div>
+                                <div class="card-body">
+                                    <div class="checklist-item">“Já não se encontra entre nós.”</div>
+                                    <div class="checklist-item">“Partiu para…”</div>
+                                    <div class="checklist-item">“Não resistiu mais…”</div>
+                                    <div class="checklist-item">“Vocês perderam o …”</div>
+                                    <div class="checklist-item">“Está no descanso eterno…”</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-success text-white">✅ Usar expressões como:</div>
+                                <div class="card-body">
+                                    <div class="checklist-item">“Lamento ter de vos informar, mas tenho más notícias para vos dar.”</div>
+                                    <div class="checklist-item">(Pausa para preparar as pessoas)</div>
+                                    <div class="checklist-item">“O … (nome) esteve envolvido em (explicar situação) e morreu.”</div>
+                                    <div class="checklist-item">“Tenho muita pena, os meus pêsames.”</div>
+                                    <div class="info-box mt-2">É importante dar os pêsames pois exprime sentimentos em vez de factos, e convida as pessoas a exprimirem os seus sentimentos.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Notificação a Crianças -->
+                <section class="mb-5">
+                    <h3 class="module-title">👧 Notificação de Morte a Crianças</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Deve ser sempre efetuada por uma das figuras parentais ou, na impossibilidade, por um adulto em quem a criança confie plenamente</div>
+                                    <div class="checklist-item">As crianças podem demonstrar reações diferentes, dependendo da idade, maturidade, relacionamento com o falecido e experiência anterior de perda</div>
+                                    <div class="checklist-item">Notificar as crianças o mais cedo possível</div>
+                                    <div class="checklist-item">Sentar-se ao mesmo nível da criança e informar que tem algo triste para lhe dizer</div>
+                                    <div class="checklist-item">Usar uma linguagem que a criança possa entender e ser honesto</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Potenciar um ambiente seguro e de confiança à criança</div>
+                                    <div class="checklist-item">Permitir a colocação de todas as questões que surgirem</div>
+                                    <div class="checklist-item">Não ser muito detalhado sobre como aconteceu a morte, a explicação deve ser breve e clara e usar termos como “morto” ou “morreu”</div>
+                                    <div class="checklist-item">Estar atento aos sentimentos das crianças, já que os mais pequenos costumam ter a sensação de serem culpados pela morte</div>
+                                    <div class="checklist-item">Manutenção das rotinas e alterar o menos possível os hábitos das crianças</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Se a família pedir para ver o corpo -->
+                <section class="mb-5">
+                    <h3 class="module-title">👁️ Se a família pedir para ver o corpo</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="checklist-item">Acompanhar o familiar que o vai fazer ao local onde se encontra o corpo</div>
+                            <div class="checklist-item">Prepará-lo antes com uma descrição do local e do que vai encontrar e ver</div>
+                            <div class="checklist-item">Prepará-lo para a condição em que vai encontrar o corpo (exemplo: vai parecer pálido, frio, etc.)</div>
+                            <div class="checklist-item">Não deixar a pessoa sozinha com o corpo a não ser que lhe seja pedido</div>
+                            <div class="checklist-item">Se houver alguma coisa de positivo para dizer à família dos últimos momentos da vítima dizer antes de se despedir</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Cuidados com os profissionais -->
+                <section class="mb-5">
+                    <h3 class="module-title">💙 Cuidados a ter com os profissionais</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Não se esquecer de si próprio</div>
+                                    <div class="checklist-item">Não se esquecer da equipa envolvida</div>
+                                    <div class="checklist-item">Importante o reforço positivo pelo bom desempenho</div>
+                                    <div class="checklist-item">Aprender com os erros (e aceitá-los como o percurso na aprendizagem)</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Falar com os colegas envolvidos sobre o que sentiram e que reações tiveram</div>
+                                    <div class="checklist-item">Exprimir os seus sentimentos e não ficar com a dor emocional que a situação causou</div>
+                                    <div class="checklist-item">Não deixar que as próprias reações ao evento se tornem um problema... Exprima-as!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ABA INCIDENTE CRÍTICO -->
+            <div class="tab-pane fade" id="critical-content" role="tabpanel">
+                
+                <section class="mb-5">
+                    <h3 class="module-title">⚠️ Incidente Crítico</h3>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="danger-box">
+                                <h5 class="text-center">“Afeta os mecanismos normais de adaptação, resultando num desequilíbrio psicológico e diminuição do funcionamento adaptativo.”</h5>
+                                <p class="text-center mb-0 mt-2">(Everly & Mitchell, 1999)</p>
+                            </div>
+                            
+                            <div class="warning-box mt-4">
+                                <h5>⚡ Reação Aguda de Stress (RAS)</h5>
+                                <p>O organismo ativa ao máximo os recursos físicos para atuar numa situação de emergência.</p>
+                                <p>Enquanto perceção de ameaça se mantiver a sintomatologia pode persistir.</p>
+                                <p>A ansiedade pode disparar por indícios que recordem a situação (odores, ruídos, locais, horas do dia…).</p>
+                            </div>
+                            
+                            <div class="info-box mt-4">
+                                <p>Tal como acontece com as vítimas, também os profissionais podem vir a desenvolver Reações de Stress – RAS que, apesar de normais, poderão evoluir para patologia psicológica / psiquiátrica.</p>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <div class="procedure-card">
+                                    <h5>Incidente Crítico</h5>
+                                    <div class="d-flex justify-content-center gap-3 flex-wrap mt-3">
+                                        <span class="badge bg-warning text-dark p-3">Reações iniciais (RAS)</span>
+                                        <span class="badge bg-danger p-3">→</span>
+                                        <span class="badge bg-danger p-3">Perturbação Pós-Stress Traumático (PPST)</span>
+                                        <span class="badge bg-secondary p-3">ou outras perturbações de stress ou do foro emocional…</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ABA PRIMEIROS SOCORROS PSICOLÓGICOS -->
+            <div class="tab-pane fade" id="psychfirst-content" role="tabpanel">
+                
+                <section class="mb-5">
+                    <h3 class="module-title">🫂 Primeiros Socorros Psicológicos</h3>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="text-primary">Objetivos:</h5>
+                            <div class="checklist-item">Oferecer proteção, segurança e confiança às vítimas e familiares</div>
+                            <div class="checklist-item">Redução do stress das vítimas</div>
+                            <div class="checklist-item">Minimizar o impacto do incidente crítico</div>
+                            <div class="checklist-item">Mobilizar os recursos sociais</div>
+                            
+                            <h5 class="text-primary mt-4">Princípios (Young, Ford, Ruzek, Friedman & Gusman, 1998):</h5>
+                            <div class="row mt-3">
+                                <div class="col-md-4 text-center mb-3">
+                                    <div class="procedure-card">
+                                        <h5>🛡️ Proteger</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center mb-3">
+                                    <div class="procedure-card">
+                                        <h5>🧭 Dirigir</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center mb-3">
+                                    <div class="procedure-card">
+                                        <h5>🔗 Conectar</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center mb-3">
+                                    <div class="procedure-card">
+                                        <h5>📊 Triagem</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center mb-3">
+                                    <div class="procedure-card">
+                                        <h5>🩺 Cuidar de Agudizados</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ABA STRESS NO TAS -->
+            <div class="tab-pane fade" id="stress-content" role="tabpanel">
+                
+                <section class="mb-5">
+                    <h3 class="module-title">😰 Stress no Tripulante de Ambulância</h3>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="info-box">
+                                <h5>Definição de Stress:</h5>
+                                <p>Stress é uma condição que resulta da incapacidade que a pessoa sente, real ou não, de responder às exigências de uma determinada situação (social, psicológica ou biológica). Surge quando os recursos adaptativos da pessoa não são suficientes para as exigências da situação, ou pelo menos são percecionados como insuficientes.</p>
+                            </div>
+                            
+                            <h5 class="mt-4">Alterações Físicas:</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Contração muscular</div>
+                                    <div class="checklist-item">Cefaleias</div>
+                                    <div class="checklist-item">Cansaço e sonolência</div>
+                                    <div class="checklist-item">Hipertensão e palpitações</div>
+                                    <div class="checklist-item">Dificuldades visuais</div>
+                                    <div class="checklist-item">Queixas somáticas</div>
+                                    <div class="checklist-item">Luta ou fuga</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Movimentos erráticos</div>
+                                    <div class="checklist-item">Dificuldade em cumprir responsabilidades</div>
+                                    <div class="checklist-item">Adiar as tarefas</div>
+                                    <div class="checklist-item">Pensamentos ansiosos</div>
+                                    <div class="checklist-item">Preocupação constante</div>
+                                    <div class="checklist-item">Dificuldades de memória e indecisão</div>
+                                    <div class="checklist-item">Isolamento</div>
+                                </div>
+                            </div>
+                            
+                            <h5 class="mt-4">Alterações Cognitivas:</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Dificuldade de concentração</div>
+                                    <div class="checklist-item">Dificuldade de tomada de decisão</div>
+                                    <div class="checklist-item">Baixa auto-eficácia</div>
+                                    <div class="checklist-item">Descrença</div>
+                                    <div class="checklist-item">Negação</div>
+                                    <div class="checklist-item">Alteração da memória</div>
+                                    <div class="checklist-item">Confusão</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Distorção</div>
+                                    <div class="checklist-item">Pensamentos intrusivos</div>
+                                    <div class="checklist-item">Preocupação</div>
+                                </div>
+                            </div>
+                            
+                            <h5 class="mt-4">Alterações Emocionais:</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Manifestações de choro</div>
+                                    <div class="checklist-item">Medo e incerteza</div>
+                                    <div class="checklist-item">Irritabilidade e culpa</div>
+                                    <div class="checklist-item">Raiva intensa</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Nervosismo e ansiedade</div>
+                                    <div class="checklist-item">Tristeza e depressão</div>
+                                    <div class="checklist-item">Perda de controlo emocional</div>
+                                </div>
+                            </div>
+                            
+                            <div class="warning-box mt-4">
+                                <p>A estratégia que cada profissional adota para gerir as situações de maior stress pode determinar o modo como são ultrapassadas. É fundamental, em primeiro lugar, aceitar que são reações normais e que qualquer profissional pode vir a experimentá-las em situações exigentes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Fatores de stress -->
+                <section class="mb-5">
+                    <h3 class="module-title">📌 Fatores de stress para os profissionais</h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-warning text-dark">Fatores Externos</div>
+                                <div class="card-body">
+                                    <div class="checklist-item">Pressão exterior para terminar rapidamente a intervenção</div>
+                                    <div class="checklist-item">Desacordo com decisões tomadas (ex. triagem, atuação, encaminhamento)</div>
+                                    <div class="checklist-item">Coordenação com outros elementos da equipa, bem como com outras equipas intervenientes</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-info text-white">Fatores Internos</div>
+                                <div class="card-body">
+                                    <div class="checklist-item">Abordagem inicial à vítima</div>
+                                    <div class="checklist-item">Insegurança / “Medo” de não conseguir intervir</div>
+                                    <div class="checklist-item">Experiências de vida similares/identificação com sofrimento das vítimas e familiares</div>
+                                    <div class="checklist-item">Tipo de vítima (população infantil, queimados, colegas de trabalho)</div>
+                                    <div class="checklist-item">Sentimentos de hostilidade e raiva por parte dos familiares</div>
+                                    <div class="checklist-item">Dificuldades de comunicação (diferenças linguísticas/culturais)</div>
+                                    <div class="checklist-item">Sentimento de não ter feito o suficiente – impotência</div>
+                                    <div class="checklist-item">Exposição a estímulos potencialmente traumáticos</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Consequências -->
+                <section class="mb-5">
+                    <h3 class="module-title">⚠️ Consequências do Stress profissional</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="danger-box">
+                                        <div class="checklist-item">Perturbação Aguda de Stress</div>
+                                        <div class="checklist-item">Perturbação Pós-Stress Traumático</div>
+                                        <div class="checklist-item">Alteração significativa do comportamento</div>
+                                        <div class="checklist-item">Abuso de substâncias</div>
+                                        <div class="checklist-item">Depressão</div>
+                                        <div class="checklist-item">Burnout</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="info-box">
+                                        <h6>Fatores de risco para desenvolver patologia:</h6>
+                                        <div class="checklist-item">História psiquiátrica prévia</div>
+                                        <div class="checklist-item">Características de personalidade</div>
+                                        <div class="checklist-item">Fraco suporte social</div>
+                                        <div class="checklist-item">Experiência prévia de acontecimentos traumáticos</div>
+                                        <div class="checklist-item">Severidade do acontecimento e exposição a estímulos potencialmente traumáticos</div>
+                                        <div class="checklist-item">Estratégias de coping desadaptativas e desadequadas</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sinais de alerta -->
+                <section class="mb-5">
+                    <h3 class="module-title">🚨 Sinais de alerta</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Não consegue deixar de pensar no que sucedeu</div>
+                                    <div class="checklist-item">Sente-se muito tenso ou com medo a maior parte do tempo</div>
+                                    <div class="checklist-item">Não consegue ter prazer com nada</div>
+                                    <div class="checklist-item">Não consegue ir trabalhar ou assumir as suas responsabilidades habituais</div>
+                                    <div class="checklist-item">Comporta-se como se o acontecimento estivesse a acontecer outra vez</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Irrita-se ou é agressivo com as pessoas que o rodeiam</div>
+                                    <div class="checklist-item">Consome álcool, ou outras drogas, em excesso</div>
+                                    <div class="checklist-item">Faz automedicação</div>
+                                    <div class="checklist-item">Comporta-se de forma muito distinta do habitual antes do acontecimento</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ABA ESTRATÉGIAS DE CONFRONTO -->
+            <div class="tab-pane fade" id="coping-content" role="tabpanel">
+                
+                <section class="mb-5">
+                    <h3 class="module-title">💪 Estratégias de Confronto</h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-danger text-white">❌ Coping Negativo</div>
+                                <div class="card-body">
+                                    <div class="checklist-item">Tentar abstrair-se do incidente</div>
+                                    <div class="checklist-item">Negar sentimentos dolorosos relacionados com o incidente</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-success text-white">✅ Coping Positivo</div>
+                                <div class="card-body">
+                                    <div class="checklist-item">Analisar as ações realizadas durante o incidente e aprender com os erros realizados</div>
+                                    <div class="checklist-item">Aceitar sentimentos relacionados com o incidente</div>
+                                    <div class="info-box mt-2">Ao fim de algum tempo, integramos a experiência na nossa história de vida. Os pensamentos e sentimentos são identificados e expressos, e o equilíbrio da nossa vida é recuperado.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- O que fazer -->
+                <section class="mb-5">
+                    <h3 class="module-title">📋 O que fazer?</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Falar com pessoas significativas / apoio de pares (ou escrever) sobre o sucedido</div>
+                                    <div class="checklist-item">Voltar à sua rotina diária. Tentar organizar as suas atividades para os próximos dias</div>
+                                    <div class="checklist-item">Passar tempo com as pessoas que são importantes para si</div>
+                                    <div class="checklist-item">Reservar tempo para si</div>
+                                    <div class="checklist-item">Logo que possível, enfrentar os locais e situações que lhe recordam o acontecimento</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Tentar descansar e dormir o suficiente/fazer pausas quando necessário</div>
+                                    <div class="checklist-item">Envolver-se em atividades que habitualmente lhe dão prazer</div>
+                                    <div class="checklist-item">Aceitar as suas fragilidades e dificuldades</div>
+                                    <div class="checklist-item">Evitar a automedicação, consumo de álcool, cafeína e tabaco em excesso</div>
+                                    <div class="checklist-item">Fazer uma alimentação saudável bem como exercício físico ou sessões de relaxamento</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quem pode ajudar -->
+                <section class="mb-5">
+                    <h3 class="module-title">🫂 Quem pode ajudar?</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="success-box">
+                                <p>Procurar apoio e ventilar as situações complexas com os psicólogos do CAPIC, INEM, não é uma demonstração de fragilidade, pelo contrário, é uma escolha adequada.</p>
+                                <p>Cada vez mais os serviços de apoio psicológico em emergência estão previstos como rotina, e não como uma necessidade para quando surgem problemas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Em suma -->
+                <section class="mb-5">
+                    <h3 class="module-title">📌 Em suma</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="info-box">
+                                <p>• O incidente crítico é um acontecimento negativo e contraditório com o funcionamento habitual da pessoa, que afeta os seus mecanismos de confronto e adaptação normais, levando à perda do equilíbrio psicológico e alteração do funcionamento habitual.</p>
+                                <p class="mt-2">• No exercício da sua função, os profissionais deparam-se com situações exigentes, que implicam a mobilização de estratégias para lidar com as mesmas. Sempre que necessário, o profissional deve procurar ajuda especializada!</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center mt-5 p-4 bg-dark text-white rounded">
+            <h5>🌐 Mantenha-se atualizado</h5>
+            <a href="https://aprender.inem.pt" class="btn btn-light mt-2" target="_blank">https://aprender.inem.pt</a>
+            <p class="mt-3 mb-0">Departamento de Formação em Emergência Médica | Março 2024</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script>
+        // Botão voltar ao topo
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnTopo = document.getElementById('btnTopo');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    btnTopo.style.display = 'block';
+                } else {
+                    btnTopo.style.display = 'none';
+                }
+            });
+            
+            btnTopo.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Ativar tabs corretamente
+        const triggerTabList = document.querySelectorAll('#psychTabs button')
+        triggerTabList.forEach(triggerEl => {
+            const tabTrigger = new bootstrap.Tab(triggerEl)
+
+            triggerEl.addEventListener('click', event => {
+                event.preventDefault()
+                tabTrigger.show()
+            })
+        });
+    </script>
+</body>
+</html>

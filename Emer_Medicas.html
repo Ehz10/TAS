@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Manual TAS</title>
+    <link rel="icon" type="image/png" href="img/EstrelaDaVida.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
@@ -18,7 +19,25 @@
         .table-custom { background-color: white; }
         .section-title { color: #198754; border-left: 4px solid #198754; padding-left: 15px; margin-top: 30px; }
         .emergency-icon { font-size: 1.5rem; margin-right: 10px; }
-    </style>
+    
+    /* Estilo para o estado ativo no mobile */
+    @media (max-width: 767.98px) {
+        .btn.active {
+            background-color: #0d6efd !important;
+            color: white !important;
+            border-color: #0d6efd !important;
+        }
+        
+        .btn {
+            border-radius: 12px !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .btn:active {
+            transform: scale(0.98);
+        }
+    }
+</style>
 </head>
 <body>
     <div class="container">
@@ -51,36 +70,71 @@
             </p>
         </div>
 
-        <!-- Navegação por Tipos de Emergências -->
-        <div class="container mb-4">
-            <ul class="nav nav-tabs" id="emergencyTabs" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="allergy-tab" data-bs-toggle="tab" data-bs-target="#allergy-content" type="button" role="tab">
-                        🤧 Alergias
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="respiratory-tab" data-bs-toggle="tab" data-bs-target="#respiratory-content" type="button" role="tab">
-                        🫁 Respiratórias
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="cardiac-tab" data-bs-toggle="tab" data-bs-target="#cardiac-content" type="button" role="tab">
-                        ❤️ Cardíacas
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="neuro-tab" data-bs-toggle="tab" data-bs-target="#neuro-content" type="button" role="tab">
-                        🧠 Neurológicas
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="other-tab" data-bs-toggle="tab" data-bs-target="#other-content" type="button" role="tab">
-                        ⚕️ Outras
-                    </button>
-                </li>
-            </ul>
+        <!-- Navegação por Tipos de Emergências - Versão Mobile Responsiva -->
+<div class="container mb-4">
+    <!-- Versão Desktop (tabs normais) -->
+    <ul class="nav nav-tabs d-none d-md-flex" id="emergencyTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="allergy-tab" data-bs-toggle="tab" data-bs-target="#allergy-content" type="button" role="tab">
+                🤧 Alergias
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="respiratory-tab" data-bs-toggle="tab" data-bs-target="#respiratory-content" type="button" role="tab">
+                🫁 Respiratórias
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="cardiac-tab" data-bs-toggle="tab" data-bs-target="#cardiac-content" type="button" role="tab">
+                ❤️ Cardíacas
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="neuro-tab" data-bs-toggle="tab" data-bs-target="#neuro-content" type="button" role="tab">
+                🧠 Neurológicas
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="other-tab" data-bs-toggle="tab" data-bs-target="#other-content" type="button" role="tab">
+                ⚕️ Outras
+            </button>
+        </li>
+    </ul>
+
+    <!-- Versão Mobile (cards em grid) -->
+    <div class="row row-cols-2 g-2 d-md-none" id="mobileEmergencyTabs" role="tablist">
+        <div class="col">
+            <button class="btn w-100 py-3 border text-center active" id="mobile-allergy-tab" data-bs-toggle="tab" data-bs-target="#allergy-content" type="button" role="tab" style="background-color: #f8f9fa; border-color: #dee2e6; transition: all 0.2s;">
+                <div style="font-size: 1.8rem;">🤧</div>
+                <div style="font-size: 0.9rem; font-weight: 500;">Alergias</div>
+            </button>
         </div>
+        <div class="col">
+            <button class="btn w-100 py-3 border text-center" id="mobile-respiratory-tab" data-bs-toggle="tab" data-bs-target="#respiratory-content" type="button" role="tab" style="background-color: #f8f9fa; border-color: #dee2e6;">
+                <div style="font-size: 1.8rem;">🫁</div>
+                <div style="font-size: 0.9rem; font-weight: 500;">Respiratórias</div>
+            </button>
+        </div>
+        <div class="col">
+            <button class="btn w-100 py-3 border text-center" id="mobile-cardiac-tab" data-bs-toggle="tab" data-bs-target="#cardiac-content" type="button" role="tab" style="background-color: #f8f9fa; border-color: #dee2e6;">
+                <div style="font-size: 1.8rem;">❤️</div>
+                <div style="font-size: 0.9rem; font-weight: 500;">Cardíacas</div>
+            </button>
+        </div>
+        <div class="col">
+            <button class="btn w-100 py-3 border text-center" id="mobile-neuro-tab" data-bs-toggle="tab" data-bs-target="#neuro-content" type="button" role="tab" style="background-color: #f8f9fa; border-color: #dee2e6;">
+                <div style="font-size: 1.8rem;">🧠</div>
+                <div style="font-size: 0.9rem; font-weight: 500;">Neurológicas</div>
+            </button>
+        </div>
+        <div class="col">
+            <button class="btn w-100 py-3 border text-center" id="mobile-other-tab" data-bs-toggle="tab" data-bs-target="#other-content" type="button" role="tab" style="background-color: #f8f9fa; border-color: #dee2e6;">
+                <div style="font-size: 1.8rem;">⚕️</div>
+                <div style="font-size: 0.9rem; font-weight: 500;">Outras</div>
+            </button>
+        </div>
+    </div>
+</div>
 
         <!-- Conteúdo das Abas -->
         <div class="tab-content" id="emergencyContent">
@@ -1301,6 +1355,40 @@
                 tabTrigger.show()
             })
         });
+
+        document.addEventListener('DOMContentLoaded', function() {
+        const mobileButtons = document.querySelectorAll('[id^="mobile-"]');
+        const desktopButtons = document.querySelectorAll('#emergencyTabs .nav-link');
+        
+        mobileButtons.forEach(mobileBtn => {
+            mobileBtn.addEventListener('click', function() {
+                // Remover active de todos os botões mobile
+                mobileButtons.forEach(btn => btn.classList.remove('active'));
+                // Adicionar active ao clicado
+                this.classList.add('active');
+                
+                // Sincronizar com desktop
+                const targetId = this.getAttribute('data-bs-target');
+                const desktopTab = document.querySelector(`#emergencyTabs .nav-link[data-bs-target="${targetId}"]`);
+                if (desktopTab) {
+                    const tab = new bootstrap.Tab(desktopTab);
+                    tab.show();
+                }
+            });
+        });
+        
+        // Sincronizar desktop -> mobile
+        desktopButtons.forEach(desktopBtn => {
+            desktopBtn.addEventListener('shown.bs.tab', function(event) {
+                const targetId = event.target.getAttribute('data-bs-target');
+                const mobileBtn = document.querySelector(`[id^="mobile-"][data-bs-target="${targetId}"]`);
+                if (mobileBtn) {
+                    mobileButtons.forEach(btn => btn.classList.remove('active'));
+                    mobileBtn.classList.add('active');
+                }
+            });
+        });
+    });
     </script>
 </body>
 
