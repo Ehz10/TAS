@@ -37,23 +37,12 @@
             padding-bottom: 8px;
             margin: 1.5rem 0 1rem 0;
         }
-        .table-custom { 
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
         .section-title { 
             color: #198754; 
             border-left: 4px solid #198754; 
             padding-left: 15px; 
             margin-top: 30px;
             font-weight: 600;
-        }
-        .emergency-icon { 
-            font-size: 1.5rem; 
-            margin-right: 10px;
-            display: inline-block;
         }
         .list-group-item { 
             border: none;
@@ -63,12 +52,6 @@
         }
         .list-group-item:last-child {
             border-bottom: none;
-        }
-        .highlight { 
-            background-color: #e7f1ff; 
-            padding: 15px; 
-            border-radius: 8px;
-            margin: 15px 0;
         }
         .info-box {
             background-color: #d1ecf1;
@@ -97,6 +80,13 @@
             border-radius: 8px;
             margin: 15px 0;
             border-left: 4px solid #198754;
+        }
+        .grief-box {
+            background: linear-gradient(135deg, #e7f1ff, #d4e4ff);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 5px solid #6c757d;
         }
         #btnTopo {
             position: fixed;
@@ -136,13 +126,6 @@
             margin: 15px 0;
             border-left: 5px solid #198754;
         }
-        .equipment-card {
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-            padding: 20px;
-            border-radius: 8px;
-            margin: 15px 0;
-            border-left: 5px solid #0d6efd;
-        }
         .checklist-item { 
             padding-left: 25px; 
             position: relative; 
@@ -162,6 +145,19 @@
             padding: 2rem; 
             border-radius: 10px; 
             margin-bottom: 2rem;
+        }
+        .stress-symptoms {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        .badge-icon {
+            background-color: #e9ecef;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            display: inline-block;
         }
         @media (max-width: 768px) {
             .nav-tabs .nav-link {
@@ -201,202 +197,250 @@
                 Competências Psicológicas
             </h2>
             <p class="text-muted mb-0">
-                Avaliação inicial, segurança e primeiros cuidados à vítima.
+                Notificação de morte • Processo de luto • Incidente Crítico • Primeiros Socorros Psicológicos • Stress no profissional
             </p>
         </div>
 
-        <!-- Navegação por Tópicos -->
+       <!-- Navegação por Tópicos -->
         <div class="container mb-4">
-            <ul class="nav nav-tabs" id="savTabs" role="tablist">
+            <ul class="nav nav-tabs" id="psychTabs" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="intro-tab" data-bs-toggle="tab" data-bs-target="#intro-content" type="button" role="tab">
-                        🤝 Trabalho em Equipa
+                    <button class="nav-link active" id="grief-tab" data-bs-toggle="tab" data-bs-target="#grief-content" type="button" role="tab">
+                        🕊️ Luto e Notificação
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="equipment-tab" data-bs-toggle="tab" data-bs-target="#equipment-content" type="button" role="tab">
-                        🩺 Equipamento SAV
+                    <button class="nav-link" id="critical-tab" data-bs-toggle="tab" data-bs-target="#critical-content" type="button" role="tab">
+                        ⚠️ Incidente Crítico
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="rcp-tab" data-bs-toggle="tab" data-bs-target="#rcp-content" type="button" role="tab">
-                        🫀 RCP
+                    <button class="nav-link" id="psychfirst-tab" data-bs-toggle="tab" data-bs-target="#psychfirst-content" type="button" role="tab">
+                        🫂 Primeiros Socorros Psicológicos
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="post-tab" data-bs-toggle="tab" data-bs-target="#post-content" type="button" role="tab">
-                        🏥 Pós-Reanimação
+                    <button class="nav-link" id="stress-tab" data-bs-toggle="tab" data-bs-target="#stress-content" type="button" role="tab">
+                        😰 Stress no TAS
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="safety-tab" data-bs-toggle="tab" data-bs-target="#safety-content" type="button" role="tab">
-                        ✅ 9 Certezas
+                    <button class="nav-link" id="coping-tab" data-bs-toggle="tab" data-bs-target="#coping-content" type="button" role="tab">
+                        💪 Estratégias de Confronto
                     </button>
                 </li>
             </ul>
         </div>
 
         <!-- Conteúdo das Abas -->
-        <div class="tab-content" id="savContent">
+        <div class="tab-content" id="psychContent">
             
-            <!-- ABA TRABALHO EM EQUIPA -->
-            <div class="tab-pane fade show active" id="intro-content" role="tabpanel">
+            <!-- ABA LUTO E NOTIFICAÇÃO -->
+            <div class="tab-pane fade show active" id="grief-content" role="tabpanel">
                 
                 <!-- Objetivos -->
                 <section class="mb-5">
                     <h3 class="module-title">📋 Objetivos</h3>
                     <div class="card">
                         <div class="card-body">
-                            <div class="checklist-item"> Trabalhar em equipa com os meios diferenciados</div>
-                            <div class="checklist-item"> Usar metodologia ISBAR na transmissão de informação das vítimas</div>
-                            <div class="checklist-item"> Manter assepsia nos procedimentos e cuidados prestados às vítimas</div>
-                            <div class="checklist-item"> Reconhecer equipamento usados pelos meios diferenciados</div>
+                            <div class="checklist-item">Identificar as atitudes comunicacionais e postura profissional mais adequadas a adotar nas situações de notificação de morte e início do processo de luto</div>
+                            <div class="checklist-item">Definir um incidente crítico e a sintomatologia associada</div>
+                            <div class="checklist-item">Adquirir competências para a intervenção com vítimas de trauma psicológico</div>
+                            <div class="checklist-item">Identificar os principais fatores de stress para o tripulante de ambulância</div>
+                            <div class="checklist-item">Descrever estratégias de confronto adequadas para lidar com situações mais exigentes</div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Trabalhar em equipa -->
+                <!-- Início do Processo de Luto -->
                 <section class="mb-5">
-                    <h3 class="module-title">🤝 Trabalhar em equipa</h3>
+                    <h3 class="module-title">🕊️ Início do Processo de Luto</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="grief-box">
+                                <p>Face a qualquer perda significativa, de uma pessoa ou até de um objeto estimado, inicia-se um processo necessário e fundamental para que o vazio deixado, com o tempo, possa voltar a ser preenchido. Muitas vezes estas perdas são acompanhadas de reações que podem ser muito intensas e, por isso, justificar a intervenção psicológica de emergência.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contexto de Notificação -->
+                <section class="mb-5">
+                    <h3 class="module-title">📢 Contexto de Notificação de Morte</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="info-box">
+                                <p>A notificação de morte é um momento particularmente complexo e difícil, tanto para a família quanto para os técnicos envolvidos. Apesar de não serem os TAS a fazê-lo, é importante que saibam como reagir e atuar, se estiverem presentes nesse momento, a acompanhar as equipas médicas.</p>
+                            </div>
+                            
+                            <h5 class="mt-4">Etapas da Notificação (Protocolo P-I-C-C-E-C):</h5>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="checklist-item"><strong>I:</strong> Início - Privacidade, contacto visual, tempo necessário</div>
+                                    <div class="checklist-item"><strong>P:</strong> Perceções - O que a pessoa sabe, corrigir informação que esteja errada</div>
+                                    <div class="checklist-item"><strong>I:</strong> Informação - Dar a informação em si, notificar a morte</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item"><strong>C:</strong> Conhecimento - Confirmar a compreensão – “compreendeu o que acabei de dizer?”, evitar confronto excessivo</div>
+                                    <div class="checklist-item"><strong>E:</strong> Emoções - permitir e validar a resposta emocional; empatia</div>
+                                    <div class="checklist-item"><strong>C:</strong> Confronto - Estabilizar e formular estratégias juntamente com o familiar</div>
+                                </div>
+                            </div>
+                            <p class="text-muted mt-2">(Baile, Buckman et al, 2000; Fallowfield & Jenkins, 2004)</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Considerações Notificação -->
+                <section class="mb-5">
+                    <h3 class="module-title">📌 Considerações na Notificação</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Local apropriado - lugar calmo e com privacidade</div>
+                                    <div class="checklist-item">Cumprimentar, identificar-se pelo nome e função</div>
+                                    <div class="checklist-item">Posicionar-se adequadamente (ao mesmo nível da pessoa)</div>
+                                    <div class="checklist-item">Sentar-se e pedir às pessoas presentes para se sentarem também</div>
+                                    <div class="checklist-item">Devemos sempre notificar primeiro a pessoa mais chegada</div>
+                                    <div class="checklist-item">Estar preparado para uma situação particularmente emotiva</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Devemos tratar a vítima pelo nome</div>
+                                    <div class="checklist-item">Nunca notificar uma criança sozinha; será o familiar mais próximo a fazê-lo</div>
+                                    <div class="checklist-item">Sempre presente o contacto ocular e, eventualmente contacto físico</div>
+                                    <div class="checklist-item">A notificação é realizada de uma forma simples e direta</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Expressões a evitar/usar -->
+                <section class="mb-5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-danger text-white">❌ Não usar expressões como:</div>
+                                <div class="card-body">
+                                    <div class="checklist-item">“Já não se encontra entre nós.”</div>
+                                    <div class="checklist-item">“Partiu para…”</div>
+                                    <div class="checklist-item">“Não resistiu mais…”</div>
+                                    <div class="checklist-item">“Vocês perderam o …”</div>
+                                    <div class="checklist-item">“Está no descanso eterno…”</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-success text-white">✅ Usar expressões como:</div>
+                                <div class="card-body">
+                                    <div class="checklist-item">“Lamento ter de vos informar, mas tenho más notícias para vos dar.”</div>
+                                    <div class="checklist-item">(Pausa para preparar as pessoas)</div>
+                                    <div class="checklist-item">“O … (nome) esteve envolvido em (explicar situação) e morreu.”</div>
+                                    <div class="checklist-item">“Tenho muita pena, os meus pêsames.”</div>
+                                    <div class="info-box mt-2">É importante dar os pêsames pois exprime sentimentos em vez de factos, e convida as pessoas a exprimirem os seus sentimentos.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Notificação a Crianças -->
+                <section class="mb-5">
+                    <h3 class="module-title">👧 Notificação de Morte a Crianças</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Deve ser sempre efetuada por uma das figuras parentais ou, na impossibilidade, por um adulto em quem a criança confie plenamente</div>
+                                    <div class="checklist-item">As crianças podem demonstrar reações diferentes, dependendo da idade, maturidade, relacionamento com o falecido e experiência anterior de perda</div>
+                                    <div class="checklist-item">Notificar as crianças o mais cedo possível</div>
+                                    <div class="checklist-item">Sentar-se ao mesmo nível da criança e informar que tem algo triste para lhe dizer</div>
+                                    <div class="checklist-item">Usar uma linguagem que a criança possa entender e ser honesto</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Potenciar um ambiente seguro e de confiança à criança</div>
+                                    <div class="checklist-item">Permitir a colocação de todas as questões que surgirem</div>
+                                    <div class="checklist-item">Não ser muito detalhado sobre como aconteceu a morte, a explicação deve ser breve e clara e usar termos como “morto” ou “morreu”</div>
+                                    <div class="checklist-item">Estar atento aos sentimentos das crianças, já que os mais pequenos costumam ter a sensação de serem culpados pela morte</div>
+                                    <div class="checklist-item">Manutenção das rotinas e alterar o menos possível os hábitos das crianças</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Se a família pedir para ver o corpo -->
+                <section class="mb-5">
+                    <h3 class="module-title">👁️ Se a família pedir para ver o corpo</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="checklist-item">Acompanhar o familiar que o vai fazer ao local onde se encontra o corpo</div>
+                            <div class="checklist-item">Prepará-lo antes com uma descrição do local e do que vai encontrar e ver</div>
+                            <div class="checklist-item">Prepará-lo para a condição em que vai encontrar o corpo (exemplo: vai parecer pálido, frio, etc.)</div>
+                            <div class="checklist-item">Não deixar a pessoa sozinha com o corpo a não ser que lhe seja pedido</div>
+                            <div class="checklist-item">Se houver alguma coisa de positivo para dizer à família dos últimos momentos da vítima dizer antes de se despedir</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Cuidados com os profissionais -->
+                <section class="mb-5">
+                    <h3 class="module-title">💙 Cuidados a ter com os profissionais</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Não se esquecer de si próprio</div>
+                                    <div class="checklist-item">Não se esquecer da equipa envolvida</div>
+                                    <div class="checklist-item">Importante o reforço positivo pelo bom desempenho</div>
+                                    <div class="checklist-item">Aprender com os erros (e aceitá-los como o percurso na aprendizagem)</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Falar com os colegas envolvidos sobre o que sentiram e que reações tiveram</div>
+                                    <div class="checklist-item">Exprimir os seus sentimentos e não ficar com a dor emocional que a situação causou</div>
+                                    <div class="checklist-item">Não deixar que as próprias reações ao evento se tornem um problema... Exprima-as!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ABA INCIDENTE CRÍTICO -->
+            <div class="tab-pane fade" id="critical-content" role="tabpanel">
+                
+                <section class="mb-5">
+                    <h3 class="module-title">⚠️ Incidente Crítico</h3>
                     
                     <div class="card">
                         <div class="card-body">
-                            <div class="procedure-card">
-                                <h5 class="flow-title">Quando? Em que condições?</h5>
-                                <p class="text-muted">Até o meio diferenciado chegar ao local, qual a estratégia de cuidados a desenvolver com as vítimas? E qual o meio diferenciado para a ocorrência?</p>
-                            </div>
-                            
-                            <div class="info-box">
-                                <h5>Contexto pré-hospitalar</h5>
-                                <p>Há oportunidade para o TAS, em complementaridade, auxiliar sob indicação e supervisão, determinadas tarefas</p>
-                                <p>A gravidade da avaliação da vítima vai ditar os cuidados que são prestados e a ordem pela qual são executados</p>
-                                <p>A equipa de cuidados que se assume deve criar a sinergia necessária à recuperação ou manutenção da vida da vítima.</p>
-                            </div>
-                            
                             <div class="danger-box">
-                                <h5>Vítima com sinais de gravidade e critérios de instabilidade.</h5>
-                                <p class="mb-0">Os momentos frequentes onde os elementos TAS se unem com os elementos diferenciados são:</p>
-                                <div class="row mt-2">
-                                    <div class="col-md-6">
-                                        <div class="checklist-item">o Em PCR</div>
+                                <h5 class="text-center">“Afeta os mecanismos normais de adaptação, resultando num desequilíbrio psicológico e diminuição do funcionamento adaptativo.”</h5>
+                                <p class="text-center mb-0 mt-2">(Everly & Mitchell, 1999)</p>
+                            </div>
+                            
+                            <div class="warning-box mt-4">
+                                <h5>⚡ Reação Aguda de Stress (RAS)</h5>
+                                <p>O organismo ativa ao máximo os recursos físicos para atuar numa situação de emergência.</p>
+                                <p>Enquanto perceção de ameaça se mantiver a sintomatologia pode persistir.</p>
+                                <p>A ansiedade pode disparar por indícios que recordem a situação (odores, ruídos, locais, horas do dia…).</p>
+                            </div>
+                            
+                            <div class="info-box mt-4">
+                                <p>Tal como acontece com as vítimas, também os profissionais podem vir a desenvolver Reações de Stress – RAS que, apesar de normais, poderão evoluir para patologia psicológica / psiquiátrica.</p>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <div class="procedure-card">
+                                    <h5>Incidente Crítico</h5>
+                                    <div class="d-flex justify-content-center gap-3 flex-wrap mt-3">
+                                        <span class="badge bg-warning text-dark p-3">Reações iniciais (RAS)</span>
+                                        <span class="badge bg-danger p-3">→</span>
+                                        <span class="badge bg-danger p-3">Perturbação Pós-Stress Traumático (PPST)</span>
+                                        <span class="badge bg-secondary p-3">ou outras perturbações de stress ou do foro emocional…</span>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="checklist-item">o Em Cuidados pós-reanimação</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Assistência à vítima -->
-                <section class="mb-5">
-                    <h3 class="module-title">🫁 Apoio Ventilatório</h3>
-                    
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="checklist-item"> Assistir no melhor posicionamento para minimizar esforço do doente</div>
-                                    <div class="checklist-item"> Assegurar oxigénio disponível</div>
-                                    <div class="checklist-item"> Assegurar um circuito eficaz de condução de oxigénio até à vítima</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="checklist-item"> Colaborar, sob solicitação na ventilação manual assistida</div>
-                                    <div class="checklist-item"> Colaborar na monitorização do padrão ventilatório do doente</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="mb-5">
-                    <h3 class="module-title">📊 Apoio à Monitorização</h3>
-                    
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="checklist-item"> Colaborar com a equipa no posicionamento da vítima</div>
-                                    <div class="checklist-item"> Auxiliar na monitorização de parâmetros com equipamento do meio diferenciado:</div>
-                                    <div class="checklist-item" style="padding-left: 40px;"> SpO₂</div>
-                                    <div class="checklist-item" style="padding-left: 40px;"> Tensões arteriais</div>
-                                    <div class="checklist-item" style="padding-left: 40px;"> Monitorização básica eletrocardiográfica (4 elétrodos)</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="checklist-item"> Preparar sistema de soro</div>
-                                    <div class="checklist-item"> Facilitar ambiente de trabalho na célula sanitária</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="mb-5">
-                    <h3 class="module-title">🧠 Apoio Neurológico e Comportamental</h3>
-                    
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="checklist-item"> Vigiar de forma contínua o estado de consciência da vítima</div>
-                                    <div class="checklist-item"> Situações com AEC, convulsões e agressividade, colaborar na promoção de ambiente calmo e seguro, para a própria vítima e equipa</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="checklist-item"> Situações com necessidade de imobilização, colaborar com a equipa na recolocação de material</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="mb-5">
-                    <h3 class="module-title">🌡️ Controlo Térmico</h3>
-                    
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="checklist-item"> Promover, quando indicado, o aquecimento da vítima</div>
-                                    <div class="checklist-item"> Prevenir perda de temperatura da vítima e da célula sanitária</div>
-                                    <div class="checklist-item"> Facilitar, quando indicado e oportuno, a exposição da vítima com o devido controlo da temperatura</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="checklist-item"> Manter preocupação para que nada do que foi iniciado se perca ou se exteriorize</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="mb-5">
-                    <h3 class="module-title">📋 Recolha de Informação</h3>
-                    
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="checklist-item"> Colaborar na obtenção de informação clínica pertinente da vítima:</div>
-                            <div class="checklist-item" style="padding-left: 40px;"> Exames complementares</div>
-                            <div class="checklist-item" style="padding-left: 40px;"> Medicação</div>
-                            <div class="checklist-item" style="padding-left: 40px;"> Documento de identificação</div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="mb-5">
-                    <h3 class="module-title">🚚 Transporte de Equipamento</h3>
-                    
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="checklist-item"> Colaborar no transporte de equipamento do meio diferenciado:</div>
-                                    <div class="checklist-item" style="padding-left: 40px;"> Monitor desfibrilhador</div>
-                                    <div class="checklist-item" style="padding-left: 40px;"> Malas médicas</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="checklist-item" style="padding-left: 40px;"> Ventilador</div>
-                                    <div class="checklist-item" style="padding-left: 40px;"> Bombas infusoras para seringas</div>
-                                    <div class="checklist-item" style="padding-left: 40px;"> Compressor torácico mecânico</div>
                                 </div>
                             </div>
                         </div>
@@ -404,76 +448,46 @@
                 </section>
             </div>
 
-            <!-- ABA EQUIPAMENTO SAV -->
-            <div class="tab-pane fade" id="equipment-content" role="tabpanel">
+            <!-- ABA PRIMEIROS SOCORROS PSICOLÓGICOS -->
+            <div class="tab-pane fade" id="psychfirst-content" role="tabpanel">
                 
                 <section class="mb-5">
-                    <h3 class="module-title">🩺 Equipamento SAV</h3>
+                    <h3 class="module-title">🫂 Primeiros Socorros Psicológicos</h3>
                     
-                    <!-- Monitor Desfibrilhador -->
-                    <div class="equipment-card">
-                        <h4 class="text-primary"># Monitor desfibrilhador</h4>
-                        <div class="text-center my-3">
-                            <div class="emergency-icon">🖥️</div>
-                        </div>
-                    </div>
-
-                    <!-- Tensões arteriais -->
-                    <div class="equipment-card">
-                        <h4 class="text-primary"># Monitor desfibrilhador – Tensões arteriais</h4>
-                        <div class="text-center my-3">
-                            <div class="emergency-icon">💓</div>
-                        </div>
-                    </div>
-
-                    <!-- SpO2 -->
-                    <div class="equipment-card">
-                        <h4 class="text-primary"># Monitor desfibrilhador – SpO2</h4>
-                        <div class="text-center my-3">
-                            <div class="emergency-icon">🩸</div>
-                        </div>
-                    </div>
-
-                    <!-- ECG -->
-                    <div class="equipment-card">
-                        <h4 class="text-primary"># Monitor desfibrilhador – ECG 6 derivações</h4>
-                        <div class="text-center my-3">
-                            <div class="emergency-icon">📈</div>
-                        </div>
-                    </div>
-
-                    <!-- Ventiladores -->
-                    <div class="equipment-card">
-                        <h4 class="text-primary"># Ventiladores</h4>
-                        <div class="text-center my-3">
-                            <div class="emergency-icon">💨</div>
-                        </div>
-                    </div>
-
-                    <!-- Bombas infusoras -->
-                    <div class="equipment-card">
-                        <h4 class="text-primary"># Bombas infusoras para seringas</h4>
-                        <div class="text-center my-3">
-                            <div class="emergency-icon">💉</div>
-                        </div>
-                    </div>
-
-                    <!-- Compressor torácico -->
-                    <div class="equipment-card">
-                        <h4 class="text-primary"># Compressor torácico mecânico</h4>
-                        <div class="text-center my-3">
-                            <div class="emergency-icon">🫀</div>
-                        </div>
-                    </div>
-
-                    <!-- Preparação sistema de soro -->
-                    <div class="card mt-4">
-                        <div class="card-header bg-success text-white">## Preparação sistema de soro</div>
+                    <div class="card">
                         <div class="card-body">
-                            <div class="procedure-card">
-                                <h5># Preparação sistema de soro</h5>
-                                <div class="text-center my-2">
-                                    <div class="emergency-icon">💧</div>
+                            <h5 class="text-primary">Objetivos:</h5>
+                            <div class="checklist-item">Oferecer proteção, segurança e confiança às vítimas e familiares</div>
+                            <div class="checklist-item">Redução do stress das vítimas</div>
+                            <div class="checklist-item">Minimizar o impacto do incidente crítico</div>
+                            <div class="checklist-item">Mobilizar os recursos sociais</div>
+                            
+                            <h5 class="text-primary mt-4">Princípios (Young, Ford, Ruzek, Friedman & Gusman, 1998):</h5>
+                            <div class="row mt-3">
+                                <div class="col-md-4 text-center mb-3">
+                                    <div class="procedure-card">
+                                        <h5>🛡️ Proteger</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center mb-3">
+                                    <div class="procedure-card">
+                                        <h5>🧭 Dirigir</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center mb-3">
+                                    <div class="procedure-card">
+                                        <h5>🔗 Conectar</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center mb-3">
+                                    <div class="procedure-card">
+                                        <h5>📊 Triagem</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center mb-3">
+                                    <div class="procedure-card">
+                                        <h5>🩺 Cuidar de Agudizados</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -481,32 +495,164 @@
                 </section>
             </div>
 
-            <!-- ABA RCP -->
-            <div class="tab-pane fade" id="rcp-content" role="tabpanel">
+            <!-- ABA STRESS NO TAS -->
+            <div class="tab-pane fade" id="stress-content" role="tabpanel">
                 
                 <section class="mb-5">
-                    <h3 class="module-title">🫀 Equipa durante a RCP</h3>
+                    <h3 class="module-title">😰 Stress no Tripulante de Ambulância</h3>
                     
                     <div class="card">
                         <div class="card-body">
                             <div class="info-box">
-                                <p class="mb-0">As manobras SAV, são da exclusiva responsabilidade da equipa diferenciada. Com indicação e supervisão desta, alguns procedimentos poderão ser feitos pelos tripulantes.</p>
+                                <h5>Definição de Stress:</h5>
+                                <p>Stress é uma condição que resulta da incapacidade que a pessoa sente, real ou não, de responder às exigências de uma determinada situação (social, psicológica ou biológica). Surge quando os recursos adaptativos da pessoa não são suficientes para as exigências da situação, ou pelo menos são percecionados como insuficientes.</p>
                             </div>
                             
-                            <div class="procedure-card">
-                                <h5># RCP – Apoio à VA e Ventilação</h5>
-                                <div class="text-center my-2">
-                                    <div class="emergency-icon">🫁</div>
+                            <h5 class="mt-4">Alterações Físicas:</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Contração muscular</div>
+                                    <div class="checklist-item">Cefaleias</div>
+                                    <div class="checklist-item">Cansaço e sonolência</div>
+                                    <div class="checklist-item">Hipertensão e palpitações</div>
+                                    <div class="checklist-item">Dificuldades visuais</div>
+                                    <div class="checklist-item">Queixas somáticas</div>
+                                    <div class="checklist-item">Luta ou fuga</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Movimentos erráticos</div>
+                                    <div class="checklist-item">Dificuldade em cumprir responsabilidades</div>
+                                    <div class="checklist-item">Adiar as tarefas</div>
+                                    <div class="checklist-item">Pensamentos ansiosos</div>
+                                    <div class="checklist-item">Preocupação constante</div>
+                                    <div class="checklist-item">Dificuldades de memória e indecisão</div>
+                                    <div class="checklist-item">Isolamento</div>
                                 </div>
                             </div>
                             
-                            <div class="procedure-card">
-                                <h5># RCP – Monitorização dos dois minutos de SBV</h5>
-                                <div class="warning-box">
-                                    <h6>Para cronometrar:</h6>
-                                    <div class="checklist-item">o Um elemento monitoriza no relógio do monitor</div>
-                                    <div class="checklist-item">o No fim de 5 ciclos de 30:2, a 100-120 cpm, passaram dois minutos</div>
-                                    <div class="checklist-item">o Ou o elemento que está nas ventilações, com dispositivo supra-glótico, ou tubo endotraqueal, quando terminar as 20 ventilações a cada 5/6 segundos informa</div>
+                            <h5 class="mt-4">Alterações Cognitivas:</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Dificuldade de concentração</div>
+                                    <div class="checklist-item">Dificuldade de tomada de decisão</div>
+                                    <div class="checklist-item">Baixa auto-eficácia</div>
+                                    <div class="checklist-item">Descrença</div>
+                                    <div class="checklist-item">Negação</div>
+                                    <div class="checklist-item">Alteração da memória</div>
+                                    <div class="checklist-item">Confusão</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Distorção</div>
+                                    <div class="checklist-item">Pensamentos intrusivos</div>
+                                    <div class="checklist-item">Preocupação</div>
+                                </div>
+                            </div>
+                            
+                            <h5 class="mt-4">Alterações Emocionais:</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Manifestações de choro</div>
+                                    <div class="checklist-item">Medo e incerteza</div>
+                                    <div class="checklist-item">Irritabilidade e culpa</div>
+                                    <div class="checklist-item">Raiva intensa</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Nervosismo e ansiedade</div>
+                                    <div class="checklist-item">Tristeza e depressão</div>
+                                    <div class="checklist-item">Perda de controlo emocional</div>
+                                </div>
+                            </div>
+                            
+                            <div class="warning-box mt-4">
+                                <p>A estratégia que cada profissional adota para gerir as situações de maior stress pode determinar o modo como são ultrapassadas. É fundamental, em primeiro lugar, aceitar que são reações normais e que qualquer profissional pode vir a experimentá-las em situações exigentes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Fatores de stress -->
+                <section class="mb-5">
+                    <h3 class="module-title">📌 Fatores de stress para os profissionais</h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-warning text-dark">Fatores Externos</div>
+                                <div class="card-body">
+                                    <div class="checklist-item">Pressão exterior para terminar rapidamente a intervenção</div>
+                                    <div class="checklist-item">Desacordo com decisões tomadas (ex. triagem, atuação, encaminhamento)</div>
+                                    <div class="checklist-item">Coordenação com outros elementos da equipa, bem como com outras equipas intervenientes</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-info text-white">Fatores Internos</div>
+                                <div class="card-body">
+                                    <div class="checklist-item">Abordagem inicial à vítima</div>
+                                    <div class="checklist-item">Insegurança / “Medo” de não conseguir intervir</div>
+                                    <div class="checklist-item">Experiências de vida similares/identificação com sofrimento das vítimas e familiares</div>
+                                    <div class="checklist-item">Tipo de vítima (população infantil, queimados, colegas de trabalho)</div>
+                                    <div class="checklist-item">Sentimentos de hostilidade e raiva por parte dos familiares</div>
+                                    <div class="checklist-item">Dificuldades de comunicação (diferenças linguísticas/culturais)</div>
+                                    <div class="checklist-item">Sentimento de não ter feito o suficiente – impotência</div>
+                                    <div class="checklist-item">Exposição a estímulos potencialmente traumáticos</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Consequências -->
+                <section class="mb-5">
+                    <h3 class="module-title">⚠️ Consequências do Stress profissional</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="danger-box">
+                                        <div class="checklist-item">Perturbação Aguda de Stress</div>
+                                        <div class="checklist-item">Perturbação Pós-Stress Traumático</div>
+                                        <div class="checklist-item">Alteração significativa do comportamento</div>
+                                        <div class="checklist-item">Abuso de substâncias</div>
+                                        <div class="checklist-item">Depressão</div>
+                                        <div class="checklist-item">Burnout</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="info-box">
+                                        <h6>Fatores de risco para desenvolver patologia:</h6>
+                                        <div class="checklist-item">História psiquiátrica prévia</div>
+                                        <div class="checklist-item">Características de personalidade</div>
+                                        <div class="checklist-item">Fraco suporte social</div>
+                                        <div class="checklist-item">Experiência prévia de acontecimentos traumáticos</div>
+                                        <div class="checklist-item">Severidade do acontecimento e exposição a estímulos potencialmente traumáticos</div>
+                                        <div class="checklist-item">Estratégias de coping desadaptativas e desadequadas</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sinais de alerta -->
+                <section class="mb-5">
+                    <h3 class="module-title">🚨 Sinais de alerta</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Não consegue deixar de pensar no que sucedeu</div>
+                                    <div class="checklist-item">Sente-se muito tenso ou com medo a maior parte do tempo</div>
+                                    <div class="checklist-item">Não consegue ter prazer com nada</div>
+                                    <div class="checklist-item">Não consegue ir trabalhar ou assumir as suas responsabilidades habituais</div>
+                                    <div class="checklist-item">Comporta-se como se o acontecimento estivesse a acontecer outra vez</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Irrita-se ou é agressivo com as pessoas que o rodeiam</div>
+                                    <div class="checklist-item">Consome álcool, ou outras drogas, em excesso</div>
+                                    <div class="checklist-item">Faz automedicação</div>
+                                    <div class="checklist-item">Comporta-se de forma muito distinta do habitual antes do acontecimento</div>
                                 </div>
                             </div>
                         </div>
@@ -514,86 +660,81 @@
                 </section>
             </div>
 
-            <!-- ABA PÓS-REANIMAÇÃO -->
-            <div class="tab-pane fade" id="post-content" role="tabpanel">
+            <!-- ABA ESTRATÉGIAS DE CONFRONTO -->
+            <div class="tab-pane fade" id="coping-content" role="tabpanel">
                 
                 <section class="mb-5">
-                    <h3 class="module-title">🏥 Equipa em cuidados pós-reanimação</h3>
+                    <h3 class="module-title">💪 Estratégias de Confronto</h3>
                     
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-danger text-white">❌ Coping Negativo</div>
+                                <div class="card-body">
+                                    <div class="checklist-item">Tentar abstrair-se do incidente</div>
+                                    <div class="checklist-item">Negar sentimentos dolorosos relacionados com o incidente</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-success text-white">✅ Coping Positivo</div>
+                                <div class="card-body">
+                                    <div class="checklist-item">Analisar as ações realizadas durante o incidente e aprender com os erros realizados</div>
+                                    <div class="checklist-item">Aceitar sentimentos relacionados com o incidente</div>
+                                    <div class="info-box mt-2">Ao fim de algum tempo, integramos a experiência na nossa história de vida. Os pensamentos e sentimentos são identificados e expressos, e o equilíbrio da nossa vida é recuperado.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- O que fazer -->
+                <section class="mb-5">
+                    <h3 class="module-title">📋 O que fazer?</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Falar com pessoas significativas / apoio de pares (ou escrever) sobre o sucedido</div>
+                                    <div class="checklist-item">Voltar à sua rotina diária. Tentar organizar as suas atividades para os próximos dias</div>
+                                    <div class="checklist-item">Passar tempo com as pessoas que são importantes para si</div>
+                                    <div class="checklist-item">Reservar tempo para si</div>
+                                    <div class="checklist-item">Logo que possível, enfrentar os locais e situações que lhe recordam o acontecimento</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checklist-item">Tentar descansar e dormir o suficiente/fazer pausas quando necessário</div>
+                                    <div class="checklist-item">Envolver-se em atividades que habitualmente lhe dão prazer</div>
+                                    <div class="checklist-item">Aceitar as suas fragilidades e dificuldades</div>
+                                    <div class="checklist-item">Evitar a automedicação, consumo de álcool, cafeína e tabaco em excesso</div>
+                                    <div class="checklist-item">Fazer uma alimentação saudável bem como exercício físico ou sessões de relaxamento</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quem pode ajudar -->
+                <section class="mb-5">
+                    <h3 class="module-title">🫂 Quem pode ajudar?</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="success-box">
+                                <p>Procurar apoio e ventilar as situações complexas com os psicólogos do CAPIC, INEM, não é uma demonstração de fragilidade, pelo contrário, é uma escolha adequada.</p>
+                                <p>Cada vez mais os serviços de apoio psicológico em emergência estão previstos como rotina, e não como uma necessidade para quando surgem problemas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Em suma -->
+                <section class="mb-5">
+                    <h3 class="module-title">📌 Em suma</h3>
                     <div class="card">
                         <div class="card-body">
                             <div class="info-box">
-                                <p>Há que considerar todos os momentos em que a vítima sofre transferência. Isto porque, são iniciados cuidados, executados procedimentos, aplicadas monitorizações que têm que ser mantidas durante a transferência do doente:</p>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="checklist-item">● Do local inicial para a maca da ambulância</div>
-                                    <div class="checklist-item">● Para o interior da ambulância</div>
-                                    <div class="checklist-item">● Durante o transporte do doente</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="checklist-item">● Saída da ambulância no Hospital de destino</div>
-                                    <div class="checklist-item">● Transferência para a maca do Hospital</div>
-                                </div>
-                            </div>
-                            
-                            <div class="danger-box mt-4">
-                                <h5>Os erros mais comuns e complicações:</h5>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="checklist-item"> Na avaliação inicial do doente</div>
-                                        <div class="checklist-item"> Durante a estabilização hemodinâmica</div>
-                                        <div class="checklist-item"> Na manutenção da permeabilidade da Via Aérea</div>
-                                        <div class="checklist-item"> Pneumotórax / Hemotórax</div>
-                                        <div class="checklist-item"> Nos acessos vasculares</div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="checklist-item"> Na monitorização</div>
-                                        <div class="checklist-item"> Nos equipamentos de perfusão</div>
-                                        <div class="checklist-item"> Nos fármacos</div>
-                                        <div class="checklist-item"> No suporte ventilatório</div>
-                                        <div class="checklist-item"> Na agitação do doente</div>
-                                        <div class="checklist-item"> Na avaliação e registos durante o transporte</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <!-- ABA 9 CERTEZAS -->
-            <div class="tab-pane fade" id="safety-content" role="tabpanel">
-                
-                <section class="mb-5">
-                    <h3 class="module-title">✅ 9 certezas - Segurança na Administração</h3>
-                    
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="procedure-card">
-                                <h4 class="text-center text-primary">9 certezas</h4>
-                                
-                                <div class="row mt-4">
-                                    <div class="col-md-6">
-                                        <div class="checklist-item">1. Confirmar a administração para a vítima certa</div>
-                                        <div class="checklist-item">2. Confirmar a medicação</div>
-                                        <div class="checklist-item">3. Confirmar a via</div>
-                                        <div class="checklist-item">4. Confirmar a dose</div>
-                                        <div class="checklist-item">5. Confirmar a hora</div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="checklist-item">6. Registar da hora de administração</div>
-                                        <div class="checklist-item">7. Ter conhecimento da ação esperada</div>
-                                        <div class="checklist-item">8. Conhecer a forma farmacêutica</div>
-                                        <div class="checklist-item">9. Manter monitorização/vigilância</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="success-box mt-4">
-                                <h5>Lembrete de Segurança:</h5>
-                                <p class="mb-0">A verificação sistemática destes 9 pontos previne erros de medicação e garante a segurança da vítima.</p>
+                                <p>• O incidente crítico é um acontecimento negativo e contraditório com o funcionamento habitual da pessoa, que afeta os seus mecanismos de confronto e adaptação normais, levando à perda do equilíbrio psicológico e alteração do funcionamento habitual.</p>
+                                <p class="mt-2">• No exercício da sua função, os profissionais deparam-se com situações exigentes, que implicam a mobilização de estratégias para lidar com as mesmas. Sempre que necessário, o profissional deve procurar ajuda especializada!</p>
                             </div>
                         </div>
                     </div>
@@ -601,20 +742,48 @@
             </div>
         </div>
 
-        </main>
+        <!-- Footer -->
         <footer class="text-center mt-5 p-4 bg-dark text-white rounded">
             <h5>🌐 Mantenha-se atualizado</h5>
             <a href="https://aprender.inem.pt" class="btn btn-light mt-2" target="_blank">https://aprender.inem.pt</a>
             <p class="mt-3 mb-0">Departamento de Formação em Emergência Médica | Março 2024</p>
         </footer>
-    
-    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-            class="astro-vvvwv3sm"></script>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-        <script src="/script.js"></script> 
-</body>
+    <script>
+        // Botão voltar ao topo
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnTopo = document.getElementById('btnTopo');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    btnTopo.style.display = 'block';
+                } else {
+                    btnTopo.style.display = 'none';
+                }
+            });
+            
+            btnTopo.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Ativar tabs corretamente
+        const triggerTabList = document.querySelectorAll('#psychTabs button')
+        triggerTabList.forEach(triggerEl => {
+            const tabTrigger = new bootstrap.Tab(triggerEl)
 
+            triggerEl.addEventListener('click', event => {
+                event.preventDefault()
+                tabTrigger.show()
+            })
+        });
+    </script>
+</body>
 </html>
