@@ -202,7 +202,7 @@
         </div>
 
        <!-- Navegação por Tópicos -->
-        <div class="container mb-4">
+        <!--<div class="container mb-4">
             <ul class="nav nav-tabs" id="psychTabs" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="grief-tab" data-bs-toggle="tab" data-bs-target="#grief-content" type="button" role="tab">
@@ -230,6 +230,72 @@
                     </button>
                 </li>
             </ul>
+        </div>-->
+
+        <!-- Navegação entre as matérias -->
+        <div class="container mb-4">
+            <ul class="nav nav-tabs d-none d-md-flex" id="psychTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="grief-tab" data-bs-toggle="tab" data-bs-target="#grief-content" type="button" role="tab">
+                        🕊️ Luto e Notificação
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="critical-tab" data-bs-toggle="tab" data-bs-target="#critical-content" type="button" role="tab">
+                        ⚠️ Incidente Crítico
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="psychfirst-tab" data-bs-toggle="tab" data-bs-target="#psychfirst-content" type="button" role="tab">
+                        🫂 Primeiros Socorros Psicológicos
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="stress-tab" data-bs-toggle="tab" data-bs-target="#stress-content" type="button" role="tab">
+                        😰 Stress no TAS
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="coping-tab" data-bs-toggle="tab" data-bs-target="#coping-content" type="button" role="tab">
+                        💪 Estratégias de Confronto
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Versão Mobile (cards em grid) -->
+            <div class="row row-cols-2 g-2 d-md-none" id="psychTabs" role="tablist">
+                <!-- Versão Desktop (tabs normais) -->
+                <div class="col">
+                    <button class="btn w-100 py-3 border text-center active" id="grief-tab" data-bs-toggle="tab" data-bs-target="#grief-content" type="button" role="tab" style="background-color: #f8f9fa; border-color: #dee2e6; transition: all 0.2s;">
+                        <div style="font-size: 1.8rem;">🕊️</div>
+                        <div style="font-size: 0.9rem; font-weight: 500;">Luto e Notificação</div>
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn w-100 py-3 border text-center" id="critical-tab" data-bs-toggle="tab" data-bs-target="#critical-content" type="button" role="tab" style="background-color: #f8f9fa; border-color: #dee2e6; transition: all 0.2s;">
+                        <div style="font-size: 1.8rem;">⚠️</div>
+                        <div style="font-size: 0.9rem; font-weight: 500;">Incidente Crítico</div>
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn w-100 py-3 border text-center" id="psychfirst-tab" data-bs-toggle="tab" data-bs-target="#psychfirst-content" type="button" role="tab" style="background-color: #f8f9fa; border-color: #dee2e6; transition: all 0.2s;">
+                        <div style="font-size: 1.8rem;">🫂</div>
+                        <div style="font-size: 0.9rem; font-weight: 500;">Primeiros Socorros Psicológicos</div>
+                    </button>
+                </div>   
+                <div class="col">
+                    <button class="btn w-100 py-3 border text-center" id="stress-tab" data-bs-toggle="tab" data-bs-target="#stress-content" type="button" role="tab" style="background-color: #f8f9fa; border-color: #dee2e6; transition: all 0.2s;">
+                        <div style="font-size: 1.8rem;">😰</div>
+                        <div style="font-size: 0.9rem; font-weight: 500;">Stress no TAS</div>
+                    </button>
+                </div> 
+                <div class="col">
+                    <button class="btn w-100 py-3 border text-center" id="coping-tab" data-bs-toggle="tab" data-bs-target="#coping-content" type="button" role="tab" style="background-color: #f8f9fa; border-color: #dee2e6; transition: all 0.2s;">
+                        <div style="font-size: 1.8rem;">💪</div>
+                        <div style="font-size: 0.9rem; font-weight: 500;">Estratégias de Confronto</div>
+                    </button>
+                </div>              
+            </div>
         </div>
 
         <!-- Conteúdo das Abas -->

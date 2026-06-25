@@ -214,7 +214,7 @@
 
             <!-- Navegação por Tópicos -->
         <!-- Navegação por Tópicos -->
-        <div class="container mb-4">
+        <!--<div class="container mb-4">
             <ul class="nav nav-tabs" id="savTabs" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="intro-tab" data-bs-toggle="tab" data-bs-target="#intro-content" type="button" role="tab">
@@ -242,6 +242,72 @@
                     </button>
                 </li>
             </ul>
+        </div>-->
+
+        <!-- Navegação entre as matérias -->
+        <div class="container mb-4">
+            <ul class="nav nav-tabs d-none d-md-flex" id="savTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="intro-tab" data-bs-toggle="tab" data-bs-target="#intro-content" type="button" role="tab">
+                        🤝 Trabalho em Equipa
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="equipment-tab" data-bs-toggle="tab" data-bs-target="#equipment-content" type="button" role="tab">
+                        🩺 Equipamento SAV
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="rcp-tab" data-bs-toggle="tab" data-bs-target="#rcp-content" type="button" role="tab">
+                        🫀 RCP
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="post-tab" data-bs-toggle="tab" data-bs-target="#post-content" type="button" role="tab">
+                        🏥 Pós-Reanimação
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="safety-tab" data-bs-toggle="tab" data-bs-target="#safety-content" type="button" role="tab">
+                        ✅ 9 Certezas
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Versão Mobile (cards em grid) -->
+            <div class="row row-cols-2 g-2 d-md-none" id="mobileEmergencyTabs" role="tablist">
+                <!-- Versão Desktop (tabs normais) -->
+                <div class="col">
+                    <button class="btn w-100 py-3 border text-center active" id="mobile-intro-tab" data-bs-toggle="tab" data-bs-target="#intro-content" type="button" role="tab" style="background-color: #f8f9fa; border-color: #dee2e6; transition: all 0.2s;">
+                        <div style="font-size: 1.8rem;">🤝</div>
+                        <div style="font-size: 0.9rem; font-weight: 500;">Trabalho em Equipa</div>
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn w-100 py-3 border text-center" id="mobile-equipment-tab" data-bs-toggle="tab" data-bs-target="#equipment-content" type="button" role="tab" style="background-color: #f8f9fa; border-color: #dee2e6; transition: all 0.2s;">
+                        <div style="font-size: 1.8rem;">🩺</div>
+                        <div style="font-size: 0.9rem; font-weight: 500;">Equipamento SAV</div>
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn w-100 py-3 border text-center" id="mobile-rcp-tab" data-bs-toggle="tab" data-bs-target="#rcp-content" type="button" role="tab" style="background-color: #f8f9fa; border-color: #dee2e6; transition: all 0.2s;">
+                        <div style="font-size: 1.8rem;">🫀</div>
+                        <div style="font-size: 0.9rem; font-weight: 500;">RCP</div>
+                    </button>
+                </div>    
+                <div class="col">
+                    <button class="btn w-100 py-3 border text-center" id="mobile-post-tab" data-bs-toggle="tab" data-bs-target="#post-content" type="button" role="tab" style="background-color: #f8f9fa; border-color: #dee2e6; transition: all 0.2s;">
+                        <div style="font-size: 1.8rem;">🏥</div>
+                        <div style="font-size: 0.9rem; font-weight: 500;">Pós-Reanimação</div>
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn w-100 py-3 border text-center" id="mobile-safety-tab" data-bs-toggle="tab" data-bs-target="#safety-content" type="button" role="tab" style="background-color: #f8f9fa; border-color: #dee2e6; transition: all 0.2s;">
+                        <div style="font-size: 1.8rem;">✅</div>
+                        <div style="font-size: 0.9rem; font-weight: 500;">9 Certezas</div>
+                    </button>
+                </div>            
+            </div>
         </div>
 
         <!-- Conteúdo das Abas -->

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Manual TAS - Competências Psicológicas</title>
+    <title>Manual TAS - Ética e Aspetos Legais</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
@@ -33,13 +33,6 @@
             border-bottom: 3px solid #dc3545; 
             padding-bottom: 8px;
             margin: 1.5rem 0 1rem 0;
-        }
-        .section-title { 
-            color: #198754; 
-            border-left: 4px solid #198754; 
-            padding-left: 15px; 
-            margin-top: 30px;
-            font-weight: 600;
         }
         .list-group-item { 
             border: none;
@@ -78,12 +71,12 @@
             margin: 15px 0;
             border-left: 4px solid #198754;
         }
-        .grief-box {
+        .ethics-box {
             background: linear-gradient(135deg, #e7f1ff, #d4e4ff);
             padding: 20px;
             border-radius: 8px;
             margin: 15px 0;
-            border-left: 5px solid #6c757d;
+            border-left: 5px solid #0d6efd;
         }
         #btnTopo {
             position: fixed;
@@ -116,13 +109,6 @@
             background-color: transparent;
             color: #0d6efd;
         }
-        .procedure-card {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 20px;
-            border-radius: 8px;
-            margin: 15px 0;
-            border-left: 5px solid #198754;
-        }
         .checklist-item { 
             padding-left: 25px; 
             position: relative; 
@@ -143,18 +129,31 @@
             border-radius: 10px; 
             margin-bottom: 2rem;
         }
-        .stress-symptoms {
+        .rights-card {
             background-color: #f8f9fa;
             padding: 15px;
             border-radius: 8px;
             margin: 10px 0;
+            border-left: 4px solid #198754;
         }
-        .badge-icon {
-            background-color: #e9ecef;
-            padding: 8px 15px;
-            border-radius: 20px;
-            margin: 5px;
-            display: inline-block;
+        .duties-card {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #dc3545;
+        }
+        .badge-number {
+            background-color: #0d6efd;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
         }
         @media (max-width: 768px) {
             .nav-tabs .nav-link {
@@ -190,7 +189,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="main.html">Início</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Competências Psicológicas</li>
+                    <li class="breadcrumb-item active" aria-current="page">Ética e Aspetos Legais</li>
                 </ol>
             </nav>
         </div>
@@ -200,214 +199,207 @@
             <div class="header-card">
                 <h2 class="fw-bold text-white">
                     <span class="badge bg-light text-primary me-2 fs-5">TAS</span>
-                    Competências Psicológicas III
+                    Ética e Aspetos Legais
                 </h2>
                 <p class="lead mb-0">
-                    Notificação de morte • Processo de luto • Incidente Crítico • Primeiros Socorros Psicológicos • Stress no profissional
+                    Profissionalismo • Princípios éticos • Direitos constitucionais • Questões ético-legais
                 </p>
             </div>
         </div>
 
         <!-- Navegação por Tópicos -->
         <div class="container mb-4">
-            <ul class="nav nav-tabs" id="psychTabs" role="tablist">
+            <ul class="nav nav-tabs" id="ethicsTabs" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="grief-tab" data-bs-toggle="tab" data-bs-target="#grief-content" type="button" role="tab">
-                        🕊️ Luto e Notificação
+                    <button class="nav-link active" id="intro-tab" data-bs-toggle="tab" data-bs-target="#intro-content" type="button" role="tab">
+                        ⚖️ Ética e Profissionalismo
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="critical-tab" data-bs-toggle="tab" data-bs-target="#critical-content" type="button" role="tab">
-                        ⚠️ Incidente Crítico
+                    <button class="nav-link" id="rights-tab" data-bs-toggle="tab" data-bs-target="#rights-content" type="button" role="tab">
+                        📜 Direitos Constitucionais
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="psychfirst-tab" data-bs-toggle="tab" data-bs-target="#psychfirst-content" type="button" role="tab">
-                        🫂 Primeiros Socorros Psicológicos
+                    <button class="nav-link" id="issues-tab" data-bs-toggle="tab" data-bs-target="#issues-content" type="button" role="tab">
+                        ⚠️ Questões Ético-Legais
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="stress-tab" data-bs-toggle="tab" data-bs-target="#stress-content" type="button" role="tab">
-                        😰 Stress no TAS
+                    <button class="nav-link" id="transport-tab" data-bs-toggle="tab" data-bs-target="#transport-content" type="button" role="tab">
+                        🚑 Transporte e Verbete
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="coping-tab" data-bs-toggle="tab" data-bs-target="#coping-content" type="button" role="tab">
-                        💪 Estratégias de Confronto
+                    <button class="nav-link" id="rightsduties-tab" data-bs-toggle="tab" data-bs-target="#rightsduties-content" type="button" role="tab">
+                        📋 Carta de Direitos/Deveres
                     </button>
                 </li>
             </ul>
         </div>
 
         <!-- Conteúdo das Abas -->
-        <div class="tab-content" id="psychContent">
+        <div class="tab-content" id="ethicsContent">
             
-            <!-- ABA LUTO E NOTIFICAÇÃO -->
-            <div class="tab-pane fade show active" id="grief-content" role="tabpanel">
+            <!-- ABA ÉTICA E PROFISSIONALISMO -->
+            <div class="tab-pane fade show active" id="intro-content" role="tabpanel">
                 
                 <!-- Objetivos -->
                 <section class="mb-5">
                     <h3 class="module-title">📋 Objetivos</h3>
                     <div class="card">
                         <div class="card-body">
-                            <div class="checklist-item">Identificar as atitudes comunicacionais e postura profissional mais adequadas a adotar nas situações de notificação de morte e início do processo de luto</div>
-                            <div class="checklist-item">Definir um incidente crítico e a sintomatologia associada</div>
-                            <div class="checklist-item">Adquirir competências para a intervenção com vítimas de trauma psicológico</div>
-                            <div class="checklist-item">Identificar os principais fatores de stress para o tripulante de ambulância</div>
-                            <div class="checklist-item">Descrever estratégias de confronto adequadas para lidar com situações mais exigentes</div>
+                            <div class="checklist-item">Compreender a ética e reconhecer os aspetos legais no contexto da atividade pré-hospitalar</div>
+                            <div class="checklist-item">Diferenciar princípios de direitos no âmbito da prática em emergência pré-hospitalar</div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Início do Processo de Luto -->
+                <!-- Profissionalismo -->
                 <section class="mb-5">
-                    <h3 class="module-title">🕊️ Início do Processo de Luto</h3>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="grief-box">
-                                <p>Face a qualquer perda significativa, de uma pessoa ou até de um objeto estimado, inicia-se um processo necessário e fundamental para que o vazio deixado, com o tempo, possa voltar a ser preenchido. Muitas vezes estas perdas são acompanhadas de reações que podem ser muito intensas e, por isso, justificar a intervenção psicológica de emergência.</p>
-                            </div>
-                        </div>
+                    <h3 class="module-title">💼 Profissionalismo</h3>
+                    <div class="ethics-box">
+                        <h5 class="text-primary">Profissionalismo</h5>
                     </div>
                 </section>
 
-                <!-- Contexto de Notificação -->
+                <!-- Ética -->
                 <section class="mb-5">
-                    <h3 class="module-title">📢 Contexto de Notificação de Morte</h3>
+                    <h3 class="module-title">🧠 Ética</h3>
+                    <div class="ethics-box">
+                        <h5 class="text-primary">Ética</h5>
+                    </div>
+                </section>
+
+                <!-- Ética vs Lei -->
+                <section class="mb-5">
+                    <h3 class="module-title">⚖️ Ética vs. Lei</h3>
                     <div class="card">
                         <div class="card-body">
                             <div class="info-box">
-                                <p>A notificação de morte é um momento particularmente complexo e difícil, tanto para a família quanto para os técnicos envolvidos. Apesar de não serem os TAS a fazê-lo, é importante que saibam como reagir e atuar, se estiverem presentes nesse momento, a acompanhar as equipas médicas.</p>
+                                <p>Distingue-se do aspeto legal por não obrigar a adoção de determinado comportamento, exceto se for contemplada em algum tipo de norma ou preceito legal.</p>
+                                <p>Legislação define o conjunto de comportamentos e as consequências que a não adoção desses comportamentos ou, no caso de comportamentos socialmente inaceitáveis (proibidos), a sua realização acarreta.</p>
                             </div>
-                            
-                            <h5 class="mt-4">Etapas da Notificação (Protocolo P-I-C-C-E-C):</h5>
-                            <div class="row mt-3">
-                                <div class="col-md-6">
-                                    <div class="checklist-item"><strong>I:</strong> Início - Privacidade, contacto visual, tempo necessário</div>
-                                    <div class="checklist-item"><strong>P:</strong> Perceções - O que a pessoa sabe, corrigir informação que esteja errada</div>
-                                    <div class="checklist-item"><strong>I:</strong> Informação - Dar a informação em si, notificar a morte</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="checklist-item"><strong>C:</strong> Conhecimento - Confirmar a compreensão – “compreendeu o que acabei de dizer?”, evitar confronto excessivo</div>
-                                    <div class="checklist-item"><strong>E:</strong> Emoções - permitir e validar a resposta emocional; empatia</div>
-                                    <div class="checklist-item"><strong>C:</strong> Confronto - Estabilizar e formular estratégias juntamente com o familiar</div>
-                                </div>
-                            </div>
-                            <p class="text-muted mt-2">(Baile, Buckman et al, 2000; Fallowfield & Jenkins, 2004)</p>
                         </div>
                     </div>
                 </section>
 
-                <!-- Considerações Notificação -->
+                <!-- Pressupostos éticos -->
                 <section class="mb-5">
-                    <h3 class="module-title">📌 Considerações na Notificação</h3>
+                    <h3 class="module-title">📌 Pressupostos éticos em ambiente pré-hospitalar</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="checklist-item">Comportamento exemplar com a vítima, familiares, acompanhantes e com o público</div>
+                            <div class="checklist-item">Manter competência técnica e não técnica no desenvolvimento das ocorrências – conduta, consentimento e privacidade das vítimas</div>
+                            <div class="checklist-item">Todos sem exceção têm direito a ser assistidos, sem juízos de valor</div>
+                            <div class="checklist-item">Participar/denunciar e encaminhar ocorrências com implicações jurídico-legais: Violência, maus tratos, negligência</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ABA DIREITOS CONSTITUCIONAIS -->
+            <div class="tab-pane fade" id="rights-content" role="tabpanel">
+                
+                <section class="mb-5">
+                    <h3 class="module-title">📜 Constituição da República Portuguesa</h3>
+                    
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="checklist-item">Local apropriado - lugar calmo e com privacidade</div>
-                                    <div class="checklist-item">Cumprimentar, identificar-se pelo nome e função</div>
-                                    <div class="checklist-item">Posicionar-se adequadamente (ao mesmo nível da pessoa)</div>
-                                    <div class="checklist-item">Sentar-se e pedir às pessoas presentes para se sentarem também</div>
-                                    <div class="checklist-item">Devemos sempre notificar primeiro a pessoa mais chegada</div>
-                                    <div class="checklist-item">Estar preparado para uma situação particularmente emotiva</div>
+                                    <div class="rights-card">
+                                        <div class="checklist-item">Principio da igualdade</div>
+                                        <div class="checklist-item">Direito à vida</div>
+                                        <div class="checklist-item">Direito à integridade pessoal</div>
+                                        <div class="checklist-item">Direito à capacidade civil</div>
+                                        <div class="checklist-item">Direito ao bom nome</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="checklist-item">Devemos tratar a vítima pelo nome</div>
-                                    <div class="checklist-item">Nunca notificar uma criança sozinha; será o familiar mais próximo a fazê-lo</div>
-                                    <div class="checklist-item">Sempre presente o contacto ocular e, eventualmente contacto físico</div>
-                                    <div class="checklist-item">A notificação é realizada de uma forma simples e direta</div>
+                                    <div class="rights-card">
+                                        <div class="checklist-item">Direito à imagem</div>
+                                        <div class="checklist-item">Direito à palavra</div>
+                                        <div class="checklist-item">Direito à reserva da intimidade da vida privada e familiar</div>
+                                        <div class="checklist-item">Direito à liberdade</div>
+                                        <div class="checklist-item">Direito à proteção da saúde</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Expressões a evitar/usar -->
+                <!-- Principios e direitos basilares -->
                 <section class="mb-5">
+                    <h3 class="module-title">⚖️ Princípios e direitos basilares</h3>
+                    
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="card h-100">
-                                <div class="card-header bg-danger text-white">❌ Não usar expressões como:</div>
+                            <div class="card mb-3">
+                                <div class="card-header bg-primary text-white">Direito à vida</div>
                                 <div class="card-body">
-                                    <div class="checklist-item">“Já não se encontra entre nós.”</div>
-                                    <div class="checklist-item">“Partiu para…”</div>
-                                    <div class="checklist-item">“Não resistiu mais…”</div>
-                                    <div class="checklist-item">“Vocês perderam o …”</div>
-                                    <div class="checklist-item">“Está no descanso eterno…”</div>
+                                    <p>Direito fundamental e inalienável de todo o ser humano.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-3">
+                                <div class="card-header bg-primary text-white">Direito à integridade pessoal – física e moral</div>
+                                <div class="card-body">
+                                    <p>Proteção contra qualquer forma de agressão física ou psicológica.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-3">
+                                <div class="card-header bg-primary text-white">Direito à capacidade civil</div>
+                                <div class="card-body">
+                                    <p>Capacidade para exercer pessoalmente os seus direitos.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-3">
+                                <div class="card-header bg-primary text-white">Direito ao bom nome</div>
+                                <div class="card-body">
+                                    <p>Proteção da reputação e honra da pessoa.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-3">
+                                <div class="card-header bg-primary text-white">Direito à imagem</div>
+                                <div class="card-body">
+                                    <p>Proteção contra a captação, fixação e divulgação não autorizada da imagem.</p>
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="col-md-6">
-                            <div class="card h-100">
-                                <div class="card-header bg-success text-white">✅ Usar expressões como:</div>
+                            <div class="card mb-3">
+                                <div class="card-header bg-primary text-white">Direito à palavra</div>
                                 <div class="card-body">
-                                    <div class="checklist-item">“Lamento ter de vos informar, mas tenho más notícias para vos dar.”</div>
-                                    <div class="checklist-item">(Pausa para preparar as pessoas)</div>
-                                    <div class="checklist-item">“O … (nome) esteve envolvido em (explicar situação) e morreu.”</div>
-                                    <div class="checklist-item">“Tenho muita pena, os meus pêsames.”</div>
-                                    <div class="info-box mt-2">É importante dar os pêsames pois exprime sentimentos em vez de factos, e convida as pessoas a exprimirem os seus sentimentos.</div>
+                                    <p>Liberdade de expressão e comunicação.</p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Notificação a Crianças -->
-                <section class="mb-5">
-                    <h3 class="module-title">👧 Notificação de Morte a Crianças</h3>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="checklist-item">Deve ser sempre efetuada por uma das figuras parentais ou, na impossibilidade, por um adulto em quem a criança confie plenamente</div>
-                                    <div class="checklist-item">As crianças podem demonstrar reações diferentes, dependendo da idade, maturidade, relacionamento com o falecido e experiência anterior de perda</div>
-                                    <div class="checklist-item">Notificar as crianças o mais cedo possível</div>
-                                    <div class="checklist-item">Sentar-se ao mesmo nível da criança e informar que tem algo triste para lhe dizer</div>
-                                    <div class="checklist-item">Usar uma linguagem que a criança possa entender e ser honesto</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="checklist-item">Potenciar um ambiente seguro e de confiança à criança</div>
-                                    <div class="checklist-item">Permitir a colocação de todas as questões que surgirem</div>
-                                    <div class="checklist-item">Não ser muito detalhado sobre como aconteceu a morte, a explicação deve ser breve e clara e usar termos como “morto” ou “morreu”</div>
-                                    <div class="checklist-item">Estar atento aos sentimentos das crianças, já que os mais pequenos costumam ter a sensação de serem culpados pela morte</div>
-                                    <div class="checklist-item">Manutenção das rotinas e alterar o menos possível os hábitos das crianças</div>
+                            
+                            <div class="card mb-3">
+                                <div class="card-header bg-primary text-white">Direito à reserva da intimidade da vida privada e familiar</div>
+                                <div class="card-body">
+                                    <p>Proteção da esfera pessoal e familiar contra intrusões.</p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Se a família pedir para ver o corpo -->
-                <section class="mb-5">
-                    <h3 class="module-title">👁️ Se a família pedir para ver o corpo</h3>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="checklist-item">Acompanhar o familiar que o vai fazer ao local onde se encontra o corpo</div>
-                            <div class="checklist-item">Prepará-lo antes com uma descrição do local e do que vai encontrar e ver</div>
-                            <div class="checklist-item">Prepará-lo para a condição em que vai encontrar o corpo (exemplo: vai parecer pálido, frio, etc.)</div>
-                            <div class="checklist-item">Não deixar a pessoa sozinha com o corpo a não ser que lhe seja pedido</div>
-                            <div class="checklist-item">Se houver alguma coisa de positivo para dizer à família dos últimos momentos da vítima dizer antes de se despedir</div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Cuidados com os profissionais -->
-                <section class="mb-5">
-                    <h3 class="module-title">💙 Cuidados a ter com os profissionais</h3>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="checklist-item">Não se esquecer de si próprio</div>
-                                    <div class="checklist-item">Não se esquecer da equipa envolvida</div>
-                                    <div class="checklist-item">Importante o reforço positivo pelo bom desempenho</div>
-                                    <div class="checklist-item">Aprender com os erros (e aceitá-los como o percurso na aprendizagem)</div>
+                            
+                            <div class="card mb-3">
+                                <div class="card-header bg-primary text-white">Direito à liberdade</div>
+                                <div class="card-body">
+                                    <div class="warning-box">
+                                        <p class="mb-0">No seguimento do direito à liberdade quando se recorre à contenção física das vítimas? Em que situações?</p>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="checklist-item">Falar com os colegas envolvidos sobre o que sentiram e que reações tiveram</div>
-                                    <div class="checklist-item">Exprimir os seus sentimentos e não ficar com a dor emocional que a situação causou</div>
-                                    <div class="checklist-item">Não deixar que as próprias reações ao evento se tornem um problema... Exprima-as!</div>
+                            </div>
+                            
+                            <div class="card mb-3">
+                                <div class="card-header bg-primary text-white">Direito à proteção da saúde</div>
+                                <div class="card-body">
+                                    <p>Direito de acesso a cuidados de saúde adequados.</p>
                                 </div>
                             </div>
                         </div>
@@ -415,333 +407,212 @@
                 </section>
             </div>
 
-            <!-- ABA INCIDENTE CRÍTICO -->
-            <div class="tab-pane fade" id="critical-content" role="tabpanel">
+            <!-- ABA QUESTÕES ÉTICO-LEGAIS -->
+            <div class="tab-pane fade" id="issues-content" role="tabpanel">
                 
                 <section class="mb-5">
-                    <h3 class="module-title">⚠️ Incidente Crítico</h3>
+                    <h3 class="module-title">⚠️ Questões éticas e legais</h3>
+                    
+                    <!-- Dever de cuidado -->
+                    <div class="card">
+                        <div class="card-header bg-warning text-dark">Dever de cuidado</div>
+                        <div class="card-body">
+                            <p>Atuar de acordo com as competências adquiridas. Considera-se negligência quando o profissional adota uma conduta diferente da exigível e expectável.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Consentimento informado -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-info text-white">Consentimento informado</div>
+                        <div class="card-body">
+                            <p>Para a realização de procedimento ou intervenção na vítima, é necessário prestar os esclarecimentos adequados e obter autorização prévia por parte da mesma.</p>
+                            <div class="info-box mt-2">
+                                <p class="mb-0"><strong>Consentimento presumido?</strong> O que é? Quando se equaciona?</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Menores -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-primary text-white">Menores</div>
+                        <div class="card-body">
+                            <div class="checklist-item">Nos termos da lei civil, é considerado menor quem ainda não tiver completado 18 anos de idade.</div>
+                            <div class="checklist-item">Consentimento informado – normalmente pelos progenitores ou, em determinados casos por um tutor designado pelo tribunal.</div>
+                            <div class="checklist-item">Em função da capacidade de compreensão informar o menor</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Situações com menores -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-danger text-white">Como proceder nas seguintes situações</div>
+                        <div class="card-body">
+                            <div class="checklist-item">1. Menor acompanhado pelo representante legal que não aceita encaminhamento à unidade hospitalar?</div>
+                            <div class="checklist-item">2. Menor recusa assistência e/ou transporte mas não se encontra acompanhado pelo representante legal.</div>
+                            <div class="checklist-item">3. Menor acompanhado pelo representante legal, mas o representante encontra-se com perturbação psíquica.</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Outras situações de incapacidade -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-secondary text-white">Outras situações de incapacidade</div>
+                        <div class="card-body">
+                            <p>Situações em que as pessoas estão impossibilitadas de exercer plena, pessoal e conscientemente os seus direitos: Anomalia psíquica, surdez-mudez ou cegueira.</p>
+                            <div class="info-box mt-2">
+                                <p class="mb-0"><strong>Como proceder?</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recusa de assinatura -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-warning text-dark">Recusa de assinatura da declaração</div>
+                        <div class="card-body">
+                            <div class="checklist-item">No caso de recusa em assinar a declaração, a vítima não pode ser coagida ou forçada a fazê-lo. A pessoa tem direito a não assinar.</div>
+                            <div class="checklist-item">Informar CODU</div>
+                            <div class="checklist-item">Documentar toda a informação no verbete</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Denúncia obrigatória -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-danger text-white">Denúncia obrigatória</div>
+                        <div class="card-body">
+                            <p>Nos termos da Lei, a denúncia de um crime é obrigatória.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Direito de necessidade -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-info text-white">Direito de necessidade</div>
+                        <div class="card-body">
+                            <p>Por força do dever de prestar assistência, perante uma situação de perigo, ao ser confrontado com a necessidade de agir para acautelar a sua própria segurança, da vítima ou de terceiros.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Legítima defesa -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-success text-white">Legítima defesa</div>
+                        <div class="card-body">
+                            <p>Consiste na reação destinada a afastar a agressão atual e ilícita sobre a pessoa ou o património, seja do próprio ou de outra pessoa.</p>
+                            <div class="info-box mt-2">
+                                <p class="mb-0"><strong>Exemplo:</strong> alguém defender uma pessoa que está a ser agredida.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Intervenção em local de crime -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-dark text-white">Intervenção em local de crime</div>
+                        <div class="card-body">
+                            <p>Perante uma situação que envolva morte ou violência, lembre-se de que pode estar perante um possível cenário de crime.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Diretiva Antecipada de Vontade -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-primary text-white">Diretiva Antecipada de Vontade (DAV)</div>
+                        <div class="card-body">
+                            <div class="info-box">
+                                <p>Conhecida por testamento vital, é um documento formal, feito por iniciativa de cidadãos nacionais, estrangeiros e refugiados (apátridas), residentes em Portugal, maiores de idade, no qual é manifestada, antecipadamente, a vontade consciente, livre e esclarecida de um utente, sobre quais os cuidados de saúde que deseja receber ou não, por qualquer razão, caso não seja capaz de expressar a sua vontade pessoal e autonomamente, permitindo ainda a nomeação de um procurador de cuidados de saúde.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ABA TRANSPORTE E VERBETE -->
+            <div class="tab-pane fade" id="transport-content" role="tabpanel">
+                
+                <section class="mb-5">
+                    <h3 class="module-title">🚑 Transporte</h3>
                     
                     <div class="card">
+                        <div class="card-body">
+                            <div class="info-box">
+                                <p>No caso de transporte ao SU, a vítima tem direito a ser acompanhada por uma pessoa por si indicada.</p>
+                                <div class="warning-box mt-2">
+                                    <p class="mb-0"><strong>Este direito pode ser limitado? Em que situações?</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mt-3">
+                        <div class="card-header bg-primary text-white">O Verbete de socorro/transporte</div>
                         <div class="card-body">
                             <div class="danger-box">
-                                <h5 class="text-center">“Afeta os mecanismos normais de adaptação, resultando num desequilíbrio psicológico e diminuição do funcionamento adaptativo.”</h5>
-                                <p class="text-center mb-0 mt-2">(Everly & Mitchell, 1999)</p>
+                                <p class="mb-0">O instrumento essencial, com valor jurídico e que é indissociável dos cuidados de saúde prestados ao doente pelo operacional, inclusive em caso de recusa de assistência, transporte ou de PCR.</p>
                             </div>
-                            
-                            <div class="warning-box mt-4">
-                                <h5>⚡ Reação Aguda de Stress (RAS)</h5>
-                                <p>O organismo ativa ao máximo os recursos físicos para atuar numa situação de emergência.</p>
-                                <p>Enquanto perceção de ameaça se mantiver a sintomatologia pode persistir.</p>
-                                <p>A ansiedade pode disparar por indícios que recordem a situação (odores, ruídos, locais, horas do dia…).</p>
-                            </div>
-                            
-                            <div class="info-box mt-4">
-                                <p>Tal como acontece com as vítimas, também os profissionais podem vir a desenvolver Reações de Stress – RAS que, apesar de normais, poderão evoluir para patologia psicológica / psiquiátrica.</p>
-                            </div>
-                            
-                            <div class="text-center mt-4">
-                                <div class="procedure-card">
-                                    <h5>Incidente Crítico</h5>
-                                    <div class="d-flex justify-content-center gap-3 flex-wrap mt-3">
-                                        <span class="badge bg-warning text-dark p-3">Reações iniciais (RAS)</span>
-                                        <span class="badge bg-danger p-3">→</span>
-                                        <span class="badge bg-danger p-3">Perturbação Pós-Stress Traumático (PPST)</span>
-                                        <span class="badge bg-secondary p-3">ou outras perturbações de stress ou do foro emocional…</span>
-                                    </div>
-                                </div>
-                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mt-3">
+                        <div class="card-header bg-secondary text-white">Proteção de dados pessoais</div>
+                        <div class="card-body">
+                            <p>Confidencialidade e tratamento adequado da informação clínica e pessoal das vítimas.</p>
                         </div>
                     </div>
                 </section>
             </div>
 
-            <!-- ABA PRIMEIROS SOCORROS PSICOLÓGICOS -->
-            <div class="tab-pane fade" id="psychfirst-content" role="tabpanel">
+            <!-- ABA CARTA DE DIREITOS E DEVERES -->
+            <div class="tab-pane fade" id="rightsduties-content" role="tabpanel">
                 
                 <section class="mb-5">
-                    <h3 class="module-title">🫂 Primeiros Socorros Psicológicos</h3>
+                    <h3 class="module-title">📋 Carta de Direitos e Deveres do Utente do INEM</h3>
                     
+                    <!-- Direitos -->
                     <div class="card">
+                        <div class="card-header bg-success text-white">Direitos</div>
                         <div class="card-body">
-                            <h5 class="text-primary">Objetivos:</h5>
-                            <div class="checklist-item">Oferecer proteção, segurança e confiança às vítimas e familiares</div>
-                            <div class="checklist-item">Redução do stress das vítimas</div>
-                            <div class="checklist-item">Minimizar o impacto do incidente crítico</div>
-                            <div class="checklist-item">Mobilizar os recursos sociais</div>
-                            
-                            <h5 class="text-primary mt-4">Princípios (Young, Ford, Ruzek, Friedman & Gusman, 1998):</h5>
-                            <div class="row mt-3">
-                                <div class="col-md-4 text-center mb-3">
-                                    <div class="procedure-card">
-                                        <h5>🛡️ Proteger</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="rights-card">
+                                        <div class="checklist-item">1. Receber cuidados de saúde no local da ocorrência e ser transportado para o hospital adequado</div>
+                                        <div class="checklist-item">2. Receber os cuidados apropriados ao seu estado de saúde</div>
+                                        <div class="checklist-item">3. Receber assistência médica pré e inter-hospitalar</div>
+                                        <div class="checklist-item">4. Receber cuidados de saúde, independentemente da sua situação económica, social, cultural, convicções filosóficas, religiosas e dos locais onde vive</div>
+                                        <div class="checklist-item">5. Ser tratado com o máximo respeito pela dignidade humana</div>
+                                        <div class="checklist-item">6. Ter toda a informação clínica e dados pessoais tratados de forma confidencial</div>
+                                        <div class="checklist-item">7. Receber informação verdadeira, completa, compreensível e transparente sobre a prestação de cuidados</div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 text-center mb-3">
-                                    <div class="procedure-card">
-                                        <h5>🧭 Dirigir</h5>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 text-center mb-3">
-                                    <div class="procedure-card">
-                                        <h5>🔗 Conectar</h5>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 text-center mb-3">
-                                    <div class="procedure-card">
-                                        <h5>📊 Triagem</h5>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 text-center mb-3">
-                                    <div class="procedure-card">
-                                        <h5>🩺 Cuidar de Agudizados</h5>
+                                <div class="col-md-6">
+                                    <div class="rights-card">
+                                        <div class="checklist-item">8. Ser informado acerca dos serviços de saúde existentes, suas competências e níveis de cuidados</div>
+                                        <div class="checklist-item">9. Dar ou recusar o seu consentimento antes de qualquer procedimento de assistência médica, exceto quando se trate da defesa da saúde pública</div>
+                                        <div class="checklist-item">10. Aceder aos dados registados no processo clínico</div>
+                                        <div class="checklist-item">11. Privacidade e intimidade durante a assistência médica prestada</div>
+                                        <div class="checklist-item">12. Apresentar sugestões ou reclamações</div>
+                                        <div class="checklist-item">13. Ser transportado em ambulância com acompanhamento por uma pessoa por si indicada exceto quando possa comprometer a prestação de cuidados</div>
+                                        <div class="checklist-item">14. Receber cuidados de saúde com os níveis de qualidade legalmente previstos e clinicamente aceitáveis</div>
+                                        <div class="checklist-item">15. Aceder aos serviços do INEM mesmo que pertença a grupos vulneráveis ou com necessidades especiais</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
-
-            <!-- ABA STRESS NO TAS -->
-            <div class="tab-pane fade" id="stress-content" role="tabpanel">
-                
-                <section class="mb-5">
-                    <h3 class="module-title">😰 Stress no Tripulante de Ambulância</h3>
                     
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="info-box">
-                                <h5>Definição de Stress:</h5>
-                                <p>Stress é uma condição que resulta da incapacidade que a pessoa sente, real ou não, de responder às exigências de uma determinada situação (social, psicológica ou biológica). Surge quando os recursos adaptativos da pessoa não são suficientes para as exigências da situação, ou pelo menos são percecionados como insuficientes.</p>
-                            </div>
-                            
-                            <h5 class="mt-4">Alterações Físicas:</h5>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="checklist-item">Contração muscular</div>
-                                    <div class="checklist-item">Cefaleias</div>
-                                    <div class="checklist-item">Cansaço e sonolência</div>
-                                    <div class="checklist-item">Hipertensão e palpitações</div>
-                                    <div class="checklist-item">Dificuldades visuais</div>
-                                    <div class="checklist-item">Queixas somáticas</div>
-                                    <div class="checklist-item">Luta ou fuga</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="checklist-item">Movimentos erráticos</div>
-                                    <div class="checklist-item">Dificuldade em cumprir responsabilidades</div>
-                                    <div class="checklist-item">Adiar as tarefas</div>
-                                    <div class="checklist-item">Pensamentos ansiosos</div>
-                                    <div class="checklist-item">Preocupação constante</div>
-                                    <div class="checklist-item">Dificuldades de memória e indecisão</div>
-                                    <div class="checklist-item">Isolamento</div>
-                                </div>
-                            </div>
-                            
-                            <h5 class="mt-4">Alterações Cognitivas:</h5>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="checklist-item">Dificuldade de concentração</div>
-                                    <div class="checklist-item">Dificuldade de tomada de decisão</div>
-                                    <div class="checklist-item">Baixa auto-eficácia</div>
-                                    <div class="checklist-item">Descrença</div>
-                                    <div class="checklist-item">Negação</div>
-                                    <div class="checklist-item">Alteração da memória</div>
-                                    <div class="checklist-item">Confusão</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="checklist-item">Distorção</div>
-                                    <div class="checklist-item">Pensamentos intrusivos</div>
-                                    <div class="checklist-item">Preocupação</div>
-                                </div>
-                            </div>
-                            
-                            <h5 class="mt-4">Alterações Emocionais:</h5>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="checklist-item">Manifestações de choro</div>
-                                    <div class="checklist-item">Medo e incerteza</div>
-                                    <div class="checklist-item">Irritabilidade e culpa</div>
-                                    <div class="checklist-item">Raiva intensa</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="checklist-item">Nervosismo e ansiedade</div>
-                                    <div class="checklist-item">Tristeza e depressão</div>
-                                    <div class="checklist-item">Perda de controlo emocional</div>
-                                </div>
-                            </div>
-                            
-                            <div class="warning-box mt-4">
-                                <p>A estratégia que cada profissional adota para gerir as situações de maior stress pode determinar o modo como são ultrapassadas. É fundamental, em primeiro lugar, aceitar que são reações normais e que qualquer profissional pode vir a experimentá-las em situações exigentes.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Fatores de stress -->
-                <section class="mb-5">
-                    <h3 class="module-title">📌 Fatores de stress para os profissionais</h3>
-                    
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card h-100">
-                                <div class="card-header bg-warning text-dark">Fatores Externos</div>
-                                <div class="card-body">
-                                    <div class="checklist-item">Pressão exterior para terminar rapidamente a intervenção</div>
-                                    <div class="checklist-item">Desacordo com decisões tomadas (ex. triagem, atuação, encaminhamento)</div>
-                                    <div class="checklist-item">Coordenação com outros elementos da equipa, bem como com outras equipas intervenientes</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card h-100">
-                                <div class="card-header bg-info text-white">Fatores Internos</div>
-                                <div class="card-body">
-                                    <div class="checklist-item">Abordagem inicial à vítima</div>
-                                    <div class="checklist-item">Insegurança / “Medo” de não conseguir intervir</div>
-                                    <div class="checklist-item">Experiências de vida similares/identificação com sofrimento das vítimas e familiares</div>
-                                    <div class="checklist-item">Tipo de vítima (população infantil, queimados, colegas de trabalho)</div>
-                                    <div class="checklist-item">Sentimentos de hostilidade e raiva por parte dos familiares</div>
-                                    <div class="checklist-item">Dificuldades de comunicação (diferenças linguísticas/culturais)</div>
-                                    <div class="checklist-item">Sentimento de não ter feito o suficiente – impotência</div>
-                                    <div class="checklist-item">Exposição a estímulos potencialmente traumáticos</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Consequências -->
-                <section class="mb-5">
-                    <h3 class="module-title">⚠️ Consequências do Stress profissional</h3>
-                    <div class="card">
+                    <!-- Deveres -->
+                    <div class="card mt-3">
+                        <div class="card-header bg-danger text-white">Deveres</div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="danger-box">
-                                        <div class="checklist-item">Perturbação Aguda de Stress</div>
-                                        <div class="checklist-item">Perturbação Pós-Stress Traumático</div>
-                                        <div class="checklist-item">Alteração significativa do comportamento</div>
-                                        <div class="checklist-item">Abuso de substâncias</div>
-                                        <div class="checklist-item">Depressão</div>
-                                        <div class="checklist-item">Burnout</div>
+                                    <div class="duties-card">
+                                        <div class="checklist-item">1. Cuidar do seu estado de saúde, procurar garantir a sua mais completa recuperação e participar na promoção da própria saúde e da comunidade em que vive</div>
+                                        <div class="checklist-item">2. Fornecer aos profissionais de saúde todas as informações necessárias para uma correta avaliação da situação e consequente intervenção</div>
+                                        <div class="checklist-item">3. Respeitar os direitos dos outros utentes</div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="info-box">
-                                        <h6>Fatores de risco para desenvolver patologia:</h6>
-                                        <div class="checklist-item">História psiquiátrica prévia</div>
-                                        <div class="checklist-item">Características de personalidade</div>
-                                        <div class="checklist-item">Fraco suporte social</div>
-                                        <div class="checklist-item">Experiência prévia de acontecimentos traumáticos</div>
-                                        <div class="checklist-item">Severidade do acontecimento e exposição a estímulos potencialmente traumáticos</div>
-                                        <div class="checklist-item">Estratégias de coping desadaptativas e desadequadas</div>
+                                    <div class="duties-card">
+                                        <div class="checklist-item">4. Colaborar com os profissionais de saúde, respeitando e aceitando as indicações que lhe são recomendadas</div>
+                                        <div class="checklist-item">5. Respeitar as regras e normas de funcionamento do INEM</div>
+                                        <div class="checklist-item">6. Utilizar os serviços de saúde de forma apropriada e colaborar na redução de gastos desnecessários</div>
+                                        <div class="checklist-item">7. Recusar assistência ou transporte, assumindo em documento próprio, com a devida identificação pessoal</div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Sinais de alerta -->
-                <section class="mb-5">
-                    <h3 class="module-title">🚨 Sinais de alerta</h3>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="checklist-item">Não consegue deixar de pensar no que sucedeu</div>
-                                    <div class="checklist-item">Sente-se muito tenso ou com medo a maior parte do tempo</div>
-                                    <div class="checklist-item">Não consegue ter prazer com nada</div>
-                                    <div class="checklist-item">Não consegue ir trabalhar ou assumir as suas responsabilidades habituais</div>
-                                    <div class="checklist-item">Comporta-se como se o acontecimento estivesse a acontecer outra vez</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="checklist-item">Irrita-se ou é agressivo com as pessoas que o rodeiam</div>
-                                    <div class="checklist-item">Consome álcool, ou outras drogas, em excesso</div>
-                                    <div class="checklist-item">Faz automedicação</div>
-                                    <div class="checklist-item">Comporta-se de forma muito distinta do habitual antes do acontecimento</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <!-- ABA ESTRATÉGIAS DE CONFRONTO -->
-            <div class="tab-pane fade" id="coping-content" role="tabpanel">
-                
-                <section class="mb-5">
-                    <h3 class="module-title">💪 Estratégias de Confronto</h3>
-                    
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card h-100">
-                                <div class="card-header bg-danger text-white">❌ Coping Negativo</div>
-                                <div class="card-body">
-                                    <div class="checklist-item">Tentar abstrair-se do incidente</div>
-                                    <div class="checklist-item">Negar sentimentos dolorosos relacionados com o incidente</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card h-100">
-                                <div class="card-header bg-success text-white">✅ Coping Positivo</div>
-                                <div class="card-body">
-                                    <div class="checklist-item">Analisar as ações realizadas durante o incidente e aprender com os erros realizados</div>
-                                    <div class="checklist-item">Aceitar sentimentos relacionados com o incidente</div>
-                                    <div class="info-box mt-2">Ao fim de algum tempo, integramos a experiência na nossa história de vida. Os pensamentos e sentimentos são identificados e expressos, e o equilíbrio da nossa vida é recuperado.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- O que fazer -->
-                <section class="mb-5">
-                    <h3 class="module-title">📋 O que fazer?</h3>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="checklist-item">Falar com pessoas significativas / apoio de pares (ou escrever) sobre o sucedido</div>
-                                    <div class="checklist-item">Voltar à sua rotina diária. Tentar organizar as suas atividades para os próximos dias</div>
-                                    <div class="checklist-item">Passar tempo com as pessoas que são importantes para si</div>
-                                    <div class="checklist-item">Reservar tempo para si</div>
-                                    <div class="checklist-item">Logo que possível, enfrentar os locais e situações que lhe recordam o acontecimento</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="checklist-item">Tentar descansar e dormir o suficiente/fazer pausas quando necessário</div>
-                                    <div class="checklist-item">Envolver-se em atividades que habitualmente lhe dão prazer</div>
-                                    <div class="checklist-item">Aceitar as suas fragilidades e dificuldades</div>
-                                    <div class="checklist-item">Evitar a automedicação, consumo de álcool, cafeína e tabaco em excesso</div>
-                                    <div class="checklist-item">Fazer uma alimentação saudável bem como exercício físico ou sessões de relaxamento</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Quem pode ajudar -->
-                <section class="mb-5">
-                    <h3 class="module-title">🫂 Quem pode ajudar?</h3>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="success-box">
-                                <p>Procurar apoio e ventilar as situações complexas com os psicólogos do CAPIC, INEM, não é uma demonstração de fragilidade, pelo contrário, é uma escolha adequada.</p>
-                                <p>Cada vez mais os serviços de apoio psicológico em emergência estão previstos como rotina, e não como uma necessidade para quando surgem problemas.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Em suma -->
-                <section class="mb-5">
-                    <h3 class="module-title">📌 Em suma</h3>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="info-box">
-                                <p>• O incidente crítico é um acontecimento negativo e contraditório com o funcionamento habitual da pessoa, que afeta os seus mecanismos de confronto e adaptação normais, levando à perda do equilíbrio psicológico e alteração do funcionamento habitual.</p>
-                                <p class="mt-2">• No exercício da sua função, os profissionais deparam-se com situações exigentes, que implicam a mobilização de estratégias para lidar com as mesmas. Sempre que necessário, o profissional deve procurar ajuda especializada!</p>
                             </div>
                         </div>
                     </div>
@@ -782,7 +653,7 @@
         });
         
         // Ativar tabs corretamente
-        const triggerTabList = document.querySelectorAll('#psychTabs button')
+        const triggerTabList = document.querySelectorAll('#ethicsTabs button')
         triggerTabList.forEach(triggerEl => {
             const tabTrigger = new bootstrap.Tab(triggerEl)
 

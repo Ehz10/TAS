@@ -224,23 +224,49 @@
 
         <!-- Navegação entre as matérias -->
         <div class="container mb-4">
-            <ul class="nav nav-tabs" id="airwayTabs" role="tablist">
+            <ul class="nav nav-tabs d-none d-md-flex" id="AirwayTabs" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="airway-tab" data-bs-toggle="tab" data-bs-target="#airway-content" type="button" role="tab">
+                    <button class="nav-link active" id="airway-tab" data-bs-toggle="tab" data-bs-target="#airway-content"
+                        type="button" role="tab">
                         🫁 Via Aérea
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="oxygen-tab" data-bs-toggle="tab" data-bs-target="#oxygen-content" type="button" role="tab">
+                    <button class="nav-link" id="oxygen-tab" data-bs-toggle="tab" data-bs-target="#oxygen-content"
+                        type="button" role="tab">
                         💨 Oxigenoterapia
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="equipment-tab" data-bs-toggle="tab" data-bs-target="#equipment-content" type="button" role="tab">
+                    <button class="nav-link" id="equipment-tab" data-bs-toggle="tab" data-bs-target="#equipment-content"
+                        type="button" role="tab">
                         🩺 Equipamento
                     </button>
                 </li>
             </ul>
+
+            <!-- Versão Mobile (cards em grid) -->
+            <div class="row row-cols-2 g-2 d-md-none" id="AirwayTabs   " role="tablist">
+                <!-- Versão Desktop (tabs normais) -->
+                <div class="col">
+                    <button class="btn w-100 py-3 border text-center active" id="mobile-adult-tab" data-bs-toggle="tab" data-bs-target="#airway-content" type="button" role="tab" style="background-color: #f8f9fa; border-color: #dee2e6; transition: all 0.2s;">
+                        <div style="font-size: 1.8rem;">🫁</div>
+                        <div style="font-size: 0.9rem; font-weight: 500;">Via Aérea</div>
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn w-100 py-3 border text-center" id="mobile-pediatric-tab" data-bs-toggle="tab" data-bs-target="#oxygen-content" type="button" role="tab" style="background-color: #f8f9fa; border-color: #dee2e6; transition: all 0.2s;">
+                        <div style="font-size: 1.8rem;">💨</div>
+                        <div style="font-size: 0.9rem; font-weight: 500;">Oxigenoterapia</div>
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn w-100 py-3 border text-center" id="mobile-neonatal-tab" data-bs-toggle="tab" data-bs-target="#equipment-content" type="button" role="tab" style="background-color: #f8f9fa; border-color: #dee2e6; transition: all 0.2s;">
+                        <div style="font-size: 1.8rem;">🩺</div>
+                        <div style="font-size: 0.9rem; font-weight: 500;">Equipamento</div>
+                    </button>
+                </div>                
+            </div>
         </div>
 
         <!-- Conteúdo das abas -->
